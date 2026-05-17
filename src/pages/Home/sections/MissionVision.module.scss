@@ -1,0 +1,201 @@
+// ============================================================
+// MissionVision.module.scss — Purpose & Direction
+// ============================================================
+
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+.mv {
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: v.$bg-dark;
+  position: relative;
+  overflow: hidden;
+}
+
+.mv__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.mv__orb1 {
+  position: absolute;
+  top: -20%;
+  left: -8%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.mv__orb2 {
+  position: absolute;
+  bottom: -20%;
+  right: -8%;
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.09) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+// ─── Header ───────────────────────────────────────────────────
+.mv__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.mv__eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: v.$font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: v.$letter-spacing-wider;
+  color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 14px;
+  border-radius: v.$radius-full;
+  margin-bottom: 20px;
+}
+
+.mv__title {
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: v.$font-weight-extrabold;
+  color: v.$white;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+
+  span {
+    background: linear-gradient(135deg, #60A5FA 0%, #818CF8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.mv__subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.75;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+// ─── Cards ────────────────────────────────────────────────────
+.mv__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+
+  @include r.down(tablet) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.mv__card {
+  position: relative;
+  border-radius: v.$radius-xl;
+  overflow: hidden;
+  transition: transform v.$transition-smooth;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.mv__cardGlow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color, #60A5FA) 8%, transparent) 0%,
+    transparent 55%
+  );
+  pointer-events: none;
+  transition: opacity v.$transition-smooth;
+  opacity: 0.6;
+
+  .mv__card:hover & {
+    opacity: 1;
+  }
+}
+
+.mv__cardInner {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: v.$radius-xl;
+  padding: 44px 40px;
+  height: 100%;
+  transition: border-color v.$transition-smooth, background v.$transition-smooth;
+
+  .mv__card:hover & {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  @include r.down(mobile-lg) {
+    padding: 32px 24px;
+  }
+}
+
+.mv__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: v.$radius-lg;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--color, #60A5FA);
+  transition: all v.$transition-smooth;
+
+  .mv__card:hover & {
+    background: color-mix(in srgb, var(--color, #60A5FA) 14%, transparent);
+    border-color: color-mix(in srgb, var(--color, #60A5FA) 35%, transparent);
+    box-shadow: 0 0 24px color-mix(in srgb, var(--color, #60A5FA) 25%, transparent);
+  }
+}
+
+.mv__cardEyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: v.$font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color, #60A5FA);
+  margin-bottom: 12px;
+}
+
+.mv__cardTitle {
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: v.$font-weight-extrabold;
+  color: v.$white;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.mv__cardBody {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 28px;
+}
+
+.mv__cardAccent {
+  height: 2px;
+  width: 40px;
+  background: var(--color, #60A5FA);
+  border-radius: 2px;
+  opacity: 0.7;
+  transition: width v.$transition-smooth;
+
+  .mv__card:hover & {
+    width: 64px;
+  }
+}

@@ -1,0 +1,176 @@
+// ============================================================
+// ProcessPreview.module.scss — Premium Timeline Process
+// ============================================================
+
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+.process {
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: v.$bg-dark;
+  position: relative;
+  overflow: hidden;
+}
+
+.process__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.process__bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.process__bgOrb {
+  position: absolute;
+  top: 20%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+// ─── Steps Grid ───────────────────────────────────────────────
+.process__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  margin-bottom: 60px;
+
+  @include r.down(tablet-lg) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  @include r.down(mobile-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.process__step {
+  position: relative;
+  padding: 0 24px;
+  text-align: center;
+
+  &:first-child { padding-left: 0; }
+  &:last-child  { padding-right: 0; }
+
+  @include r.down(tablet-lg) {
+    padding: 0;
+    text-align: left;
+    display: flex;
+    gap: 20px;
+  }
+
+  @include r.down(mobile-lg) {
+    text-align: left;
+  }
+}
+
+// ─── Connector Line ───────────────────────────────────────────
+.process__connector {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%);
+  z-index: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color, v.$primary-lighter) 0%, transparent 100%);
+    transform: translateY(-50%);
+    opacity: 0.5;
+  }
+
+  @include r.down(tablet-lg) {
+    display: none;
+  }
+}
+
+// ─── Step Head ────────────────────────────────────────────────
+.process__stepHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+
+  @include r.down(tablet-lg) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    width: 60px;
+  }
+}
+
+.process__iconWrap {
+  width: 60px;
+  height: 60px;
+  border-radius: v.$radius-xl;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color, v.$primary-lighter);
+  transition: all v.$transition-smooth;
+  position: relative;
+
+  .process__step:hover & {
+    background: rgba(var(--color, 96, 165, 250), 0.15);
+    border-color: var(--color, v.$primary-lighter);
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(var(--color, 96, 165, 250), 0.2);
+  }
+}
+
+.process__num {
+  font-size: 12px;
+  font-weight: v.$font-weight-extrabold;
+  color: var(--color, v.$primary-lighter);
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+// ─── Step Body ────────────────────────────────────────────────
+.process__stepBody {
+  @include r.down(tablet-lg) {
+    flex: 1;
+  }
+}
+
+.process__stepTitle {
+  font-size: 17px;
+  font-weight: v.$font-weight-bold;
+  color: v.$white;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.process__stepDesc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+}
+
+.process__cta {
+  text-align: center;
+}

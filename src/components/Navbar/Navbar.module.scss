@@ -1,0 +1,280 @@
+// ============================================================
+// Navbar.module.scss — Premium Sticky Navigation
+// Vishal Infotech
+// ============================================================
+
+@use '../../styles/variables' as v;
+@use '../../styles/responsive' as r;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: v.$z-navbar;
+  padding: 20px 0;
+  transition: padding v.$transition-smooth, background v.$transition-smooth,
+    box-shadow v.$transition-smooth;
+
+  // ─── Scrolled State ────────────────────────────────────────
+  &--scrolled {
+    padding: 12px 0;
+    // background: rgba(219, 60, 60, 0);
+    // backdrop-filter: blur(20px);
+    // -webkit-backdrop-filter: blur(20px);
+  }
+
+  // ─── Inner ─────────────────────────────────────────────────
+  &__inner {
+    @include r.container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  // ─── Logo ──────────────────────────────────────────────────
+  &__logoCard {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: v.$white;
+    padding: 8px 18px;
+    border-radius: v.$radius-full;
+    box-shadow: v.$shadow-md;
+    border: 1px solid v.$border-light;
+    z-index: v.$z-navbar + 2;
+    transition: transform v.$transition-smooth, box-shadow v.$transition-smooth;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: v.$shadow-lg;
+    }
+  }
+
+  &__logoImg {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  // ─── Desktop Nav Capsule ───────────────────────────────────
+  &__capsule {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-right: none;
+    padding: 6px 6px 6px 20px;
+    border-radius: 100px 0 0 100px;
+    gap: 4px;
+    box-shadow: -4px 4px 24px rgba(0, 0, 0, 0.06);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 4px 24px rgba(0, 0, 0, 0.06);
+
+    // background: rgba(219, 60, 60, 0);
+    // backdrop-filter: blur(20px);
+    // -webkit-backdrop-filter: blur(20px);
+    @include r.down(tablet-lg) {
+      display: none;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    display: block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: v.$font-weight-medium;
+    color: v.$text-secondary;
+    border-radius: v.$radius-full;
+    transition: color v.$transition-fast, background v.$transition-fast;
+    letter-spacing: 0.01em;
+
+    &:hover {
+      color: v.$primary;
+      background: v.$primary-faint;
+    }
+
+    &--active {
+      color: v.$primary;
+      font-weight: v.$font-weight-semibold;
+      background: v.$primary-faint;
+    }
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 22px;
+    background: v.$primary;
+    color: v.$white;
+    font-size: 14px;
+    font-weight: v.$font-weight-semibold;
+    border-radius: v.$radius-full;
+    transition: all v.$transition-smooth;
+    letter-spacing: 0.01em;
+    margin-left: 8px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+
+    &:hover {
+      background: v.$primary-light;
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+      transform: translateY(-1px);
+    }
+  }
+
+  // ─── Mobile Toggle ─────────────────────────────────────────
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: v.$white;
+    border-radius: v.$radius-md;
+    box-shadow: v.$shadow-sm;
+    border: 1px solid v.$border-light;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: v.$z-navbar + 2;
+    transition: all v.$transition-smooth;
+
+    @include r.down(tablet-lg) {
+      display: flex;
+    }
+
+    span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: v.$text-primary;
+      border-radius: 2px;
+      transition: all v.$transition-smooth;
+      transform-origin: center;
+    }
+
+    &--open {
+      background: v.$primary-faint;
+      border-color: v.$primary-pale;
+
+      span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+  }
+
+  // ─── Mobile Menu ───────────────────────────────────────────
+  &__mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: v.$z-navbar + 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.02);
+    transition: opacity v.$transition-smooth, transform v.$transition-smooth;
+
+    &--open {
+      opacity: 1;
+      pointer-events: all;
+      transform: scale(1);
+    }
+
+    @include r.up(tablet-lg) {
+      display: none;
+    }
+  }
+
+  &__mobileLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    max-width: 300px;
+    padding: 0 24px;
+  }
+
+  &__mobileLink {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: v.$font-weight-medium;
+    color: v.$text-secondary;
+    border-radius: v.$radius-lg;
+    transition: all v.$transition-fast;
+    letter-spacing: 0.01em;
+
+    &:hover {
+      color: v.$primary;
+      background: v.$primary-faint;
+    }
+
+    &--active {
+      color: v.$primary;
+      font-weight: v.$font-weight-semibold;
+      background: v.$primary-faint;
+    }
+  }
+
+  &__mobileCta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 16px 48px;
+    background: v.$primary;
+    color: v.$white;
+    font-size: 16px;
+    font-weight: v.$font-weight-semibold;
+    border-radius: v.$radius-full;
+    box-shadow: v.$shadow-primary;
+    transition: all v.$transition-smooth;
+
+    &:hover {
+      background: v.$primary-light;
+      transform: translateY(-2px);
+    }
+  }
+}

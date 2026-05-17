@@ -1,0 +1,180 @@
+// ============================================================
+// Button.module.scss — Premium Button System
+// Vishal Infotech
+// ============================================================
+
+@use '../../styles/variables' as v;
+@use '../../styles/responsive' as r;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: v.$font-primary;
+  font-weight: v.$font-weight-semibold;
+  border-radius: v.$radius-full;
+  cursor: pointer;
+  transition: all v.$transition-smooth;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+
+  // ─── Ripple layer ──────────────────────────────────────────
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity v.$transition-fast;
+  }
+
+  // ─── Sizes ─────────────────────────────────────────────────
+  &--sm {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+
+  &--md {
+    padding: 13px 30px;
+    font-size: 15px;
+
+    @include r.down(mobile) {
+      padding: 11px 24px;
+      font-size: 14px;
+    }
+  }
+
+  &--lg {
+    padding: 16px 38px;
+    font-size: 16px;
+
+    @include r.down(mobile) {
+      padding: 14px 30px;
+      font-size: 15px;
+    }
+  }
+
+  // ─── Primary ───────────────────────────────────────────────
+  &--primary {
+    background: v.$primary;
+    color: v.$white;
+    border: 2px solid v.$primary;
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+
+    &::after { background: rgba(255, 255, 255, 0.1); }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37, 99, 235, 0.4);
+      background: v.$primary-light;
+      border-color: v.$primary-light;
+      &::after { opacity: 1; }
+    }
+
+    &:active { transform: translateY(0); }
+  }
+
+  // ─── Outline ───────────────────────────────────────────────
+  &--outline {
+    background: transparent;
+    color: v.$primary;
+    border: 2px solid v.$primary;
+
+    &:hover {
+      background: v.$primary;
+      color: v.$white;
+      transform: translateY(-2px);
+      box-shadow: v.$shadow-primary;
+    }
+
+    &:active { transform: translateY(0); }
+  }
+
+  // ─── Outline White ─────────────────────────────────────────
+  &--outline-white {
+    background: transparent;
+    color: v.$white;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+
+    &:hover {
+      background: v.$white;
+      color: v.$primary;
+      border-color: v.$white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+    }
+
+    &:active { transform: translateY(0); }
+  }
+
+  // ─── White ─────────────────────────────────────────────────
+  &--white {
+    background: v.$white;
+    color: v.$primary;
+    border: 2px solid v.$white;
+    box-shadow: v.$shadow-md;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: v.$shadow-xl;
+    }
+
+    &:active { transform: translateY(0); }
+  }
+
+  // ─── Ghost ─────────────────────────────────────────────────
+  &--ghost {
+    background: transparent;
+    color: v.$text-primary;
+    border: 2px solid transparent;
+
+    &:hover {
+      background: v.$bg-light;
+      border-color: v.$border-light;
+    }
+  }
+
+  // ─── Gradient ──────────────────────────────────────────────
+  &--gradient {
+    background: linear-gradient(135deg, v.$primary 0%, v.$primary-lighter 100%);
+    color: v.$white;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.45);
+    }
+
+    &:active { transform: translateY(0); }
+  }
+
+  // ─── Disabled ──────────────────────────────────────────────
+  &--disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // ─── Inner Elements ────────────────────────────────────────
+  &__text {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__icon {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    transition: transform v.$transition-smooth;
+  }
+
+  &:hover &__icon {
+    transform: translateX(4px);
+  }
+}

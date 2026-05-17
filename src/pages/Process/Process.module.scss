@@ -1,0 +1,163 @@
+@use '../../styles/variables' as v;
+@use '../../styles/responsive' as r;
+@use '../../styles/mixins' as m;
+
+.process {
+  // ─── Hero ─────────────────────────────────────────────
+  &__hero {
+    padding-top: 140px;
+    padding-bottom: 60px;
+    text-align: center;
+    background: v.$bg-dark;
+
+    @include r.down(tablet) {
+      padding-top: 120px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: v.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: v.$letter-spacing-wider;
+    color: v.$primary-light;
+    background: rgba(v.$primary, 0.12);
+    border: 1px solid rgba(v.$primary, 0.2);
+    padding: 8px 20px;
+    border-radius: v.$radius-full;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    @include r.fluid-type(52px, 30px);
+    font-weight: v.$font-weight-extrabold;
+    letter-spacing: v.$letter-spacing-tight;
+    line-height: v.$line-height-tight;
+    color: v.$white;
+    max-width: 600px;
+    margin: 0 auto 24px;
+
+    span {
+      color: v.$primary-light;
+    }
+  }
+
+  &__subtitle {
+    @include r.fluid-type(18px, 15px);
+    color: rgba(255, 255, 255, 0.6);
+    line-height: v.$line-height-relaxed;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  // ─── Steps Section ────────────────────────────────────
+  &__steps {
+    @include r.section-spacing;
+  }
+
+  &__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @include r.down(tablet) {
+      gap: 40px;
+    }
+  }
+
+  &__step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+
+    &--reverse {
+      direction: rtl;
+
+      > * {
+        direction: ltr;
+      }
+    }
+
+    @include r.down(tablet) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+
+      &--reverse {
+        direction: ltr;
+      }
+    }
+  }
+
+  &__stepContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__stepNumber {
+    @include r.fluid-type(72px, 48px);
+    font-weight: v.$font-weight-extrabold;
+    color: v.$primary;
+    opacity: 0.15;
+    line-height: 1;
+  }
+
+  &__stepTitle {
+    @include r.fluid-type(32px, 24px);
+    font-weight: v.$font-weight-bold;
+    color: v.$text-primary;
+    letter-spacing: v.$letter-spacing-tight;
+  }
+
+  &__stepDesc {
+    font-size: 15px;
+    color: v.$text-secondary;
+    line-height: v.$line-height-relaxed;
+  }
+
+  // ─── Details Card ─────────────────────────────────────
+  &__stepDetails {
+    display: flex;
+  }
+
+  &__detailsCard {
+    @include m.card(v.$spacing-xl);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  &__detailsTitle {
+    font-size: 16px;
+    font-weight: v.$font-weight-semibold;
+    color: v.$text-primary;
+  }
+
+  &__detailsList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__detailsItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: v.$text-secondary;
+    line-height: v.$line-height-normal;
+
+    svg {
+      color: v.$primary;
+      flex-shrink: 0;
+    }
+  }
+}

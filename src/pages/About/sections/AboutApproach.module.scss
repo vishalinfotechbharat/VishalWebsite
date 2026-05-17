@@ -1,0 +1,164 @@
+// ============================================================
+// AboutApproach.module.scss
+// ============================================================
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+.approach {
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: v.$bg-light;
+  position: relative;
+  overflow: hidden;
+}
+
+.approach__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.approach__orb {
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(37,99,235,0.05) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+// ─── Header ───────────────────────────────────────────────────
+.approach__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.approach__eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: v.$font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: v.$letter-spacing-wider;
+  color: v.$primary;
+  background: v.$primary-faint;
+  border: 1px solid v.$primary-pale;
+  padding: 4px 14px;
+  border-radius: v.$radius-full;
+  margin-bottom: 16px;
+}
+.approach__title {
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: v.$font-weight-extrabold;
+  color: v.$text-primary;
+  line-height: 1.15;
+  letter-spacing: v.$letter-spacing-tight;
+  margin-bottom: 14px;
+
+  span {
+    background: linear-gradient(135deg, v.$primary 0%, v.$primary-lighter 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+.approach__sub {
+  font-size: 16px;
+  color: v.$text-muted;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+// ─── Steps ────────────────────────────────────────────────────
+.approach__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.approach__step {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  position: relative;
+  padding-bottom: 40px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.approach__connector {
+  position: absolute;
+  left: 21px;
+  top: 52px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--sc, v.$primary),
+    color-mix(in srgb, var(--sc, v.$primary) 30%, transparent)
+  );
+  border-radius: 2px;
+}
+
+.approach__stepLeft {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.approach__iconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: v.$radius-lg;
+  background: color-mix(in srgb, var(--sc, v.$primary) 12%, white);
+  border: 1.5px solid color-mix(in srgb, var(--sc, v.$primary) 25%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sc, v.$primary);
+  transition: all v.$transition-smooth;
+  flex-shrink: 0;
+
+  .approach__step:hover & {
+    background: color-mix(in srgb, var(--sc, v.$primary) 18%, white);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--sc, v.$primary) 25%, transparent);
+  }
+}
+
+.approach__numBadge {
+  font-size: 10px;
+  font-weight: v.$font-weight-bold;
+  color: var(--sc, v.$primary);
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+
+.approach__stepBody {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  flex: 1;
+}
+
+.approach__stepTitle {
+  font-size: 18px;
+  font-weight: v.$font-weight-extrabold;
+  color: v.$text-primary;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  transition: color v.$transition-smooth;
+
+  .approach__step:hover & {
+    color: var(--sc, v.$primary);
+  }
+}
+
+.approach__stepDesc {
+  font-size: 15px;
+  color: v.$text-muted;
+  line-height: 1.75;
+}

@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "../../../GithubRepository/HaraayWebsite"
+		},
+		{
+			"path": "../../../GithubRepository/yw/frontned/YWwebapp"
+		},
+		{
+			"path": "../../../GithubRepository/Vision"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "C:/Users/iampr/Downloads/QLSS_final/QLSS_final"
+		},
+		{
+			"path": "../../../GithubRepository/RA/R-accounting"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "QLSS_final"
+	}
+}

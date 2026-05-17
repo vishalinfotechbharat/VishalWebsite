@@ -1,0 +1,181 @@
+// ============================================================
+// ServicesTech.module.scss — Three-row tech marquee
+// ============================================================
+
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scrollRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.tech {
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: v.$white;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.tech__orb1 {
+  position: absolute;
+  top: -15%;
+  right: -8%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.tech__orb2 {
+  position: absolute;
+  bottom: -15%;
+  left: -8%;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+// ─── Header ───────────────────────────────────────────────────
+.tech__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.tech__eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: v.$font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: v.$letter-spacing-wider;
+  color: v.$primary;
+  background: v.$primary-faint;
+  border: 1px solid v.$primary-pale;
+  padding: 4px 14px;
+  border-radius: v.$radius-full;
+  margin-bottom: 16px;
+}
+
+.tech__title {
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: v.$font-weight-extrabold;
+  color: v.$text-primary;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 14px;
+
+  span {
+    background: linear-gradient(135deg, v.$primary 0%, v.$primary-lighter 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.tech__sub {
+  font-size: 16px;
+  color: v.$text-muted;
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+// ─── Marquee tracks ───────────────────────────────────────────
+.tech__tracks {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(60px, 8vw, 140px);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, v.$white 0%, transparent 100%);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, v.$white 0%, transparent 100%);
+  }
+}
+
+.tech__track {
+  overflow: hidden;
+  width: 100%;
+}
+
+.tech__inner {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: scrollLeft 30s linear infinite;
+
+  .tech__track:hover & {
+    animation-play-state: paused;
+  }
+
+  &--rev {
+    animation-name: scrollRight;
+    animation-duration: 36s;
+  }
+}
+
+// ─── Pill ─────────────────────────────────────────────────────
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: v.$white;
+  border: 1px solid v.$border-light;
+  border-radius: v.$radius-full;
+  padding: 10px 20px;
+  white-space: nowrap;
+  cursor: default;
+  transition: all v.$transition-smooth;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  &:hover {
+    border-color: var(--glow, v.$primary);
+    background: color-mix(in srgb, var(--glow, v.$primary) 6%, white);
+    box-shadow:
+      0 0 16px color-mix(in srgb, var(--glow, v.$primary) 20%, transparent),
+      0 4px 12px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px) scale(1.02);
+  }
+}
+
+.pill__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dot, v.$primary);
+  flex-shrink: 0;
+  box-shadow: 0 0 6px var(--dot, v.$primary);
+}
+
+.pill__name {
+  font-size: 13px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$text-primary;
+}

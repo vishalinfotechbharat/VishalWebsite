@@ -1,0 +1,637 @@
+// ============================================================
+// HeroSection.module.scss — Premium Enterprise Hero
+// ============================================================
+
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+// ─── Section ──────────────────────────────────────────────────
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  overflow: hidden;
+  background: v.$bg-white;
+
+  @include r.down(tablet) {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    min-height: auto;
+  }
+}
+
+// ─── Background ───────────────────────────────────────────────
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero__gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.hero__orb1 {
+  position: absolute;
+  top: -10%;
+  right: 5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glowPulse 6s ease-in-out infinite;
+
+  @include r.down(tablet) {
+    width: 350px;
+    height: 350px;
+    top: 5%;
+    right: -10%;
+  }
+}
+
+.hero__orb2 {
+  position: absolute;
+  bottom: 10%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glowPulse 8s ease-in-out infinite 2s;
+}
+
+.hero__orb3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(ellipse, rgba(219, 234, 254, 0.3) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero__dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(37, 99, 235, 0.15) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  opacity: 0.5;
+}
+
+// ─── Layout ───────────────────────────────────────────────────
+.hero__layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+
+  @include r.down(tablet-lg) {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+}
+
+// ─── Content ──────────────────────────────────────────────────
+.hero__content {
+  @include r.down(tablet-lg) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$primary;
+  background: v.$primary-faint;
+  border: 1px solid v.$primary-pale;
+  padding: 8px 18px;
+  border-radius: v.$radius-full;
+  margin-bottom: 28px;
+  letter-spacing: 0.01em;
+  animation: fadeDown 0.6s ease 0.1s both;
+}
+
+.hero__badgeDot {
+  width: 8px;
+  height: 8px;
+  background: v.$success;
+  border-radius: 50%;
+  animation: pulseDot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.hero__title {
+  @include r.fluid-type(62px, 34px);
+  font-weight: v.$font-weight-black;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: v.$text-primary;
+  margin-bottom: 24px;
+  animation: fadeUp 0.7s ease 0.2s both;
+
+  @include r.down(tablet-lg) {
+    line-height: 1.12;
+  }
+}
+
+.hero__titleGradient {
+  background: linear-gradient(135deg, v.$primary 0%, v.$primary-lighter 60%, #818CF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: gradientShift 4s ease infinite;
+}
+
+.hero__description {
+  @include r.fluid-type(18px, 15px);
+  color: v.$text-muted;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 36px;
+  animation: fadeUp 0.7s ease 0.3s both;
+
+  @include r.down(tablet-lg) {
+    max-width: 600px;
+  }
+}
+
+.hero__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  animation: fadeUp 0.7s ease 0.4s both;
+
+  @include r.down(tablet-lg) {
+    justify-content: center;
+  }
+
+  @include r.down(mobile) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+}
+
+// ─── Quality Pillars ──────────────────────────────────────────
+.hero__pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-top: 28px;
+  border-top: 1px solid v.$border-light;
+  animation: fadeUp 0.7s ease 0.5s both;
+
+  @include r.down(tablet-lg) {
+    justify-content: center;
+  }
+}
+
+.hero__pillar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero__pillarDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, v.$primary, v.$primary-lighter);
+  flex-shrink: 0;
+}
+
+.hero__pillarLabel {
+  font-size: 14px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$text-secondary;
+  white-space: nowrap;
+}
+
+// ─── Visual / Dashboard Mockup ────────────────────────────────
+.hero__visual {
+  position: relative;
+  animation: fadeLeft 0.8s ease 0.3s both;
+
+  @include r.down(tablet-lg) {
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.hero__dashWrap {
+  position: relative;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+// ─── Main Dashboard Card ──────────────────────────────────────
+.hero__dash {
+  background: v.$white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12), 0 4px 16px rgba(37, 99, 235, 0.08);
+  border: 1px solid v.$border-light;
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, v.$primary, v.$primary-lighter, #818CF8);
+  }
+}
+
+.hero__dashHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.hero__dashDots {
+  display: flex;
+  gap: 5px;
+
+  span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    &:nth-child(1) { background: #FF5F57; }
+    &:nth-child(2) { background: #FFBD2E; }
+    &:nth-child(3) { background: #28CA41; }
+  }
+}
+
+.hero__dashTitle {
+  flex: 1;
+  font-size: 13px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$text-secondary;
+}
+
+.hero__dashLive {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$primary;
+  background: v.$primary-faint;
+  padding: 3px 10px;
+  border-radius: v.$radius-full;
+}
+
+.hero__dashLiveDot {
+  width: 6px;
+  height: 6px;
+  background: v.$primary;
+  border-radius: 50%;
+  animation: pulseDot 1.5s ease-in-out infinite;
+}
+
+.hero__dashMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.hero__dashMetric {
+  background: v.$bg-light;
+  border-radius: v.$radius-md;
+  padding: 14px 12px;
+  text-align: center;
+  border: 1px solid v.$border-light;
+}
+
+.hero__dashMetricVal {
+  display: block;
+  font-size: 18px;
+  font-weight: v.$font-weight-extrabold;
+  color: v.$primary;
+  letter-spacing: -0.02em;
+  margin-bottom: 3px;
+}
+
+.hero__dashMetricLbl {
+  font-size: 11px;
+  color: v.$text-muted;
+  font-weight: v.$font-weight-medium;
+}
+
+.hero__dashChart {
+  background: v.$bg-light;
+  border-radius: v.$radius-md;
+  padding: 16px;
+  border: 1px solid v.$border-light;
+}
+
+.hero__dashChartLabel {
+  font-size: 12px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$text-secondary;
+  margin-bottom: 14px;
+}
+
+.hero__dashBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 80px;
+}
+
+.hero__dashBar {
+  flex: 1;
+  height: var(--h, 60%);
+  background: linear-gradient(180deg, v.$primary-lighter 0%, v.$primary 100%);
+  border-radius: 3px 3px 0 0;
+  animation: waveBar 2s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  opacity: 0.85;
+
+  &:nth-child(even) {
+    opacity: 0.6;
+  }
+}
+
+.hero__dashChartFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+
+  span {
+    font-size: 10px;
+    color: v.$text-light;
+    font-weight: v.$font-weight-medium;
+  }
+}
+
+// ─── Floating Cards ───────────────────────────────────────────
+.hero__floatCard1 {
+  position: absolute;
+  top: -20px;
+  right: -24px;
+  background: v.$white;
+  border-radius: v.$radius-lg;
+  padding: 14px 18px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.12);
+  border: 1px solid v.$border-light;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: float 5s ease-in-out infinite;
+  z-index: 2;
+
+  @include r.down(mobile) {
+    right: -10px;
+    top: -15px;
+  }
+}
+
+.hero__floatIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: v.$radius-md;
+  background: rgba(16, 185, 129, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$success;
+  flex-shrink: 0;
+}
+
+.hero__floatInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.hero__floatVal {
+  font-size: 16px;
+  font-weight: v.$font-weight-extrabold;
+  color: v.$success;
+  letter-spacing: -0.02em;
+}
+
+.hero__floatLbl {
+  font-size: 11px;
+  color: v.$text-muted;
+  font-weight: v.$font-weight-medium;
+}
+
+.hero__floatCard2 {
+  position: absolute;
+  bottom: -18px;
+  left: -24px;
+  background: v.$primary;
+  border-radius: v.$radius-lg;
+  padding: 14px 20px;
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.35);
+  min-width: 160px;
+  animation: floatReverse 6s ease-in-out infinite 1s;
+  z-index: 2;
+
+  @include r.down(mobile) {
+    left: -10px;
+    bottom: -15px;
+  }
+}
+
+.hero__floatInfo2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 10px;
+}
+
+.hero__floatVal2 {
+  font-size: 20px;
+  font-weight: v.$font-weight-extrabold;
+  color: v.$white;
+  letter-spacing: -0.02em;
+}
+
+.hero__floatLbl2 {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: v.$font-weight-medium;
+}
+
+.hero__floatBar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.hero__floatBarFill {
+  height: 100%;
+  width: 78%;
+  background: v.$white;
+  border-radius: 2px;
+}
+
+.hero__floatCard3 {
+  position: absolute;
+  top: 50%;
+  right: -32px;
+  transform: translateY(-50%);
+  background: v.$bg-dark;
+  border-radius: v.$radius-lg;
+  padding: 12px 14px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  animation: floatSm 4s ease-in-out infinite 0.5s;
+  z-index: 2;
+
+  @include r.down(tablet) {
+    right: -16px;
+  }
+}
+
+.hero__techPills {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hero__techPill {
+  font-size: 11px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$primary-lighter;
+  background: rgba(37, 99, 235, 0.15);
+  padding: 4px 10px;
+  border-radius: v.$radius-full;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+// ─── Scroll Indicator ─────────────────────────────────────────
+.hero__scrollIndicator {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: fadeIn 1s ease 1.5s both;
+
+  span {
+    font-size: 11px;
+    font-weight: v.$font-weight-medium;
+    color: v.$text-light;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  @include r.down(mobile) {
+    display: none;
+  }
+}
+
+.hero__scrollMouse {
+  width: 22px;
+  height: 34px;
+  border: 2px solid v.$border-light;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.hero__scrollWheel {
+  width: 3px;
+  height: 6px;
+  background: v.$primary;
+  border-radius: 3px;
+  animation: float 1.5s ease-in-out infinite;
+}
+
+// ─── Global animation keyframes (referenced here) ─────────────
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50%       { opacity: 0.5;  transform: scale(1.05); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes waveBar {
+  0%, 100% { opacity: 0.85; transform: scaleY(0.85); }
+  50%       { opacity: 1;    transform: scaleY(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(10px); }
+}
+
+@keyframes floatSm {
+  0%, 100% { transform: translateY(-50%) translateX(0px); }
+  50%       { transform: translateY(-50%) translateX(-6px); }
+}

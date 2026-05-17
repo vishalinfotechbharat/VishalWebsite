@@ -1,0 +1,219 @@
+@use '../../styles/variables' as v;
+@use '../../styles/responsive' as r;
+@use '../../styles/mixins' as m;
+
+.about {
+
+  // ─── Hero ─────────────────────────────────────────────
+  &__hero {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    text-align: center;
+    background: v.$bg-light;
+
+    @include r.down(tablet) {
+      padding-top: 120px;
+      padding-bottom: 56px;
+    }
+  }
+
+  &__badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: v.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: v.$letter-spacing-wider;
+    color: v.$primary;
+    background: rgba(v.$primary, 0.08);
+    border: 1px solid rgba(v.$primary, 0.15);
+    padding: 8px 20px;
+    border-radius: v.$radius-full;
+    margin-bottom: 24px;
+  }
+
+  &__heroTitle {
+    @include r.fluid-type(52px, 30px);
+    font-weight: v.$font-weight-extrabold;
+    letter-spacing: v.$letter-spacing-tight;
+    line-height: v.$line-height-tight;
+    color: v.$text-primary;
+    max-width: 700px;
+    margin: 0 auto 24px;
+
+    span {
+      color: v.$primary;
+    }
+  }
+
+  &__heroText {
+    @include r.fluid-type(18px, 15px);
+    color: v.$text-secondary;
+    line-height: v.$line-height-relaxed;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  // ─── Story ────────────────────────────────────────────
+  &__story {
+    @include r.section-spacing;
+  }
+
+  &__storyGrid {
+    @include r.grid-fixed('1fr 1fr', 60px);
+    align-items: center;
+
+    @include r.down(tablet) {
+      gap: 40px;
+    }
+  }
+
+  &__storyImage {
+    border-radius: v.$radius-lg;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, rgba(v.$primary, 0.05), rgba(v.$primary, 0.15));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__storyPlaceholder {
+    color: v.$primary;
+    opacity: 0.4;
+  }
+
+  &__storyContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__storyTitle {
+    @include r.fluid-type(36px, 26px);
+    font-weight: v.$font-weight-bold;
+    letter-spacing: v.$letter-spacing-tight;
+    color: v.$text-primary;
+    margin-bottom: 8px;
+  }
+
+  &__storyText {
+    font-size: 15px;
+    color: v.$text-secondary;
+    line-height: v.$line-height-relaxed;
+  }
+
+  // ─── Vision & Mission ─────────────────────────────────
+  &__vision {
+    @include r.section-spacing;
+    background: v.$bg-light;
+  }
+
+  &__visionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+
+    @include r.down(tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__visionCard {
+    @include m.card(v.$spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &--dark {
+      background: v.$bg-dark;
+      border-color: v.$border-dark;
+
+      .about__visionLabel {
+        color: v.$primary-light;
+        background: rgba(v.$primary, 0.15);
+        border-color: rgba(v.$primary, 0.25);
+      }
+
+      .about__visionTitle {
+        color: v.$white;
+      }
+
+      .about__visionText {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      &:hover {
+        border-color: v.$primary;
+        transform: translateY(-4px);
+      }
+    }
+  }
+
+  &__visionLabel {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: v.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: v.$letter-spacing-wider;
+    color: v.$primary;
+    background: rgba(v.$primary, 0.08);
+    border: 1px solid rgba(v.$primary, 0.15);
+    padding: 6px 14px;
+    border-radius: v.$radius-full;
+  }
+
+  &__visionTitle {
+    @include r.fluid-type(28px, 22px);
+    font-weight: v.$font-weight-bold;
+    color: v.$text-primary;
+    line-height: v.$line-height-snug;
+  }
+
+  &__visionText {
+    font-size: 15px;
+    color: v.$text-secondary;
+    line-height: v.$line-height-relaxed;
+  }
+
+  // ─── Values ───────────────────────────────────────────
+  &__values {
+    @include r.section-spacing;
+  }
+
+  &__valuesGrid {
+    @include r.grid(4, 24px);
+
+    @include r.down(tablet-lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__valueCard {
+    @include m.card(v.$spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__valueIcon {
+    @include m.icon-box;
+    color: v.$primary;
+    margin-bottom: 4px;
+  }
+
+  &__valueTitle {
+    font-size: 18px;
+    font-weight: v.$font-weight-semibold;
+    color: v.$text-primary;
+  }
+
+  &__valueDesc {
+    font-size: 14px;
+    color: v.$text-secondary;
+    line-height: v.$line-height-relaxed;
+  }
+}

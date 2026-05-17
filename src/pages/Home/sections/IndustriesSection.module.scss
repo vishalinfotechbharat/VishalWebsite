@@ -1,0 +1,105 @@
+// ============================================================
+// IndustriesSection.module.scss
+// ============================================================
+
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+.industries {
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: v.$bg-light;
+}
+
+.industries__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  @include r.down(tablet-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include r.down(mobile-lg) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.industries__card {
+  background: v.$white;
+  border: 1px solid v.$border-light;
+  border-radius: v.$radius-xl;
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all v.$transition-smooth;
+  cursor: default;
+  group: true;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color, v.$primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &:hover {
+    border-color: transparent;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+
+    &::before { transform: scaleX(1); }
+
+    .industries__icon {
+      background: var(--color, v.$primary);
+      color: v.$white;
+    }
+
+    .industries__arrow {
+      opacity: 1;
+      transform: translateX(0);
+      color: var(--color, v.$primary);
+    }
+  }
+}
+
+.industries__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: v.$radius-lg;
+  background: var(--bg, v.$primary-faint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color, v.$primary);
+  margin-bottom: 20px;
+  transition: all v.$transition-smooth;
+}
+
+.industries__name {
+  font-size: 18px;
+  font-weight: v.$font-weight-bold;
+  color: v.$text-primary;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.industries__desc {
+  font-size: 14px;
+  color: v.$text-muted;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.industries__arrow {
+  color: v.$text-light;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all v.$transition-smooth;
+}

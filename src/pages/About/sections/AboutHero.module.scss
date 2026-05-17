@@ -1,0 +1,305 @@
+// ============================================================
+// AboutHero.module.scss
+// ============================================================
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+@keyframes floatCard {
+
+  0%,
+  100% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-10px)
+  }
+}
+
+@keyframes floatChip {
+
+  0%,
+  100% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-6px)
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: 0.35
+  }
+}
+
+.hero {
+  padding: clamp(100px, 12vw, 160px) 0 clamp(80px, 10vw, 130px);
+  background: v.$primary;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero__orb1 {
+  position: absolute;
+  top: -15%;
+  right: -8%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.hero__orb2 {
+  position: absolute;
+  bottom: -20%;
+  left: -8%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.1) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+// ─── Layout ───────────────────────────────────────────────────
+.hero__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+
+  @include r.down(tablet-lg) {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+// ─── Content (left column) ────────────────────────────────────
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$primary-lighter;
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  padding: 6px 16px;
+  border-radius: v.$radius-full;
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero__badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: v.$primary-lighter;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.hero__title {
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: v.$font-weight-black;
+  color: v.$white;
+  line-height: 1.1;
+  letter-spacing: v.$letter-spacing-tight;
+  margin-bottom: 24px;
+}
+
+.hero__accent {
+  background: linear-gradient(135deg, #60A5FA 0%, #818CF8 50%, #C4B5FD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero__sub {
+  font-size: clamp(15px, 2vw, 18px);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+
+  @include r.down(mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+// ─── Visual ───────────────────────────────────────────────────
+.hero__visual {
+  @include r.down(tablet-lg) {
+    display: none;
+  }
+}
+
+.hero__visualWrap {
+  position: relative;
+  height: 420px;
+}
+
+.hero__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: v.$bg-dark-mid;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: v.$radius-xl;
+  overflow: hidden;
+  box-shadow: v.$shadow-xl;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+.hero__cardHeader {
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero__cardDots {
+  display: flex;
+  gap: 5px;
+
+  span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+
+    &:nth-child(1) {
+      background: #FF5F57;
+    }
+
+    &:nth-child(2) {
+      background: #FFBD2E;
+    }
+
+    &:nth-child(3) {
+      background: #28CA41;
+    }
+  }
+}
+
+.hero__cardFile {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: v.$font-mono;
+  letter-spacing: 0.02em;
+}
+
+.hero__cardBody {
+  padding: 18px 20px;
+  font-family: v.$font-mono;
+  font-size: 12.5px;
+  line-height: 1.9;
+}
+
+.hero__codeLine {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+}
+
+.hero__codeIndent {
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.hero__codeKw {
+  color: #818CF8;
+  margin-right: 4px;
+}
+
+.hero__codeVar {
+  color: #60A5FA;
+  margin-right: 4px;
+}
+
+.hero__codePunct {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.hero__codeKey {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.hero__codeStr {
+  color: var(--lc, #34D399);
+  margin-left: 2px;
+}
+
+// ─── Floating chips ───────────────────────────────────────────
+.hero__chip1,
+.hero__chip2,
+.hero__chip3 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: v.$radius-full;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: v.$font-weight-semibold;
+  color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+}
+
+.hero__chip1 {
+  top: 4%;
+  right: 0;
+  animation: floatChip 4s ease-in-out infinite;
+}
+
+.hero__chip2 {
+  bottom: 12%;
+  right: -4%;
+  animation: floatChip 5s ease-in-out infinite 0.8s;
+}
+
+.hero__chip3 {
+  bottom: 4%;
+  left: 4%;
+  animation: floatChip 4.5s ease-in-out infinite 1.4s;
+}

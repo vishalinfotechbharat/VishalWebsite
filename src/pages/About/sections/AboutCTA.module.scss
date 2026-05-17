@@ -1,0 +1,163 @@
+// ============================================================
+// AboutCTA.module.scss — About Page CTA Section
+// ============================================================
+
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+// ─── Section ──────────────────────────────────────────────────
+.cta {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: v.$bg-light;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cta__orb1 {
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.cta__orb2 {
+  position: absolute;
+  bottom: -20%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.05) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.cta__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+// ─── Card ─────────────────────────────────────────────────────
+.cta__card {
+  background: linear-gradient(135deg, v.$primary-darker 0%, v.$primary-dark 50%, #1D4ED8 100%);
+  border-radius: v.$radius-2xl;
+  padding: clamp(56px, 8vw, 96px) clamp(32px, 6vw, 80px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 24px 80px rgba(30, 58, 138, 0.35),
+    0 8px 24px rgba(0, 0, 0, 0.15);
+
+  // Subtle texture overlay
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  // Glow line at top
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  }
+}
+
+// ─── Badge ────────────────────────────────────────────────────
+.cta__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: v.$font-weight-semibold;
+  color: #34D399;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  padding: 6px 16px;
+  border-radius: v.$radius-full;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta__badgeDot {
+  width: 7px;
+  height: 7px;
+  background: #34D399;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+// ─── Headline ─────────────────────────────────────────────────
+.cta__title {
+  font-size: clamp(30px, 5vw, 56px);
+  font-weight: v.$font-weight-black;
+  color: v.$white;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta__accent {
+  background: linear-gradient(135deg, #60A5FA 0%, #818CF8 50%, #C4B5FD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// ─── Subtitle ─────────────────────────────────────────────────
+.cta__sub {
+  font-size: clamp(15px, 2vw, 17px);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 44px;
+  position: relative;
+  z-index: 1;
+}
+
+// ─── Buttons ──────────────────────────────────────────────────
+.cta__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+
+  @include r.down(mobile) {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+// ─── Keyframes ────────────────────────────────────────────────
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}

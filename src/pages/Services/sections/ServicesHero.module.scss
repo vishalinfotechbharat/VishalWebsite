@@ -1,0 +1,320 @@
+// ============================================================
+// ServicesHero.module.scss — Full-viewport hero + infinite mockup carousel
+// ============================================================
+
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+// ─── Local keyframes ──────────────────────────────────────────
+@keyframes scrollUp {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+@keyframes scrollDown {
+  0%   { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+// ─── Section ──────────────────────────────────────────────────
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: v.$bg-dark;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: clamp(100px, 14vw, 160px) 0 clamp(80px, 10vw, 130px);
+}
+
+// ─── Background ───────────────────────────────────────────────
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero__orb1 {
+  position: absolute;
+  top: -20%;
+  left: -5%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.hero__orb2 {
+  position: absolute;
+  bottom: -15%;
+  right: 40%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.1) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.hero__orb3 {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.08) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+// ─── Inner layout ─────────────────────────────────────────────
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+
+  @include r.down(tablet-lg) {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}
+
+// ─── Content (left) ───────────────────────────────────────────
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: v.$font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: v.$letter-spacing-wider;
+  color: v.$primary-lighter;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  padding: 6px 16px;
+  border-radius: v.$radius-full;
+  margin-bottom: 28px;
+}
+
+.hero__eyebrowDot {
+  width: 6px;
+  height: 6px;
+  background: v.$primary-lighter;
+  border-radius: 50%;
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.hero__title {
+  font-size: clamp(36px, 5.5vw, 68px);
+  font-weight: v.$font-weight-black;
+  color: v.$white;
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+}
+
+.hero__accent {
+  background: linear-gradient(135deg, #60A5FA 0%, #818CF8 40%, #C4B5FD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero__sub {
+  font-size: clamp(15px, 2vw, 18px);
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+
+  @include r.down(mobile) {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+.hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: v.$font-weight-medium;
+  color: rgba(255, 255, 255, 0.45);
+  padding: 5px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: v.$radius-full;
+  background: rgba(255, 255, 255, 0.03);
+
+  svg {
+    color: #34D399;
+    flex-shrink: 0;
+  }
+}
+
+// ─── Visual (right) ───────────────────────────────────────────
+.hero__visual {
+  position: relative;
+  height: 580px;
+  overflow: hidden;
+
+  @include r.down(tablet-lg) {
+    height: 340px;
+    margin: 0 -20px;
+  }
+
+  @include r.down(mobile) {
+    height: 280px;
+  }
+}
+
+// Edge fades
+.hero__fade,
+.hero__fadeBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 140px;
+  z-index: 3;
+  pointer-events: none;
+
+  @include r.down(tablet-lg) {
+    height: 80px;
+  }
+}
+
+.hero__fade {
+  top: 0;
+  background: linear-gradient(to bottom, v.$bg-dark 0%, transparent 100%);
+}
+
+.hero__fadeBottom {
+  bottom: 0;
+  background: linear-gradient(to top, v.$bg-dark 0%, transparent 100%);
+}
+
+// ─── Two-column scroll container ──────────────────────────────
+.hero__cols {
+  display: flex;
+  gap: 16px;
+  height: 100%;
+  padding: 0 4px;
+}
+
+.hero__col {
+  flex: 1;
+  overflow: hidden;
+}
+
+.hero__colTrack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: scrollUp 38s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+
+  &--rev {
+    animation-name: scrollDown;
+    animation-duration: 44s;
+  }
+}
+
+// ─── Mockup card ──────────────────────────────────────────────
+.mockup {
+  border-radius: v.$radius-lg;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow:
+      0 8px 40px rgba(0, 0, 0, 0.5),
+      0 0 0 1px var(--accent, v.$primary),
+      0 0 24px color-mix(in srgb, var(--accent, v.$primary) 20%, transparent);
+  }
+}
+
+.mockup__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mockup__dots {
+  display: flex;
+  gap: 5px;
+}
+
+.mockup__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+
+  &:nth-child(1) { background: #FF5F57; }
+  &:nth-child(2) { background: #FFBD2E; }
+  &:nth-child(3) { background: #28CA41; }
+}
+
+.mockup__label {
+  font-size: 11px;
+  font-family: v.$font-mono;
+  color: rgba(255, 255, 255, 0.28);
+  letter-spacing: 0.02em;
+}
+
+.mockup__body {
+  padding: 0;
+  line-height: 0;
+}
+
+.mockup__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}

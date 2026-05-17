@@ -1,0 +1,298 @@
+// ============================================================
+// WhoWeAre.module.scss — Human Identity Section
+// ============================================================
+
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+.who {
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: v.$white;
+  overflow: hidden;
+}
+
+.who__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+
+  @include r.down(tablet-lg) {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+// ─── Content ──────────────────────────────────────────────────
+.who__content { /* left column — natural flow */ }
+
+.who__eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: v.$font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: v.$letter-spacing-wider;
+  color: v.$primary;
+  background: v.$primary-faint;
+  border: 1px solid v.$primary-pale;
+  padding: 4px 14px;
+  border-radius: v.$radius-full;
+  margin-bottom: 20px;
+}
+
+.who__title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: v.$font-weight-extrabold;
+  color: v.$text-primary;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+
+  span {
+    background: linear-gradient(135deg, v.$primary 0%, v.$primary-lighter 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.who__lead {
+  font-size: 16px;
+  line-height: 1.8;
+  color: v.$text-secondary;
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+
+.who__belief {
+  font-size: 15px;
+  font-style: italic;
+  color: v.$text-secondary;
+  line-height: 1.7;
+  padding: 16px 20px;
+  border-left: 3px solid v.$primary;
+  background: v.$primary-faint;
+  border-radius: 0 v.$radius-md v.$radius-md 0;
+  margin-bottom: 32px;
+}
+
+.who__values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.who__value {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$text-primary;
+  background: v.$bg-light;
+  border: 1px solid v.$border-light;
+  padding: 8px 16px;
+  border-radius: v.$radius-full;
+  transition: all v.$transition-smooth;
+  cursor: default;
+
+  &:hover {
+    border-color: var(--color, v.$primary);
+    color: var(--color, v.$primary);
+    background: color-mix(in srgb, var(--color, v.$primary) 6%, white);
+    transform: translateY(-1px);
+  }
+}
+
+.who__valueDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color, v.$primary);
+  flex-shrink: 0;
+}
+
+// ─── Visual ───────────────────────────────────────────────────
+.who__visual {
+  position: relative;
+
+  @include r.down(tablet-lg) {
+    display: none;
+  }
+}
+
+.who__visualWrap {
+  position: relative;
+  height: 460px;
+}
+
+.who__orb {
+  position: absolute;
+  top: 5%;
+  right: -5%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+// Main identity card
+.who__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: v.$white;
+  border: 1px solid v.$border-light;
+  border-radius: v.$radius-xl;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(37, 99, 235, 0.06);
+  overflow: hidden;
+  animation: float 6s ease-in-out infinite;
+}
+
+.who__cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid v.$border-light;
+}
+
+.who__cardAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: v.$radius-md;
+  background: linear-gradient(135deg, v.$primary 0%, v.$primary-lighter 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: v.$font-weight-bold;
+  color: v.$white;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.who__cardMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.who__cardName {
+  font-size: 13px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$text-primary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.who__cardRole {
+  font-size: 11px;
+  color: v.$text-muted;
+}
+
+.who__cardStatus {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$primary;
+  background: v.$primary-faint;
+  padding: 4px 10px;
+  border-radius: v.$radius-full;
+  white-space: nowrap;
+}
+
+.who__cardDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: v.$primary;
+  flex-shrink: 0;
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.who__cardBody {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.who__cardRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.who__cardLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: v.$text-light;
+  font-weight: v.$font-weight-medium;
+  flex-shrink: 0;
+}
+
+.who__cardVal {
+  font-size: 12px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$text-secondary;
+  text-align: right;
+}
+
+.who__cardFooter {
+  display: flex;
+  gap: 6px;
+  padding: 12px 20px;
+  border-top: 1px solid v.$border-light;
+  background: v.$bg-light;
+  flex-wrap: wrap;
+}
+
+.who__cardTag {
+  font-size: 11px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$primary;
+  background: v.$primary-faint;
+  padding: 3px 10px;
+  border-radius: v.$radius-full;
+}
+
+// Floating accent chips
+.who__floatCard1,
+.who__floatCard2 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: v.$white;
+  border: 1px solid v.$border-light;
+  border-radius: v.$radius-lg;
+  padding: 10px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-size: 12px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$text-primary;
+  white-space: nowrap;
+}
+
+.who__floatCard1 {
+  top: 6%;
+  right: 2%;
+  animation: floatSm 4.5s ease-in-out infinite;
+}
+
+.who__floatCard2 {
+  bottom: 6%;
+  left: 2%;
+  animation: floatSm 5.5s ease-in-out infinite reverse;
+}

@@ -1,0 +1,99 @@
+// ============================================================
+// TrustedBy.module.scss — Infinite Marquee Logos
+// ============================================================
+
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+.trusted {
+  padding: 32px 0 48px;
+  background: v.$bg-white;
+  border-top: 1px solid v.$border-light;
+  border-bottom: 1px solid v.$border-light;
+  overflow: hidden;
+}
+
+.trusted__header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.trusted__label {
+  font-size: 13px;
+  font-weight: v.$font-weight-medium;
+  color: v.$text-light;
+  text-transform: uppercase;
+  letter-spacing: v.$letter-spacing-wider;
+}
+
+.trusted__marqueeWrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.trusted__fadeLeft,
+.trusted__fadeRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+
+  @include r.down(mobile) { width: 60px; }
+}
+
+.trusted__fadeLeft {
+  left: 0;
+  background: linear-gradient(90deg, v.$bg-white 0%, transparent 100%);
+}
+
+.trusted__fadeRight {
+  right: 0;
+  background: linear-gradient(-90deg, v.$bg-white 0%, transparent 100%);
+}
+
+.trusted__track {
+  overflow: hidden;
+}
+
+.trusted__inner {
+  display: flex;
+  gap: 0;
+  animation: marquee 28s linear infinite;
+  width: max-content;
+
+  &:hover { animation-play-state: paused; }
+}
+
+.trusted__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 36px;
+  border-right: 1px solid v.$border-light;
+  white-space: nowrap;
+  transition: opacity v.$transition-fast;
+  opacity: 0.55;
+
+  &:hover { opacity: 1; }
+
+  span {
+    font-size: 15px;
+    font-weight: v.$font-weight-bold;
+    color: v.$text-primary;
+    letter-spacing: -0.01em;
+  }
+}
+
+.trusted__logoDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, v.$primary, v.$primary-lighter);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

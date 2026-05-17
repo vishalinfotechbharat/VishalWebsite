@@ -1,0 +1,93 @@
+// ============================================================
+// SectionHeader.module.scss — Reusable Section Title
+// ============================================================
+
+@use '../../styles/variables' as v;
+@use '../../styles/responsive' as r;
+
+.header {
+  margin-bottom: 64px;
+
+  @include r.down(tablet) {
+    margin-bottom: 48px;
+  }
+
+  @include r.down(mobile) {
+    margin-bottom: 36px;
+  }
+
+  // ─── Alignment ─────────────────────────────────────────────
+  &--center {
+    text-align: center;
+
+    .header__description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &--left { text-align: left; }
+
+  // ─── Light (dark bg) ───────────────────────────────────────
+  &--light {
+    .header__eyebrow {
+      background: rgba(255, 255, 255, 0.1);
+      color: v.$primary-lighter;
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .header__title { color: v.$white; }
+    .header__description { color: rgba(255, 255, 255, 0.65); }
+  }
+
+  // ─── Eyebrow / Subtitle ────────────────────────────────────
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: v.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: v.$letter-spacing-widest;
+    color: v.$primary;
+    background: v.$primary-faint;
+    border: 1px solid v.$primary-pale;
+    padding: 6px 16px;
+    border-radius: v.$radius-full;
+    margin-bottom: 20px;
+
+    &::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: v.$primary;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
+
+  // ─── Title ─────────────────────────────────────────────────
+  &__title {
+    @include r.fluid-type(48px, 28px);
+    font-weight: v.$font-weight-extrabold;
+    line-height: v.$line-height-snug;
+    letter-spacing: v.$letter-spacing-tight;
+    color: v.$text-primary;
+    margin-bottom: 20px;
+
+    span {
+      background: linear-gradient(135deg, v.$primary 0%, v.$primary-lighter 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  // ─── Description ───────────────────────────────────────────
+  &__description {
+    @include r.fluid-type(18px, 15px);
+    color: v.$text-muted;
+    line-height: v.$line-height-relaxed;
+    max-width: 620px;
+  }
+}

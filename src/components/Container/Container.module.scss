@@ -1,0 +1,9 @@
+@use '../../styles/responsive' as r;
+
+.container {
+  @include r.container;
+
+  &--wide {
+    @include r.container(r.$container-xl);
+  }
+}

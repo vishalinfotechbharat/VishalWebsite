@@ -1,0 +1,234 @@
+// ============================================================
+// WhyChooseUs.module.scss — Code Philosophy + Benefits
+// ============================================================
+
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+.why {
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: v.$bg-light;
+  position: relative;
+  overflow: hidden;
+}
+
+.why__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+
+  @include r.down(tablet-lg) {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}
+
+// ─── Left Visual ──────────────────────────────────────────────
+.why__visual {
+  position: relative;
+}
+
+.why__orbBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.why__card {
+  position: relative;
+  background: v.$bg-dark;
+  border-radius: v.$radius-xl;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  box-shadow: v.$shadow-xl;
+}
+
+.why__cardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, v.$primary, v.$primary-lighter, #818CF8);
+}
+
+.why__cardInner {
+  padding: 28px;
+}
+
+// ─── Code Block ───────────────────────────────────────────────
+.why__codeHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.why__codeDots {
+  display: flex;
+  gap: 5px;
+
+  span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    &:nth-child(1) { background: #FF5F57; }
+    &:nth-child(2) { background: #FFBD2E; }
+    &:nth-child(3) { background: #28CA41; }
+  }
+}
+
+.why__codeFile {
+  font-size: 12px;
+  font-family: v.$font-mono;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.02em;
+}
+
+.why__codeBody {
+  font-family: v.$font-mono;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.why__codeLine {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+.why__codeIndent {
+  display: inline-block;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.why__codeKw {
+  color: #818CF8;
+  margin-right: 4px;
+}
+
+.why__codeVar {
+  color: #60A5FA;
+  margin-right: 4px;
+}
+
+.why__codeKey {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.why__codePunct {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.why__codeStr {
+  color: var(--str-color, #34D399);
+  margin-left: 2px;
+}
+
+// ─── Badges ───────────────────────────────────────────────────
+.why__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.why__badge {
+  font-size: 11px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$primary-lighter;
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  padding: 5px 12px;
+  border-radius: v.$radius-full;
+  letter-spacing: 0.02em;
+}
+
+// ─── Right: Benefits ──────────────────────────────────────────
+.why__content {
+  @include r.down(tablet-lg) {
+    order: -1;
+  }
+}
+
+.why__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @include r.down(mobile-lg) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.why__item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px;
+  background: v.$white;
+  border-radius: v.$radius-lg;
+  border: 1px solid v.$border-light;
+  transition: border-color v.$transition-smooth, box-shadow v.$transition-smooth,
+              transform v.$transition-smooth;
+
+  &:hover {
+    border-color: v.$primary-pale;
+    box-shadow: v.$shadow-card-hover;
+    transform: translateY(-2px);
+
+    .why__itemIcon {
+      background: v.$primary;
+      color: v.$white;
+      border-color: v.$primary;
+    }
+  }
+}
+
+.why__itemIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: v.$radius-md;
+  background: v.$primary-faint;
+  border: 1px solid v.$primary-pale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$primary;
+  flex-shrink: 0;
+  transition: all v.$transition-smooth;
+}
+
+.why__itemText {
+  display: flex;
+  flex-direction: column;
+}
+
+.why__itemTitle {
+  font-size: 14px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$text-primary;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.why__itemDesc {
+  font-size: 12px;
+  color: v.$text-muted;
+  line-height: 1.6;
+}

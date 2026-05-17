@@ -1,0 +1,188 @@
+// ============================================================
+// ServicesApproach.module.scss — Why Our Approach Works (dark)
+// ============================================================
+
+@use '../../../styles/variables' as v;
+@use '../../../styles/responsive' as r;
+
+.approach {
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: v.$bg-dark;
+  position: relative;
+  overflow: hidden;
+}
+
+.approach__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.approach__orb1 {
+  position: absolute;
+  top: -20%;
+  left: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.approach__orb2 {
+  position: absolute;
+  bottom: -20%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.08) 0%, transparent 65%);
+  border-radius: 50%;
+}
+
+.approach__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+// ─── Header ───────────────────────────────────────────────────
+.approach__header {
+  text-align: center;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 1;
+}
+
+.approach__eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: v.$font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: v.$letter-spacing-wider;
+  color: v.$primary-lighter;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  padding: 4px 14px;
+  border-radius: v.$radius-full;
+  margin-bottom: 16px;
+}
+
+.approach__title {
+  font-size: clamp(28px, 4.5vw, 48px);
+  font-weight: v.$font-weight-extrabold;
+  color: v.$white;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin-bottom: 16px;
+}
+
+.approach__accent {
+  background: linear-gradient(135deg, #60A5FA 0%, #818CF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.approach__sub {
+  font-size: clamp(15px, 2vw, 17px);
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.75;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+// ─── Cards grid ───────────────────────────────────────────────
+.approach__grid2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+
+  @include r.down(tablet-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include r.down(mobile-lg) {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+// ─── Principle card ───────────────────────────────────────────
+.principle {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: v.$radius-xl;
+  padding: 32px 28px;
+  overflow: hidden;
+  transition:
+    border-color v.$transition-smooth,
+    background v.$transition-smooth,
+    transform v.$transition-smooth,
+    box-shadow v.$transition-smooth;
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--pc, v.$primary) 35%, transparent);
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+
+    .principle__glow {
+      opacity: 1;
+    }
+
+    .principle__iconWrap {
+      background: color-mix(in srgb, var(--pc, v.$primary) 16%, transparent);
+      border-color: color-mix(in srgb, var(--pc, v.$primary) 35%, transparent);
+      color: var(--pc, v.$primary);
+    }
+  }
+}
+
+.principle__glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--pc, v.$primary),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity v.$transition-smooth;
+}
+
+.principle__iconWrap {
+  width: 50px;
+  height: 50px;
+  border-radius: v.$radius-lg;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  transition: all v.$transition-smooth;
+}
+
+.principle__title {
+  font-size: 16px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$white;
+  letter-spacing: -0.015em;
+  margin-bottom: 10px;
+}
+
+.principle__desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.7;
+}
