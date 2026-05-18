@@ -1,298 +1,332 @@
 // ============================================================
-// WhoWeAre.module.scss — Human Identity Section
+// WhoWeAre.module.scss — Freelance Studio Identity
 // ============================================================
-
 @use '../../../styles/variables' as v;
 @use '../../../styles/responsive' as r;
 
+// ─── Section ──────────────────────────────────────────────────
 .who {
   padding: clamp(80px, 10vw, 130px) 0;
-  background: v.$white;
+  background: v.$bg-light;
+  position: relative;
   overflow: hidden;
-}
 
-.who__layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-
-  @include r.down(tablet-lg) {
-    grid-template-columns: 1fr;
-    gap: 48px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
   }
 }
 
-// ─── Content ──────────────────────────────────────────────────
-.who__content { /* left column — natural flow */ }
+// ─── Header ───────────────────────────────────────────────────
+.who__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(48px, 7vw, 72px);
+}
 
 .who__eyebrow {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 12px;
   font-weight: v.$font-weight-semibold;
   text-transform: uppercase;
-  letter-spacing: v.$letter-spacing-wider;
+  letter-spacing: v.$letter-spacing-widest;
   color: v.$primary;
   background: v.$primary-faint;
   border: 1px solid v.$primary-pale;
-  padding: 4px 14px;
+  padding: 6px 18px;
   border-radius: v.$radius-full;
-  margin-bottom: 20px;
-}
+  margin-bottom: 24px;
 
-.who__title {
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: v.$font-weight-extrabold;
-  color: v.$text-primary;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  margin-bottom: 20px;
-
-  span {
-    background: linear-gradient(135deg, v.$primary 0%, v.$primary-lighter 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: v.$primary;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
 }
 
-.who__lead {
-  font-size: 16px;
+.who__title {
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: v.$font-weight-extrabold;
+  color: v.$text-primary;
+  line-height: 1.12;
+  letter-spacing: v.$letter-spacing-tight;
+  margin-bottom: 20px;
+}
+
+.who__grad {
+  background: linear-gradient(135deg, v.$primary 0%, v.$primary-lighter 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.who__intro {
+  font-size: clamp(15px, 2vw, 17px);
+  color: v.$text-muted;
   line-height: 1.8;
-  color: v.$text-secondary;
-  margin-bottom: 24px;
-  max-width: 520px;
+  max-width: 620px;
+  margin: 0 auto;
 }
 
-.who__belief {
-  font-size: 15px;
-  font-style: italic;
-  color: v.$text-secondary;
-  line-height: 1.7;
-  padding: 16px 20px;
-  border-left: 3px solid v.$primary;
+// ─── Differentiator Cards ─────────────────────────────────────
+.who__diff {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: clamp(48px, 7vw, 80px);
+
+  @include r.down(tablet-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include r.down(mobile) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.diff {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 20px;
+  background: v.$bg-white;
+  border-radius: v.$radius-lg;
+  border: 1px solid v.$border-light;
+  transition: border-color v.$transition-smooth, box-shadow v.$transition-smooth,
+              transform v.$transition-smooth;
+
+  &:hover {
+    border-color: rgba(37, 99, 235, 0.2);
+    box-shadow: v.$shadow-card-hover;
+    transform: translateY(-3px);
+
+    .diff__icon {
+      background: var(--dc, v.$primary);
+      color: v.$white;
+      border-color: var(--dc, v.$primary);
+    }
+  }
+}
+
+.diff__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: v.$radius-md;
   background: v.$primary-faint;
-  border-radius: 0 v.$radius-md v.$radius-md 0;
-  margin-bottom: 32px;
+  border: 1px solid v.$primary-pale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$primary;
+  flex-shrink: 0;
+  transition: all v.$transition-smooth;
 }
 
-.who__values {
+.diff__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.diff__title {
+  font-size: 14px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$text-primary;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.diff__desc {
+  font-size: 12px;
+  color: v.$text-muted;
+  line-height: 1.6;
+}
+
+// ─── Mission / Vision Cards ────────────────────────────────────
+.who__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: clamp(40px, 6vw, 64px);
+
+  @include r.down(tablet) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.who__card {
+  position: relative;
+  background: v.$bg-dark;
+  border-radius: v.$radius-xl;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform v.$transition-smooth, box-shadow v.$transition-smooth;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.who__cardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--vc, v.$primary), transparent);
+}
+
+.who__cardInner {
+  padding: clamp(28px, 4vw, 40px);
+}
+
+.who__cardTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.who__cardIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: v.$radius-md;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vc, v.$primary-lighter);
+  flex-shrink: 0;
+}
+
+.who__cardEyebrow {
+  font-size: 11px;
+  font-weight: v.$font-weight-semibold;
+  color: var(--vc, v.$primary-lighter);
+  text-transform: uppercase;
+  letter-spacing: v.$letter-spacing-wider;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px 12px;
+  border-radius: v.$radius-full;
+}
+
+.who__cardTitle {
+  font-size: clamp(17px, 2.2vw, 22px);
+  font-weight: v.$font-weight-bold;
+  color: v.$white;
+  line-height: 1.25;
+  letter-spacing: v.$letter-spacing-tight;
+  margin-bottom: 12px;
+}
+
+.who__cardDesc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.75;
+}
+
+.who__cardAccent {
+  margin-top: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--vc, v.$primary), transparent);
+  opacity: 0.3;
+}
+
+// ─── Statement ────────────────────────────────────────────────
+.who__statement {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: clamp(32px, 5vw, 56px);
+
+  @include r.down(mobile) {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.who__statementDeco {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, v.$border-light, transparent);
+
+  @include r.down(mobile) {
+    width: 60px;
+    height: 1px;
+    flex: none;
+  }
+}
+
+.who__statementText {
+  flex-shrink: 0;
+  max-width: 540px;
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-weight: v.$font-weight-medium;
+  color: v.$text-muted;
+  font-style: italic;
+  line-height: 1.7;
+  text-align: center;
+  padding: 0 24px;
+
+  @include r.down(mobile) {
+    padding: 0;
+  }
+}
+
+// ─── Attribute Pills ──────────────────────────────────────────
+.who__attrs {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
 }
 
-.who__value {
+.who__attr {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   font-size: 13px;
-  font-weight: v.$font-weight-semibold;
-  color: v.$text-primary;
-  background: v.$bg-light;
+  font-weight: v.$font-weight-medium;
+  color: v.$text-secondary;
+  background: v.$bg-white;
   border: 1px solid v.$border-light;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: v.$radius-full;
   transition: all v.$transition-smooth;
   cursor: default;
 
   &:hover {
-    border-color: var(--color, v.$primary);
-    color: var(--color, v.$primary);
-    background: color-mix(in srgb, var(--color, v.$primary) 6%, white);
-    transform: translateY(-1px);
+    border-color: v.$primary-pale;
+    color: v.$primary;
+    background: v.$primary-faint;
+
+    .who__attrDot {
+      background: v.$primary;
+    }
   }
 }
 
-.who__valueDot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--color, v.$primary);
-  flex-shrink: 0;
-}
-
-// ─── Visual ───────────────────────────────────────────────────
-.who__visual {
-  position: relative;
-
-  @include r.down(tablet-lg) {
-    display: none;
-  }
-}
-
-.who__visualWrap {
-  position: relative;
-  height: 460px;
-}
-
-.who__orb {
-  position: absolute;
-  top: 5%;
-  right: -5%;
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-// Main identity card
-.who__card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  background: v.$white;
-  border: 1px solid v.$border-light;
-  border-radius: v.$radius-xl;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(37, 99, 235, 0.06);
-  overflow: hidden;
-  animation: float 6s ease-in-out infinite;
-}
-
-.who__cardHeader {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 20px 20px 16px;
-  border-bottom: 1px solid v.$border-light;
-}
-
-.who__cardAvatar {
-  width: 38px;
-  height: 38px;
-  border-radius: v.$radius-md;
-  background: linear-gradient(135deg, v.$primary 0%, v.$primary-lighter 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: v.$font-weight-bold;
-  color: v.$white;
-  flex-shrink: 0;
-  letter-spacing: 0.02em;
-}
-
-.who__cardMeta {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  flex: 1;
-  min-width: 0;
-}
-
-.who__cardName {
-  font-size: 13px;
-  font-weight: v.$font-weight-semibold;
-  color: v.$text-primary;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.who__cardRole {
-  font-size: 11px;
-  color: v.$text-muted;
-}
-
-.who__cardStatus {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 11px;
-  font-weight: v.$font-weight-semibold;
-  color: v.$primary;
-  background: v.$primary-faint;
-  padding: 4px 10px;
-  border-radius: v.$radius-full;
-  white-space: nowrap;
-}
-
-.who__cardDot {
+.who__attrDot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: v.$primary;
+  background: v.$primary-lighter;
   flex-shrink: 0;
-  animation: pulseDot 2s ease-in-out infinite;
-}
-
-.who__cardBody {
-  padding: 16px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.who__cardRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.who__cardLabel {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: v.$text-light;
-  font-weight: v.$font-weight-medium;
-  flex-shrink: 0;
-}
-
-.who__cardVal {
-  font-size: 12px;
-  font-weight: v.$font-weight-semibold;
-  color: v.$text-secondary;
-  text-align: right;
-}
-
-.who__cardFooter {
-  display: flex;
-  gap: 6px;
-  padding: 12px 20px;
-  border-top: 1px solid v.$border-light;
-  background: v.$bg-light;
-  flex-wrap: wrap;
-}
-
-.who__cardTag {
-  font-size: 11px;
-  font-weight: v.$font-weight-semibold;
-  color: v.$primary;
-  background: v.$primary-faint;
-  padding: 3px 10px;
-  border-radius: v.$radius-full;
-}
-
-// Floating accent chips
-.who__floatCard1,
-.who__floatCard2 {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: v.$white;
-  border: 1px solid v.$border-light;
-  border-radius: v.$radius-lg;
-  padding: 10px 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  font-size: 12px;
-  font-weight: v.$font-weight-semibold;
-  color: v.$text-primary;
-  white-space: nowrap;
-}
-
-.who__floatCard1 {
-  top: 6%;
-  right: 2%;
-  animation: floatSm 4.5s ease-in-out infinite;
-}
-
-.who__floatCard2 {
-  bottom: 6%;
-  left: 2%;
-  animation: floatSm 5.5s ease-in-out infinite reverse;
+  transition: background v.$transition-smooth;
 }

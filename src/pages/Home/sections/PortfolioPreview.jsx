@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Container from '../../../components/Container/Container';
 import SectionHeader from '../../../components/SectionHeader/SectionHeader';
-import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
 import Button from '../../../components/Button/Button';
 import styles from './PortfolioPreview.module.scss';
 
@@ -11,8 +11,7 @@ const capabilities = [
     id: 1,
     type: 'SaaS & Web Applications',
     headline: 'Analytics Dashboards & Platforms',
-    description:
-      'We build data-rich SaaS products with multi-tenant architectures, subscription billing, real-time charts, and user management — designed to scale from your first user to your thousandth.',
+    description: 'We build data-rich SaaS products with multi-tenant architectures, subscription billing, real-time charts, and user management — designed to scale from your first user to your thousandth.',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Charts'],
     color: '#2563EB',
     features: ['Multi-tenant auth', 'Real-time data', 'Subscription billing', 'Admin panels'],
@@ -22,8 +21,7 @@ const capabilities = [
     id: 2,
     type: 'Business Platforms',
     headline: 'ERP & Workflow Systems',
-    description:
-      'Custom business software that replaces spreadsheets and manual processes — inventory, HR, operations, and finance modules built around how your team actually works.',
+    description: 'Custom business software that replaces spreadsheets and manual processes — inventory, HR, operations, and finance modules built around how your team actually works.',
     tags: ['Next.js', 'Python', 'PostgreSQL', 'REST APIs'],
     color: '#8B5CF6',
     features: ['Role-based access', 'Custom workflows', 'Reporting', 'Integrations'],
@@ -33,8 +31,7 @@ const capabilities = [
     id: 3,
     type: 'Mobile-First Experiences',
     headline: 'Responsive Apps & PWAs',
-    description:
-      'Fast, touch-friendly applications that feel native on every device. From progressive web apps to cross-platform mobile interfaces built with performance at their core.',
+    description: 'Fast, touch-friendly applications that feel native on every device. From progressive web apps to cross-platform mobile interfaces built with performance at their core.',
     tags: ['React Native', 'PWA', 'TypeScript', 'REST APIs'],
     color: '#10B981',
     features: ['Offline support', 'Push notifications', 'Native-feel UI', 'App store ready'],
@@ -56,14 +53,19 @@ const PortfolioPreview = () => {
 
         <div className={styles.portfolio__grid}>
           {capabilities.map((cap, i) => (
-            <ScrollReveal key={cap.id} delay={i * 0.1}>
+            <motion.div
+              key={cap.id}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div
                 className={`${styles.portfolio__card} ${styles[`portfolio__card--${cap.size}`]}`}
                 style={{ '--color': cap.color }}
                 onMouseEnter={() => setHovered(cap.id)}
                 onMouseLeave={() => setHovered(null)}
               >
-                {/* Visual mockup */}
                 <div className={styles.portfolio__visual}>
                   <div className={styles.portfolio__visualBg} />
                   <div className={styles.portfolio__mockup}>
@@ -80,8 +82,6 @@ const PortfolioPreview = () => {
                       </div>
                     </div>
                   </div>
-
-                  {/* Feature pills on hover */}
                   <div className={`${styles.portfolio__overlay} ${hovered === cap.id ? styles['portfolio__overlay--show'] : ''}`}>
                     <div className={styles.portfolio__featurePills}>
                       {cap.features.map((f) => (
@@ -92,13 +92,12 @@ const PortfolioPreview = () => {
                       Build Something Like This
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
                       </svg>
                     </Link>
                   </div>
                 </div>
 
-                {/* Info */}
                 <div className={styles.portfolio__info}>
                   <span className={styles.portfolio__type}>{cap.type}</span>
                   <h3 className={styles.portfolio__title}>{cap.headline}</h3>
@@ -110,20 +109,24 @@ const PortfolioPreview = () => {
                   </div>
                 </div>
               </div>
-            </ScrollReveal>
+            </motion.div>
           ))}
         </div>
 
-        <ScrollReveal>
-          <div className={styles.portfolio__cta}>
-            <p className={styles.portfolio__ctaNote}>
-              Have a product idea in mind? Let's talk about what we can build together.
-            </p>
-            <Button to="/contact" variant="primary" size="lg">
-              Discuss Your Project
-            </Button>
-          </div>
-        </ScrollReveal>
+        <motion.div
+          className={styles.portfolio__cta}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <p className={styles.portfolio__ctaNote}>
+            Have a product idea in mind? Let's talk about what we can build together.
+          </p>
+          <Button to="/contact" variant="primary" size="lg">
+            Discuss Your Project
+          </Button>
+        </motion.div>
       </Container>
     </section>
   );

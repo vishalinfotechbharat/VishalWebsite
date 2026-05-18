@@ -1,0 +1,144 @@
+// ============================================================
+// LogoIntro.module.scss — Light Theme Brand Reveal
+// ============================================================
+@use '../../styles/variables' as v;
+
+// ─── Overlay ──────────────────────────────────────────────────
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: v.$bg-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+
+  // Soft blue glow behind logo
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    width: 560px;
+    height: 560px;
+    background: radial-gradient(
+      circle at center,
+      rgba(37, 99, 235, 0.08) 0%,
+      rgba(96, 165, 250, 0.04) 45%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  // Decorative top-right accent
+  &::after {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+}
+
+// ─── Decorative Dots ──────────────────────────────────────────
+.intro__dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+
+  span {
+    position: absolute;
+    border-radius: 50%;
+    background: v.$primary;
+    opacity: 0.07;
+
+    &:nth-child(1) { width: 8px;  height: 8px;  top: 18%;  left: 12%; }
+    &:nth-child(2) { width: 5px;  height: 5px;  top: 72%;  left: 8%;  }
+    &:nth-child(3) { width: 6px;  height: 6px;  top: 25%;  right: 14%; }
+    &:nth-child(4) { width: 10px; height: 10px; top: 68%;  right: 10%; }
+    &:nth-child(5) { width: 4px;  height: 4px;  top: 45%;  left: 5%;  }
+    &:nth-child(6) { width: 7px;  height: 7px;  bottom: 20%; right: 18%; }
+  }
+}
+
+// ─── Content ──────────────────────────────────────────────────
+.intro__logoWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+// Logo image inside a soft card ring
+.intro__imgRing {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 108px;
+  height: 108px;
+  border-radius: 28px;
+  background: v.$bg-white;
+  border: 1.5px solid v.$border-light;
+  box-shadow:
+    0 0 0 8px rgba(37, 99, 235, 0.05),
+    0 8px 40px rgba(37, 99, 235, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.intro__img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.2));
+}
+
+// Company name
+.intro__name {
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: v.$font-weight-black;
+  color: v.$text-primary;
+  letter-spacing: v.$letter-spacing-tight;
+  line-height: 1;
+}
+
+// Animated progress bar
+.intro__bar {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, v.$primary, v.$primary-lighter);
+  border-radius: 99px;
+  margin-top: 2px;
+}
+
+// Tagline
+.intro__tag {
+  font-size: 10.5px;
+  font-weight: v.$font-weight-semibold;
+  color: v.$text-muted;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-top: -4px;
+}
+
+// ─── Slide-up curtain that reveals the page ───────────────────
+// This is a separate div that covers the page bottom and slides up
+.intro__curtain {
+  position: absolute;
+  inset: 0;
+  background: v.$bg-white;
+  transform-origin: bottom;
+  z-index: 2;
+  pointer-events: none;
+}

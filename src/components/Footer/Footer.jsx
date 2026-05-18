@@ -1,58 +1,158 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import styles from './Footer.module.scss';
 
-const Footer = () => {
-  return (
-    <footer className={styles.footer}>
-      <div className={styles.footer__wrapper}>
-        <div className={styles.footer__card}>
-          <div className={styles.footer__left}>
-            <Link to="/" className={styles.footer__logo}>
-              Vishal Infotech
-            </Link>
-            <p className={styles.footer__tagline}>
-              Pioneering the next generation of digital
-              experiences through architectural precision and
-              creative innovation.
-            </p>
-          </div>
+const companyLinks = [
+  { to: '/',        label: 'Home'     },
+  { to: '/about',   label: 'About'    },
+  { to: '/projects',label: 'Projects' },
+  { to: '/process', label: 'Process'  },
+  { to: '/contact', label: 'Contact'  },
+];
 
-          <div className={styles.footer__columns}>
-            <div className={styles.footer__column}>
-              <h4 className={styles.footer__columnTitle}>Company</h4>
-              <ul className={styles.footer__list}>
-                <li><Link to="/" className={styles.footer__link}>Home</Link></li>
-                <li><Link to="/about" className={styles.footer__link}>About</Link></li>
-                <li><Link to="/projects" className={styles.footer__link}>Projects</Link></li>
-                <li><Link to="/process" className={styles.footer__link}>Process</Link></li>
-                <li><Link to="/contact" className={styles.footer__link}>Contact</Link></li>
-              </ul>
-            </div>
+const serviceLinks = [
+  'Web Development',
+  'UI/UX Design',
+  'SaaS Solutions',
+  'ERP Systems',
+  'Business Automation',
+];
 
-            <div className={styles.footer__column}>
-              <h4 className={styles.footer__columnTitle}>Services</h4>
-              <ul className={styles.footer__list}>
-                <li><span className={styles.footer__link}>Web Development</span></li>
-                <li><span className={styles.footer__link}>UI/UX Design</span></li>
-                <li><span className={styles.footer__link}>SaaS Solutions</span></li>
-                <li><span className={styles.footer__link}>Consulting</span></li>
-              </ul>
-            </div>
+const legalLinks = [
+  { href: '#', label: 'Privacy Policy'   },
+  { href: '#', label: 'Terms of Service' },
+  { href: '#', label: 'Cookie Policy'    },
+];
 
-            <div className={styles.footer__column}>
-              <h4 className={styles.footer__columnTitle}>Legal</h4>
-              <ul className={styles.footer__list}>
-                <li><a href="#" className={styles.footer__link}>Privacy Policy</a></li>
-                <li><a href="#" className={styles.footer__link}>Terms of Service</a></li>
-                <li><a href="#" className={styles.footer__link}>Cookie Policy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
+// ─── Variants ─────────────────────────────────────────────────
+const cardVar = {
+  hidden:  { opacity: 0, y: 48 },
+  visible: {
+    opacity: 1, y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
 };
+
+const leftVar = {
+  hidden:  { opacity: 0, x: -32 },
+  visible: {
+    opacity: 1, x: 0,
+    transition: { duration: 0.65, delay: 0.15, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const colsContainerVar = {
+  hidden:  {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.25 } },
+};
+
+const colVar = {
+  hidden:  { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+};
+
+// ─── Component ────────────────────────────────────────────────
+const Footer = () => (
+  <footer className={styles.footer} aria-label="Site footer">
+    <div className={styles.footer__wrapper}>
+      <motion.div
+        className={styles.footer__card}
+        variants={cardVar}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-80px' }}
+      >
+        {/* Brand */}
+        <motion.div
+          className={styles.footer__left}
+          variants={leftVar}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+        >
+          <Link to="/" className={styles.footer__logo}>
+            Vishal Infotech
+          </Link>
+          <p className={styles.footer__tagline}>
+            A freelance IT solutions studio building high-performance websites,
+            SaaS platforms, ERP systems, and custom software — crafted with
+            honesty and purpose.
+          </p>
+
+          {/* Social / contact pill */}
+          <div className={styles.footer__contact}>
+            <Link to="/contact" className={styles.footer__contactBtn}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+              Start a Project
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Link Columns */}
+        <motion.div
+          className={styles.footer__columns}
+          variants={colsContainerVar}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+        >
+          <motion.div className={styles.footer__column} variants={colVar}>
+            <h4 className={styles.footer__columnTitle}>Company</h4>
+            <ul className={styles.footer__list}>
+              {companyLinks.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className={styles.footer__link}>{l.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div className={styles.footer__column} variants={colVar}>
+            <h4 className={styles.footer__columnTitle}>Services</h4>
+            <ul className={styles.footer__list}>
+              {serviceLinks.map((s) => (
+                <li key={s}>
+                  <span className={styles.footer__link}>{s}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div className={styles.footer__column} variants={colVar}>
+            <h4 className={styles.footer__columnTitle}>Legal</h4>
+            <ul className={styles.footer__list}>
+              {legalLinks.map((l) => (
+                <li key={l.label}>
+                  <a href={l.href} className={styles.footer__link}>{l.label}</a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </motion.div>
+
+      </motion.div>
+
+      {/* Bottom bar */}
+      <motion.div
+        className={styles.footer__bottom}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <p className={styles.footer__copy}>
+          © {new Date().getFullYear()} Vishal Infotech. All rights reserved.
+        </p>
+        <p className={styles.footer__made}>
+          Crafted with care &amp; purpose.
+        </p>
+      </motion.div>
+    </div>
+  </footer>
+);
 
 export default Footer;

@@ -1,110 +1,227 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Container from '../../../components/Container/Container';
-import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
 import styles from './WhoWeAre.module.scss';
 
-const values = [
-  { label: 'Design-Driven',        color: '#6366F1' },
-  { label: 'Engineering-Focused',  color: '#2563EB' },
-  { label: 'Startup-Friendly',     color: '#10B981' },
-  { label: 'Quality-First',        color: '#F59E0B' },
+// ─── Differentiators (honest, qualitative) ────────────────────
+const differentiators = [
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
+      </svg>
+    ),
+    title: 'Built from Scratch',
+    desc: 'Every project is custom-crafted to your exact needs. Zero templates, zero compromises.',
+    color: '#2563EB',
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+      </svg>
+    ),
+    title: 'Direct Collaboration',
+    desc: 'Work directly with the developer — no account managers, no middlemen, just honest communication.',
+    color: '#6366F1',
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+      </svg>
+    ),
+    title: 'Clean, Tested Code',
+    desc: 'Production-ready code with proper reviews, testing, and documentation — built to be maintained.',
+    color: '#10B981',
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+      </svg>
+    ),
+    title: 'Scalable Architecture',
+    desc: 'Systems designed to grow from day one — so your product scales without a complete rebuild.',
+    color: '#F59E0B',
+  },
 ];
 
+// ─── Mission / Vision ─────────────────────────────────────────
+const values = [
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <circle cx="12" cy="12" r="6" />
+        <circle cx="12" cy="12" r="2" />
+      </svg>
+    ),
+    label: 'Our Mission',
+    title: 'Build Products That Actually Matter',
+    desc: 'To help businesses and startups build digital products that are meaningful, scalable, and genuinely useful — crafted with honesty, care, and deep respect for the people using them.',
+    color: '#60A5FA',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    ),
+    label: 'Our Vision',
+    title: 'Become a Studio Teams Trust',
+    desc: 'To grow into a recognized freelance IT studio where startups, founders, and growing businesses find not just skilled engineers but genuine collaborators who care about their success.',
+    color: '#818CF8',
+  },
+];
+
+// ─── Attribute Pills ──────────────────────────────────────────
+const attrs = [
+  'Full-Stack Development',
+  'Design-Led Engineering',
+  'Scalable Architecture',
+  'Production-Ready Code',
+  'Agile & Transparent Delivery',
+  'Post-Launch Support',
+];
+
+// ─── Variants ─────────────────────────────────────────────────
+const containerVar = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+};
+const itemVar = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+};
+
+// ─── Component ────────────────────────────────────────────────
 const WhoWeAre = () => (
-  <section className={styles.who}>
+  <section className={styles.who} aria-labelledby="who-heading">
     <Container>
-      <div className={styles.who__layout}>
 
-        {/* ── Left: Identity Copy ── */}
-        <div className={styles.who__content}>
-          <ScrollReveal direction="right">
-            <span className={styles.who__eyebrow}>Who We Are</span>
-            <h2 className={styles.who__title}>
-              A Small Studio Built<br />
-              on <span>Big Ambitions</span>
-            </h2>
-            <p className={styles.who__lead}>
-              We are a passionate team of designers and engineers who believe great
-              digital products can genuinely change businesses. We work closely with
-              founders and startups to turn ideas into polished, scalable realities —
-              without the overhead of a large agency.
-            </p>
-            <blockquote className={styles.who__belief}>
-              "We believe the best digital products live at the intersection of clean
-              code, thoughtful design, and genuine care for the person using them."
-            </blockquote>
-            <div className={styles.who__values}>
-              {values.map((v) => (
-                <span key={v.label} className={styles.who__value} style={{ '--color': v.color }}>
-                  <span className={styles.who__valueDot} />
-                  {v.label}
-                </span>
-              ))}
+      {/* Header */}
+      <motion.div
+        className={styles.who__header}
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <span className={styles.who__eyebrow}>Who We Are</span>
+        <h2 className={styles.who__title} id="who-heading">
+          Freelance IT Solutions Built on{' '}
+          <span className={styles.who__grad}>Craft &amp; Honesty</span>
+        </h2>
+        <p className={styles.who__intro}>
+          Vishal Infotech is a freelance IT solutions studio specialising in
+          high-performance websites, SaaS platforms, ERP systems, and custom
+          software. We work directly with founders and businesses — no agencies,
+          no fluff — just clean engineering and thoughtful design that delivers
+          real results.
+        </p>
+      </motion.div>
+
+      {/* Differentiator Grid */}
+      <motion.div
+        className={styles.who__diff}
+        variants={containerVar}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        role="list"
+      >
+        {differentiators.map((d) => (
+          <motion.div
+            key={d.title}
+            className={styles.diff}
+            style={{ '--dc': d.color }}
+            variants={itemVar}
+            role="listitem"
+          >
+            <div className={styles.diff__icon}>{d.icon}</div>
+            <div className={styles.diff__text}>
+              <h3 className={styles.diff__title}>{d.title}</h3>
+              <p className={styles.diff__desc}>{d.desc}</p>
             </div>
-          </ScrollReveal>
-        </div>
+          </motion.div>
+        ))}
+      </motion.div>
 
-        {/* ── Right: Visual ── */}
-        <div className={styles.who__visual} aria-hidden="true">
-          <ScrollReveal direction="left">
-            <div className={styles.who__visualWrap}>
-              <div className={styles.who__orb} />
-
-              {/* Main identity card */}
-              <div className={styles.who__card}>
-                <div className={styles.who__cardHeader}>
-                  <div className={styles.who__cardAvatar}>VI</div>
-                  <div className={styles.who__cardMeta}>
-                    <span className={styles.who__cardName}>Vishal Infotech</span>
-                    <span className={styles.who__cardRole}>Digital Product Studio</span>
-                  </div>
-                  <span className={styles.who__cardStatus}>
-                    <span className={styles.who__cardDot} />
-                    Building
-                  </span>
-                </div>
-                <div className={styles.who__cardBody}>
-                  <div className={styles.who__cardRow}>
-                    <span className={styles.who__cardLabel}>Focus</span>
-                    <span className={styles.who__cardVal}>Design & Engineering</span>
-                  </div>
-                  <div className={styles.who__cardRow}>
-                    <span className={styles.who__cardLabel}>Approach</span>
-                    <span className={styles.who__cardVal}>Collaborative & Transparent</span>
-                  </div>
-                  <div className={styles.who__cardRow}>
-                    <span className={styles.who__cardLabel}>Mindset</span>
-                    <span className={styles.who__cardVal}>Startup-first, Quality-always</span>
-                  </div>
-                </div>
-                <div className={styles.who__cardFooter}>
-                  {['Design', 'Code', 'Launch', 'Scale'].map((tag) => (
-                    <span key={tag} className={styles.who__cardTag}>{tag}</span>
-                  ))}
-                </div>
+      {/* Mission / Vision Cards */}
+      <div className={styles.who__cards}>
+        {values.map((v, i) => (
+          <motion.div
+            key={v.label}
+            className={styles.who__card}
+            style={{ '--vc': v.color }}
+            initial={{ opacity: 0, y: 36 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.65, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className={styles.who__cardGlow} aria-hidden="true" />
+            <div className={styles.who__cardInner}>
+              <div className={styles.who__cardTop}>
+                <div className={styles.who__cardIcon}>{v.icon}</div>
+                <span className={styles.who__cardEyebrow}>{v.label}</span>
               </div>
-
-              {/* Floating accent cards */}
-              <div className={styles.who__floatCard1}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                  stroke="#6366F1" strokeWidth="2.5" strokeLinecap="round">
-                  <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
-                </svg>
-                <span>User-first Design</span>
-              </div>
-              <div className={styles.who__floatCard2}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                  stroke="#10B981" strokeWidth="2.5" strokeLinecap="round">
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
-                </svg>
-                <span>Clean Architecture</span>
-              </div>
+              <h3 className={styles.who__cardTitle}>{v.title}</h3>
+              <p className={styles.who__cardDesc}>{v.desc}</p>
+              <div className={styles.who__cardAccent} aria-hidden="true" />
             </div>
-          </ScrollReveal>
-        </div>
-
+          </motion.div>
+        ))}
       </div>
+
+      {/* Quote Statement */}
+      <motion.div
+        className={styles.who__statement}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+      >
+        <div className={styles.who__statementDeco} aria-hidden="true" />
+        <p className={styles.who__statementText}>
+          Every system we architect is built for longevity. Every interface
+          we design serves a purpose. Every line of code we write earns its place.
+        </p>
+        <div className={styles.who__statementDeco} aria-hidden="true" />
+      </motion.div>
+
+      {/* Attribute Pills */}
+      <motion.div
+        className={styles.who__attrs}
+        variants={containerVar}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        role="list"
+        aria-label="Core capabilities"
+      >
+        {attrs.map((attr) => (
+          <motion.span
+            key={attr}
+            className={styles.who__attr}
+            variants={itemVar}
+            role="listitem"
+          >
+            <span className={styles.who__attrDot} aria-hidden="true" />
+            {attr}
+          </motion.span>
+        ))}
+      </motion.div>
+
     </Container>
   </section>
 );

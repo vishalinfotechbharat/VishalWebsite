@@ -1,102 +1,112 @@
+// ============================================================
+// Footer.module.scss — Premium Footer
+// ============================================================
 @use '../../styles/variables' as v;
 @use '../../styles/responsive' as r;
 
 .footer {
   background: v.$primary;
-  padding: 60px 0 80px;
-  margin-top: auto;
+  padding: 56px 0 0;
 
-  @include r.down(tablet) {
-    padding: 40px 0 56px;
-  }
+  @include r.down(tablet) { padding: 40px 0 0; }
+  @include r.down(mobile) { padding: 28px 0 0; }
 
-  @include r.down(mobile) {
-    padding: 32px 0 44px;
-  }
-
-  // --- Wrapper (centers + constrains content) ---
   &__wrapper {
     @include r.container;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
-  // --- White Rounded Card ---
+  // ─── White Card ────────────────────────────────────────────
   &__card {
     background: v.$white;
-    border-radius: 24px;
-    padding: 56px 60px;
+    border-radius: 24px 24px 0 0;
+    padding: 56px 60px 48px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: start;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 -4px 40px rgba(0, 0, 0, 0.06);
 
     @include r.down(tablet-lg) {
-      padding: 44px 40px;
+      padding: 44px 40px 40px;
       gap: 48px;
     }
 
     @include r.down(tablet) {
       grid-template-columns: 1fr;
       gap: 40px;
-      padding: 36px 32px;
+      padding: 36px 32px 32px;
     }
 
     @include r.down(mobile) {
-      padding: 28px 24px;
+      padding: 28px 24px 24px;
       gap: 32px;
-      border-radius: 18px;
+      border-radius: 18px 18px 0 0;
     }
   }
 
-  // --- Left: Brand + Tagline ---
+  // ─── Left ──────────────────────────────────────────────────
   &__left {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    max-width: 420px;
+    gap: 18px;
+    max-width: 400px;
 
-    @include r.down(tablet) {
-      max-width: 100%;
-    }
+    @include r.down(tablet) { max-width: 100%; }
   }
 
   &__logo {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: v.$font-weight-extrabold;
     color: v.$text-primary;
     letter-spacing: v.$letter-spacing-tight;
     line-height: 1;
 
-    @include r.down(mobile) {
-      font-size: 24px;
-    }
+    @include r.down(mobile) { font-size: 22px; }
   }
 
   &__tagline {
-    font-size: 15px;
-    line-height: v.$line-height-relaxed;
-    color: v.$text-secondary;
-    max-width: 380px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: v.$text-muted;
 
-    @include r.down(tablet) {
-      max-width: 100%;
-    }
+    @include r.down(mobile) { font-size: 13px; }
+  }
 
-    @include r.down(mobile) {
-      font-size: 14px;
+  &__contact {
+    display: flex;
+    margin-top: 4px;
+  }
+
+  &__contactBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: v.$font-weight-semibold;
+    color: v.$primary;
+    background: v.$primary-faint;
+    border: 1px solid v.$primary-pale;
+    padding: 9px 18px;
+    border-radius: v.$radius-full;
+    transition: all v.$transition-smooth;
+
+    &:hover {
+      background: v.$primary;
+      color: v.$white;
+      border-color: v.$primary;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
     }
   }
 
-  // --- Right: 3 Columns ---
+  // ─── Columns ───────────────────────────────────────────────
   &__columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
-
-    @include r.down(mobile-lg) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
 
     @include r.down(mobile) {
       grid-template-columns: repeat(2, 1fr);
@@ -112,45 +122,61 @@
   &__column {
     display: flex;
     flex-direction: column;
-    gap: 0;
   }
 
   &__columnTitle {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: v.$font-weight-bold;
     color: v.$text-primary;
-    margin-bottom: 20px;
-    letter-spacing: v.$letter-spacing-normal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 18px;
 
-    @include r.down(mobile) {
-      font-size: 15px;
-      margin-bottom: 14px;
-    }
+    @include r.down(mobile) { margin-bottom: 14px; }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 14px;
-
-    @include r.down(mobile) {
-      gap: 12px;
-    }
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   &__link {
-    font-size: 15px;
-    color: v.$text-secondary;
+    font-size: 14px;
+    color: v.$text-muted;
     transition: color v.$transition-fast;
     cursor: pointer;
     display: inline-block;
 
-    &:hover {
-      color: v.$primary;
-    }
+    &:hover { color: v.$primary; }
 
-    @include r.down(mobile) {
-      font-size: 14px;
-    }
+    @include r.down(mobile) { font-size: 13px; }
+  }
+
+  // ─── Bottom Bar ────────────────────────────────────────────
+  &__bottom {
+    background: rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 60px;
+    flex-wrap: wrap;
+
+    @include r.down(tablet-lg) { padding: 14px 40px; }
+    @include r.down(tablet)    { padding: 14px 32px; }
+    @include r.down(mobile)    { padding: 12px 24px; flex-direction: column; gap: 4px; }
+  }
+
+  &__copy,
+  &__made {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+
+    @include r.down(mobile) { text-align: center; }
   }
 }
