@@ -13,7 +13,7 @@ const pillars = [
       </svg>
     ),
     title: 'Full-Stack Engineering',
-    desc: 'Front-end to back-end, database to cloud — we engineer complete digital products from a single, cohesive team.',
+    desc: 'Front-end to back-end, database to cloud: we engineer complete digital products from a single, cohesive team.',
     accent: '#60A5FA',
   },
   {
@@ -24,7 +24,7 @@ const pillars = [
       </svg>
     ),
     title: 'Design-Led Development',
-    desc: 'Every interface we build begins with user experience. Good design is not decoration — it\'s the product\'s core.',
+    desc: 'Every interface we build begins with user experience. Good design is not decoration: it\'s the product\'s core.',
     accent: '#818CF8',
   },
   {
@@ -35,7 +35,7 @@ const pillars = [
       </svg>
     ),
     title: 'Modern Tech Stack',
-    desc: 'React, Next.js, Node.js, TypeScript, AWS, Docker — tools selected for performance, scalability, and longevity.',
+    desc: 'React, Next.js, Node.js, TypeScript, AWS, Docker: tools selected for performance, scalability, and longevity.',
     accent: '#34D399',
   },
   {
@@ -68,8 +68,8 @@ const StatsSection = () => (
         </ScrollReveal>
         <ScrollReveal delay={0.16}>
           <p className={styles.pillars__subtitle}>
-            We are a small team with deep expertise. Every decision — from
-            architecture to UI — is made with care.
+            We are a small team with deep expertise. Every decision, from
+            architecture to UI, is made with care.
           </p>
         </ScrollReveal>
       </div>

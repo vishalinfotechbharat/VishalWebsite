@@ -14,7 +14,7 @@ const principles = [
       </svg>
     ),
     title: 'Design Before Code',
-    desc: 'Every project starts with clarity — user flows, wireframes, and component specs — before the first line of code is written. This prevents expensive late-stage rework.',
+    desc: 'Every project starts with clarity - user flows, wireframes, and component specs - before the first line of code is written. This prevents expensive late-stage rework.',
   },
   {
     color: '#34D399',
@@ -25,7 +25,7 @@ const principles = [
       </svg>
     ),
     title: 'Scalable by Architecture',
-    desc: 'We design systems to handle growth — whether that\'s 10x more users, 10x more data, or a pivot you can\'t predict yet. The foundation holds.',
+    desc: 'We design systems to handle growth - whether that\'s 10x more users, 10x more data, or a pivot you can\'t predict yet. The foundation holds.',
   },
   {
     color: '#FBBF24',
@@ -36,7 +36,7 @@ const principles = [
       </svg>
     ),
     title: 'Security as a Default',
-    desc: 'Authentication, data validation, dependency management, and responsible data practices — we treat security as a discipline, not an afterthought.',
+    desc: 'Authentication, data validation, dependency management, and responsible data practices - we treat security as a discipline, not an afterthought.',
   },
   {
     color: '#F472B6',
@@ -59,7 +59,7 @@ const principles = [
       </svg>
     ),
     title: 'Testing Before Shipping',
-    desc: 'We write tests. We run them. We review them in CI before anything hits production. Not because clients demand it — because bugs in production cost more than prevention.',
+    desc: 'We write tests. We run them. We review them in CI before anything hits production. Not because clients demand it - because bugs in production cost more than prevention.',
   },
   {
     color: '#06B6D4',
@@ -71,7 +71,7 @@ const principles = [
       </svg>
     ),
     title: 'Transparent by Nature',
-    desc: 'You have access to the same information we do — progress, blockers, decisions. We\'d rather tell you something difficult early than hide it until it\'s a crisis.',
+    desc: 'You have access to the same information we do - progress, blockers, decisions. We\'d rather tell you something difficult early than hide it until it\'s a crisis.',
   },
 ];
 
@@ -93,7 +93,7 @@ const ServicesApproach = () => (
           </h2>
           <p className={styles.approach__sub}>
             There are a lot of ways to build software. We've chosen ours
-            deliberately — each principle learned the hard way or designed to
+            deliberately - each principle learned the hard way or designed to
             prevent the common mistakes.
           </p>
         </div>

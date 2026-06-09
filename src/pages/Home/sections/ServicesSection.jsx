@@ -29,7 +29,7 @@ const services = [
   {
     icon: (<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>),
     title: 'ERP Development',
-    desc: 'Custom ERP solutions for operations, HR, finance and inventory — integrated and scalable.',
+    desc: 'Custom ERP solutions for operations, HR, finance and inventory - integrated and scalable.',
     tags: ['Modular', 'Realtime', 'Reporting'],
     color: '#10B981',
   },
@@ -43,7 +43,7 @@ const services = [
   {
     icon: (<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>),
     title: 'API Integration',
-    desc: 'Seamless third-party integrations — payment gateways, CRMs, ERPs, and any REST/GraphQL API.',
+    desc: 'Seamless third-party integrations - payment gateways, CRMs, ERPs, and any REST/GraphQL API.',
     tags: ['REST', 'GraphQL', 'Webhooks'],
     color: '#06B6D4',
   },
@@ -85,7 +85,7 @@ const ServicesSection = () => (
       <SectionHeader
         subtitle="What We Offer"
         title={<>Services Built for <span>Business Growth</span></>}
-        description="From idea to enterprise — we cover every layer of your digital product journey."
+        description="From idea to enterprise - we cover every layer of your digital product journey."
       />
       <motion.div
         className={styles.services__grid}

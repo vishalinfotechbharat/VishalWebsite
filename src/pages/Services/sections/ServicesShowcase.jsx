@@ -63,7 +63,7 @@ const UIUXVisual = () => (
     <rect x="380" y="13" width="20" height="18" rx="4" fill="#EFF6FF"/>
     <rect x="406" y="13" width="20" height="18" rx="4" fill="#EFF6FF"/>
     <rect x="432" y="13" width="36" height="18" rx="4" fill="#2563EB"/>
-    {/* Left panel — layers */}
+    {/* Left panel - layers */}
     <rect x="8" y="52" width="90" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" strokeWidth="1"/>
     <rect x="14" y="60" width="40" height="6" rx="2" fill="#94A3B8"/>
     {[0,1,2,3,4,5,6,7].map(i => (
@@ -98,7 +98,7 @@ const UIUXVisual = () => (
     <rect x="190" y="272" width="44" height="16" rx="4" fill="#F0FDF4"/>
     <rect x="240" y="272" width="44" height="16" rx="4" fill="#FFF7ED"/>
     <rect x="290" y="272" width="44" height="16" rx="4" fill="#F5F3FF"/>
-    {/* Right panel — properties */}
+    {/* Right panel - properties */}
     <rect x="382" y="52" width="90" height="260" rx="10" fill="#FFFFFF" stroke="#E2E8F0" strokeWidth="1"/>
     <rect x="388" y="60" width="40" height="6" rx="2" fill="#94A3B8"/>
     {[0,1,2,3,4].map(i => (
@@ -185,12 +185,12 @@ const showcaseItems = [
     id: 'web',
     eyebrow: 'Web Development',
     title: 'Websites & Web Apps Built for the Real World',
-    desc: 'We move quickly without cutting corners. Our web development practice covers everything from marketing sites to complex internal tools — and we make sure they work beautifully on every device.',
+    desc: 'We move quickly without cutting corners. Our web development practice covers everything from marketing sites to complex internal tools - and we make sure they work beautifully on every device.',
     points: [
       { label: 'Responsive by default', text: 'Every layout tested across mobile, tablet, and desktop before it ships.' },
       { label: 'Performance-optimized', text: 'We target sub-2s load times and strong Core Web Vitals as standard practice.' },
       { label: 'Clean, maintainable code', text: 'No spaghetti. No "it works on my machine." Readable code you can hand off.' },
-      { label: 'Scalable architecture', text: 'Systems that grow with you — not ones you outgrow in 18 months.' },
+      { label: 'Scalable architecture', text: 'Systems that grow with you - not ones you outgrow in 18 months.' },
     ],
     color: '#2563EB',
     visual: <WebDevVisual />,
@@ -202,7 +202,7 @@ const showcaseItems = [
     title: 'Design That Makes Users Feel Understood',
     desc: 'We design with empathy first. Before we open Figma, we understand who your users are, what they\'re trying to accomplish, and where they currently get stuck. Then we design around that reality.',
     points: [
-      { label: 'Research-informed', text: 'We ask real questions before designing — who are your users, what do they need?' },
+      { label: 'Research-informed', text: 'We ask real questions before designing - who are your users, what do they need?' },
       { label: 'Component-driven systems', text: 'Design systems that developers love and designers can evolve easily.' },
       { label: 'Interactive prototypes', text: 'Clickable prototypes before a line of code is written. Test early, iterate cheaply.' },
       { label: 'Handoff-ready', text: 'Pixel-perfect specs, annotated flows, and developer notes included every time.' },
@@ -215,10 +215,10 @@ const showcaseItems = [
     id: 'saas',
     eyebrow: 'SaaS Development',
     title: 'SaaS Platforms Built to Grow With Your Business',
-    desc: 'Building a SaaS product is more than writing features. It requires the right foundation — multi-tenancy, security boundaries, billing, and a dashboard that actually helps your users succeed.',
+    desc: 'Building a SaaS product is more than writing features. It requires the right foundation - multi-tenancy, security boundaries, billing, and a dashboard that actually helps your users succeed.',
     points: [
       { label: 'Multi-tenant from the start', text: 'Isolated data, flexible plans, and team management built into the core.' },
-      { label: 'Billing that just works', text: 'Stripe integration, subscription tiers, usage-based pricing — we\'ve built it all.' },
+      { label: 'Billing that just works', text: 'Stripe integration, subscription tiers, usage-based pricing - we\'ve built it all.' },
       { label: 'User onboarding flows', text: 'New-user experiences designed to get people to their "aha moment" fast.' },
       { label: 'Admin & analytics dashboards', text: 'Tools for you to understand your product\'s health and your users\' behaviour.' },
     ],
@@ -260,7 +260,7 @@ const ServicesShowcase = () => (
                     <div className={styles.content__pointDot} />
                     <div>
                       <strong className={styles.content__pointLabel}>{pt.label}</strong>
-                      <span className={styles.content__pointText}> — {pt.text}</span>
+                      <span className={styles.content__pointText}> - {pt.text}</span>
                     </div>
                   </li>
                 ))}

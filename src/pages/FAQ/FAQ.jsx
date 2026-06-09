@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Container from '../../components/Container/Container';
 import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
 import Button from '../../components/Button/Button';
@@ -59,47 +60,48 @@ const faqs = [
   },
 ];
 
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Vishal Infotech",
+  "image": "https://www.vishalinfotech.com/logo.png",
+  "@id": "https://www.vishalinfotech.com/#organization",
+  "url": "https://www.vishalinfotech.com",
+  "telephone": "+918169829398",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mumbai",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 19.076090,
+    "longitude": 72.877793
+  },
+  "sameAs": [
+    "https://github.com/vishalinfotechbharat"
+  ]
+};
+
 const FAQ = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [openIndexes, setOpenIndexes] = useState({});
-
-  // Dynamic Page Title & Meta for SEO
-  useEffect(() => {
-    document.title = "FAQ — Frequently Asked Questions | Vishal Infotech";
-    
-    const metaDesc = document.querySelector('meta[name="description"]');
-    const originalDesc = metaDesc ? metaDesc.getAttribute('content') : '';
-    if (metaDesc) {
-      metaDesc.setAttribute('content', 'Find detailed answers to frequently asked questions about Vishal Infotech freelance IT solutions, including custom web development, SaaS platforms, ERP systems, pricing, and our development lifecycle.');
-    }
-
-    // JSON-LD FAQ Schema injection for Google Rich Snippets
-    const schemaMarkup = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map((faq) => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'faq-jsonld-schema';
-    script.innerHTML = JSON.stringify(schemaMarkup);
-    document.head.appendChild(script);
-
-    return () => {
-      if (metaDesc) metaDesc.setAttribute('content', originalDesc);
-      const injectedScript = document.getElementById('faq-jsonld-schema');
-      if (injectedScript) injectedScript.remove();
-    };
-  }, []);
 
   const toggleFAQ = (index) => {
     setOpenIndexes((prev) => ({
@@ -118,6 +120,44 @@ const FAQ = () => {
 
   return (
     <div className={styles.faqPage}>
+      <Helmet>
+        <title>FAQ | Frequently Asked Questions | Vishal Infotech</title>
+        <meta name="description" content="Find detailed answers to frequently asked questions about Vishal Infotech freelance IT solutions, including custom web development, SaaS platforms, ERP systems, pricing, and our development lifecycle." />
+        <link rel="canonical" href="https://www.vishalinfotech.com/faq" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.vishalinfotech.com/faq" />
+        <meta property="og:title" content="FAQ | Frequently Asked Questions | Vishal Infotech" />
+        <meta property="og:description" content="Find detailed answers to frequently asked questions about Vishal Infotech freelance IT solutions, including custom web development, SaaS platforms, ERP systems, pricing, and our development lifecycle." />
+        <meta property="og:image" content="https://www.vishalinfotech.com/logo.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.vishalinfotech.com/faq" />
+        <meta name="twitter:title" content="FAQ | Frequently Asked Questions | Vishal Infotech" />
+        <meta name="twitter:description" content="Find detailed answers to frequently asked questions about Vishal Infotech freelance IT solutions, including custom web development, SaaS platforms, ERP systems, pricing, and our development lifecycle." />
+        <meta name="twitter:image" content="https://www.vishalinfotech.com/logo.png" />
+
+        {/* Schemas */}
+        <script type="application/ld+json">
+          {JSON.stringify(schemaMarkup)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vishalinfotech.com/" },
+              { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://www.vishalinfotech.com/faq" }
+            ]
+          })}
+        </script>
+      </Helmet>
       {/* Hero */}
       <section className={styles.faqPage__hero}>
         <div className={styles.faqPage__heroBg} aria-hidden="true" />

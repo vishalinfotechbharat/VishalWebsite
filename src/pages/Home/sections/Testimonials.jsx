@@ -15,7 +15,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "We launched our SaaS platform in just 6 weeks. The team's attention to detail — from design to API architecture — was remarkable. Our user retention is at 87% thanks to the UX work.",
+    quote: "We launched our SaaS platform in just 6 weeks. The team's attention to detail - from design to API architecture - was remarkable. Our user retention is at 87% thanks to the UX work.",
     name: 'Priya Sharma',
     role: 'Founder',
     company: 'MediCare App',

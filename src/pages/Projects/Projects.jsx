@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Container from '../../components/Container/Container';
 import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
 import CTABanner from '../Home/sections/CTABanner';
@@ -18,41 +19,46 @@ const projects = [
     id: 1,
     title: 'AiFin Financial Platform',
     category: 'SaaS',
-    description: 'Your smart finance companion — a secure digital banking and asset management platform for tracking wealth and real-time market data.',
+    description: 'Your smart finance companion, a secure digital banking and asset management platform for tracking wealth and real-time market data.',
     tags: ['SaaS', 'Finance', 'Analytics'],
     image: project1,
+    alt: 'AiFin Financial SaaS dashboard showing real-time asset tracking and market data',
   },
   {
     id: 2,
     title: 'Kutulus Booking App',
     category: 'Corporate',
-    description: 'Where adventure meets serenity — a luxury mobile-first booking experience and hospitality management system for high-end boutique resorts.',
+    description: 'Where adventure meets serenity, a luxury mobile-first booking experience and hospitality management system for high-end boutique resorts.',
     tags: ['Booking', 'Hospitality', 'Mobile-First'],
     image: project2,
+    alt: 'Kutulus booking application mobile-first interface for boutique resorts',
   },
   {
     id: 3,
     title: 'Timezone Luxury Showcase',
     category: 'E-commerce',
-    description: 'Discover timeless elegance — a high-end luxury watch showroom featuring Audemars Piguet watches with interactive customization options.',
+    description: 'Discover timeless elegance, a high-end luxury watch showroom featuring Audemars Piguet watches with interactive customization options.',
     tags: ['E-commerce', 'Luxury', 'Retail'],
     image: project3Jpg,
+    alt: 'Timezone luxury watch e-commerce showroom showcase with AP watches',
   },
   {
     id: 4,
     title: 'The Sanctuary Portfolio',
     category: 'Corporate',
-    description: 'Elevate your escape — a premium architectural property portfolio showcasing ultra-exclusive luxury villa rentals and estates.',
+    description: 'Elevate your escape, a premium architectural property portfolio showcasing ultra-exclusive luxury villa rentals and estates.',
     tags: ['Real Estate', 'Portfolio', 'Corporate'],
     image: project3Png,
+    alt: 'The Sanctuary property rental website and real estate portfolio',
   },
   {
     id: 5,
     title: 'Smarter Funding Dashboard',
     category: 'Dashboards',
-    description: 'Accelerate business growth — an intelligent business funding and capital management dashboard for tracking credit, cash flow, and analytics.',
+    description: 'Accelerate business growth, an intelligent business funding and capital management dashboard for tracking credit, cash flow, and analytics.',
     tags: ['Dashboard', 'Fintech', 'SaaS'],
     image: project4,
+    alt: 'Smarter Funding dashboard with cash flow graphs and credit score tracker',
   },
 ];
 
@@ -66,13 +72,45 @@ const Projects = () => {
 
   return (
     <div className={styles.projects}>
+      <Helmet>
+        <title>Portfolio & Case Studies | Vishal Infotech</title>
+        <meta name="description" content="View Vishal Infotech's portfolio: SaaS platforms, e-commerce stores, fintech dashboards and corporate websites built for real businesses." />
+        <link rel="canonical" href="https://www.vishalinfotech.com/projects" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.vishalinfotech.com/projects" />
+        <meta property="og:title" content="Portfolio & Case Studies | Vishal Infotech" />
+        <meta property="og:description" content="View Vishal Infotech's portfolio: SaaS platforms, e-commerce stores, fintech dashboards and corporate websites built for real businesses." />
+        <meta property="og:image" content="https://www.vishalinfotech.com/logo.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.vishalinfotech.com/projects" />
+        <meta name="twitter:title" content="Portfolio & Case Studies | Vishal Infotech" />
+        <meta name="twitter:description" content="View Vishal Infotech's portfolio: SaaS platforms, e-commerce stores, fintech dashboards and corporate websites built for real businesses." />
+        <meta name="twitter:image" content="https://www.vishalinfotech.com/logo.png" />
+
+        {/* Breadcrumb List Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vishalinfotech.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.vishalinfotech.com/projects" }
+            ]
+          })}
+        </script>
+      </Helmet>
       <section className={styles.projects__hero}>
         <div className={styles.projects__heroBg} />
         <Container>
           <div className={styles.projects__heroContent}>
             <ScrollReveal>
               <div className={styles.projects__badgeWrapper}>
-                <span className={styles.projects__badge}>— Selected Work</span>
+                <span className={styles.projects__badge}>Selected Work</span>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
@@ -108,7 +146,7 @@ const Projects = () => {
               <ScrollReveal key={project.id} delay={index * 0.08}>
                 <div className={styles.projects__card}>
                   <div className={styles.projects__cardImage}>
-                    <img src={project.image} alt={project.title} className={styles.projects__img} />
+                    <img src={project.image} alt={project.alt} className={styles.projects__img} loading="lazy" />
                   </div>
                   <div className={styles.projects__cardBody}>
                     <h3 className={styles.projects__cardTitle}>{project.title}</h3>

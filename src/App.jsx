@@ -23,7 +23,13 @@ const ScrollToTop = () => {
 };
 
 function App() {
-  const [introDone, setIntroDone] = useState(false);
+  const [introDone, setIntroDone] = useState(() => {
+    try {
+      return !!sessionStorage.getItem('vi_intro_seen');
+    } catch {
+      return false;
+    }
+  });
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -34,7 +40,9 @@ function App() {
 
     let rafId;
     function raf(time) {
-      lenis.raf(time);
+      if (!document.hidden) {
+        lenis.raf(time);
+      }
       rafId = requestAnimationFrame(raf);
     }
     rafId = requestAnimationFrame(raf);

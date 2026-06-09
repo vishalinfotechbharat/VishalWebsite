@@ -26,7 +26,7 @@ const differentiators = [
       </svg>
     ),
     title: 'Direct Collaboration',
-    desc: 'Work directly with the developer — no account managers, no middlemen, just honest communication.',
+    desc: 'Work directly with the developer: no account managers, no middlemen, just honest communication.',
     color: '#6366F1',
   },
   {
@@ -37,7 +37,7 @@ const differentiators = [
       </svg>
     ),
     title: 'Clean, Tested Code',
-    desc: 'Production-ready code with proper reviews, testing, and documentation — built to be maintained.',
+    desc: 'Production-ready code with proper reviews, testing, and documentation - built to be maintained.',
     color: '#10B981',
   },
   {
@@ -48,7 +48,7 @@ const differentiators = [
       </svg>
     ),
     title: 'Scalable Architecture',
-    desc: 'Systems designed to grow from day one — so your product scales without a complete rebuild.',
+    desc: 'Systems designed to grow from day one - so your product scales without a complete rebuild.',
     color: '#F59E0B',
   },
 ];
@@ -66,7 +66,7 @@ const values = [
     ),
     label: 'Our Mission',
     title: 'Build Products That Actually Matter',
-    desc: 'To help modern businesses and enterprise clients build digital products that are meaningful, scalable, and genuinely useful — crafted with honesty, care, and deep respect for the people using them.',
+    desc: 'To help modern businesses and enterprise clients build digital products that are meaningful, scalable, and genuinely useful, crafted with honesty, care, and deep respect for the people using them.',
     color: '#60A5FA',
   },
   {
@@ -79,7 +79,7 @@ const values = [
     ),
     label: 'Our Vision',
     title: 'A Partner That Teams Come Back To',
-    desc: 'To grow into a trusted digital product partner — one where founders, product teams, and growing businesses know they will find not just capable engineers and designers, but genuine partners who care about their success as much as they do.',
+    desc: 'To grow into a trusted digital product partner, one where founders, product teams, and growing businesses know they will find not just capable engineers and designers, but genuine partners who care about their success as much as they do.',
     color: '#818CF8',
   },
 ];
@@ -125,8 +125,8 @@ const WhoWeAre = () => (
         <p className={styles.who__intro}>
           Vishal Infotech is a freelance IT solutions partner specialising in
           high-performance websites, SaaS platforms, ERP systems, and custom
-          software. We work directly with founders and businesses — no agencies,
-          no fluff — just clean engineering and thoughtful design that delivers
+          software. We work directly with founders and businesses (no agencies,
+          no fluff) just clean engineering and thoughtful design that delivers
           real results.
         </p>
       </motion.div>

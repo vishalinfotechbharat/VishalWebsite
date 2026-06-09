@@ -71,21 +71,21 @@ const ServicesTech = () => (
     </Container>
 
     <div className={styles.tech__tracks}>
-      {/* Row 1 — left */}
+      {/* Row 1 - left */}
       <div className={styles.tech__track}>
         <div className={styles.tech__inner}>
           {[...row1, ...row1].map((t, i) => <TechPill key={`r1-${i}`} {...t} />)}
         </div>
       </div>
 
-      {/* Row 2 — right */}
+      {/* Row 2 - right */}
       <div className={styles.tech__track}>
         <div className={`${styles.tech__inner} ${styles['tech__inner--rev']}`}>
           {[...row2, ...row2].map((t, i) => <TechPill key={`r2-${i}`} {...t} />)}
         </div>
       </div>
 
-      {/* Row 3 — left */}
+      {/* Row 3 - left */}
       <div className={styles.tech__track}>
         <div className={styles.tech__inner}>
           {[...row3, ...row3].map((t, i) => <TechPill key={`r3-${i}`} {...t} />)}

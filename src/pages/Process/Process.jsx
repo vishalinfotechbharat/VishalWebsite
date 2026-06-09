@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Container from '../../components/Container/Container';
 import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
 import styles from './Process.module.scss';
@@ -57,6 +58,38 @@ const steps = [
 const Process = () => {
   return (
     <div className={styles.process}>
+      <Helmet>
+        <title>Our Development Process | Vishal Infotech</title>
+        <meta name="description" content="Learn how Vishal Infotech builds digital products: Discovery, Design, Development and post-launch Support - delivered transparently in 4 structured steps." />
+        <link rel="canonical" href="https://www.vishalinfotech.com/process" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.vishalinfotech.com/process" />
+        <meta property="og:title" content="Our Development Process | Vishal Infotech" />
+        <meta property="og:description" content="Learn how Vishal Infotech builds digital products: Discovery, Design, Development and post-launch Support - delivered transparently in 4 structured steps." />
+        <meta property="og:image" content="https://www.vishalinfotech.com/logo.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.vishalinfotech.com/process" />
+        <meta name="twitter:title" content="Our Development Process | Vishal Infotech" />
+        <meta name="twitter:description" content="Learn how Vishal Infotech builds digital products: Discovery, Design, Development and post-launch Support - delivered transparently in 4 structured steps." />
+        <meta name="twitter:image" content="https://www.vishalinfotech.com/logo.png" />
+
+        {/* Breadcrumb List Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vishalinfotech.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Process", "item": "https://www.vishalinfotech.com/process" }
+            ]
+          })}
+        </script>
+      </Helmet>
       <section className={styles.process__hero}>
         <Container>
           <ScrollReveal>

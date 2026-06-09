@@ -18,7 +18,7 @@ const steps = [
   {
     number: '02',
     title: 'Design & Prototype',
-    desc: 'Wireframes become high-fidelity designs. We prototype key interactions and validate flows before development begins — saving time and preventing costly rework.',
+    desc: 'Wireframes become high-fidelity designs. We prototype key interactions and validate flows before development begins - saving time and preventing costly rework.',
     color: '#818CF8',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
@@ -29,7 +29,7 @@ const steps = [
   {
     number: '03',
     title: 'Engineering & Development',
-    desc: 'Agile sprints, daily visibility, and clean architecture. Every feature ships with code reviews and continuous integration — no technical debt by default.',
+    desc: 'Agile sprints, daily visibility, and clean architecture. Every feature ships with code reviews and continuous integration - no technical debt by default.',
     color: '#34D399',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
@@ -40,7 +40,7 @@ const steps = [
   {
     number: '04',
     title: 'Testing & Quality Review',
-    desc: 'Automated tests, manual QA, performance checks, and accessibility reviews — built into every cycle, not added as an afterthought at the end.',
+    desc: 'Automated tests, manual QA, performance checks, and accessibility reviews - built into every cycle, not added as an afterthought at the end.',
     color: '#FBBF24',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
@@ -51,7 +51,7 @@ const steps = [
   {
     number: '05',
     title: 'Launch & Continuous Support',
-    desc: 'We deploy with care and stay involved. Monitoring, performance tuning, and ongoing improvements — because a product launch is the beginning, not the end.',
+    desc: 'We deploy with care and stay involved. Monitoring, performance tuning, and ongoing improvements - because a product launch is the beginning, not the end.',
     color: '#F472B6',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">

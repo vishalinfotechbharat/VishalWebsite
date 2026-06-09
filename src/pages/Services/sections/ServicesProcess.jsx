@@ -16,7 +16,7 @@ const steps = [
     ),
     title: 'Discovery',
     subtitle: 'Weeks 1–2',
-    desc: 'We start by deeply understanding your problem. User research, stakeholder interviews, competitive landscape — before any solution is proposed.',
+    desc: 'We start by deeply understanding your problem. User research, stakeholder interviews, competitive landscape - before any solution is proposed.',
     actions: ['Requirements workshop', 'User persona mapping', 'Technical feasibility check', 'Project scope agreement'],
   },
   {
@@ -46,7 +46,7 @@ const steps = [
     ),
     title: 'Development',
     subtitle: 'Weeks 3–12+',
-    desc: 'Sprint-based development with weekly demos. You see working software early and often — not a big reveal at the end. Feedback shapes every sprint.',
+    desc: 'Sprint-based development with weekly demos. You see working software early and often - not a big reveal at the end. Feedback shapes every sprint.',
     actions: ['Weekly sprint cycles', 'Continuous integration', 'Code review practice', 'Staging environment demos'],
   },
   {
@@ -60,7 +60,7 @@ const steps = [
     ),
     title: 'Testing',
     subtitle: 'Ongoing',
-    desc: 'Testing isn\'t a phase — it runs throughout. Unit tests, integration tests, and end-to-end flows are written and maintained alongside the code.',
+    desc: 'Testing isn\'t a phase - it runs throughout. Unit tests, integration tests, and end-to-end flows are written and maintained alongside the code.',
     actions: ['Automated test suite', 'Cross-browser QA', 'Performance audits', 'Security review'],
   },
   {
@@ -74,7 +74,7 @@ const steps = [
     ),
     title: 'Launch',
     subtitle: 'Go-live',
-    desc: 'A coordinated launch — not a rushed push. We prepare deployment runbooks, monitoring setup, rollback plans, and communicate clearly throughout.',
+    desc: 'A coordinated launch - not a rushed push. We prepare deployment runbooks, monitoring setup, rollback plans, and communicate clearly throughout.',
     actions: ['Production deployment', 'Monitoring & alerting', 'Load testing', 'Rollback plan ready'],
   },
   {
@@ -88,7 +88,7 @@ const steps = [
     ),
     title: 'Support & Growth',
     subtitle: 'Post-launch',
-    desc: 'We stay engaged after the launch. Bug fixes, performance improvements, new features — and honest advice on what to build next and what to skip.',
+    desc: 'We stay engaged after the launch. Bug fixes, performance improvements, new features - and honest advice on what to build next and what to skip.',
     actions: ['Ongoing bug support', 'Monthly health reports', 'Feature roadmapping', 'Performance tuning'],
   },
 ];

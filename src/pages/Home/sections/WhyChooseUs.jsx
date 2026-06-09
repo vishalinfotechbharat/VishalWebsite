@@ -8,12 +8,12 @@ const benefits = [
   {
     icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>),
     title: 'Fast, Focused Delivery',
-    desc: 'Short sprint cycles, clear milestones, and weekly demos — no endless delays or surprise bottlenecks.',
+    desc: 'Short sprint cycles, clear milestones, and weekly demos - no endless delays or surprise bottlenecks.',
   },
   {
     icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>),
     title: 'Built to Scale',
-    desc: 'We architect for growth from day one — so the product you launch today handles tomorrow\'s demand without a rebuild.',
+    desc: 'We architect for growth from day one - so the product you launch today handles tomorrow\'s demand without a rebuild.',
   },
   {
     icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>),
@@ -28,7 +28,7 @@ const benefits = [
   {
     icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>),
     title: 'Outcome-Oriented',
-    desc: 'We measure success by your product\'s performance — conversions, retention, load time — not just deliverables.',
+    desc: 'We measure success by your product\'s performance - conversions, retention, load time - not just deliverables.',
   },
   {
     icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>),

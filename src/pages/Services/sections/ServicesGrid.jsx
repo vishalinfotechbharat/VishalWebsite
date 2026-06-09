@@ -16,7 +16,7 @@ const services = [
     ),
     title: 'Web Development',
     tagline: 'Fast. Responsive. Future-Ready.',
-    desc: 'We build modern web applications using the right framework for your needs — not just the trendiest one. Our code is clean, tested, and built to last.',
+    desc: 'We build modern web applications using the right framework for your needs - not just the trendiest one. Our code is clean, tested, and built to last.',
     tags: ['React', 'Next.js', 'Node.js', 'TypeScript', 'PostgreSQL'],
     points: [
       'Custom web apps tailored to your exact workflow',
@@ -39,7 +39,7 @@ const services = [
     ),
     title: 'UI/UX Design',
     tagline: 'Intuitive. Beautiful. Purposeful.',
-    desc: 'Great design is not decoration — it\'s the reason users stay. We design interfaces that are beautiful to look at and effortless to use.',
+    desc: 'Great design is not decoration - it\'s the reason users stay. We design interfaces that are beautiful to look at and effortless to use.',
     tags: ['Figma', 'Design Systems', 'Prototyping', 'User Research', 'Wireframes'],
     points: [
       'User-centred design from research to pixel-perfect delivery',
@@ -60,7 +60,7 @@ const services = [
     ),
     title: 'SaaS App Development',
     tagline: 'Scalable. Multi-tenant. Subscription-ready.',
-    desc: 'We build SaaS products from the ground up — multi-tenant architecture, role-based access, billing integrations, and dashboards that give your users real value.',
+    desc: 'We build SaaS products from the ground up - multi-tenant architecture, role-based access, billing integrations, and dashboards that give your users real value.',
     tags: ['SaaS Architecture', 'Auth', 'Stripe', 'APIs', 'Cloud Deploy'],
     points: [
       'Multi-tenant architecture designed to scale from day one',
@@ -101,7 +101,7 @@ const services = [
     ),
     title: 'IT Consulting',
     tagline: 'Honest advice. No vendor agenda.',
-    desc: 'We help you make better technology decisions — from choosing the right stack to auditing your existing systems. We tell you what will actually work, not what\'s fashionable.',
+    desc: 'We help you make better technology decisions - from choosing the right stack to auditing your existing systems. We tell you what will actually work, not what\'s fashionable.',
     tags: ['Tech Audits', 'Architecture', 'Stack Review', 'Roadmapping', 'Code Review'],
     points: [
       'Technology audits for existing systems and codebases',
@@ -121,7 +121,7 @@ const services = [
     ),
     title: 'Maintenance & Support',
     tagline: 'We don\'t disappear after launch.',
-    desc: 'Software needs care after it goes live. We provide ongoing maintenance, monitoring, dependency updates, and fast turnaround on bugs — so you can focus on your business.',
+    desc: 'Software needs care after it goes live. We provide ongoing maintenance, monitoring, dependency updates, and fast turnaround on bugs - so you can focus on your business.',
     tags: ['Monitoring', 'Updates', 'Bug Fixes', 'Performance', 'Security'],
     points: [
       'Proactive monitoring and uptime alerts',

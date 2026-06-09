@@ -7,6 +7,11 @@ const Services = lazy(() => import('../pages/Services/Services'));
 const Projects = lazy(() => import('../pages/Projects/Projects'));
 const Process  = lazy(() => import('../pages/Process/Process'));
 const Contact  = lazy(() => import('../pages/Contact/Contact'));
+const FAQ      = lazy(() => import('../pages/FAQ/FAQ'));
+const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
+const PrivacyPolicy = lazy(() => import('../pages/Legal/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('../pages/Legal/TermsOfService'));
+const CookiePolicy = lazy(() => import('../pages/Legal/CookiePolicy'));
 
 const Loader = () => (
   <div style={{
@@ -37,6 +42,11 @@ const AppRoutes = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/process"  element={<Process />} />
         <Route path="/contact"  element={<Contact />} />
+        <Route path="/faq"      element={<FAQ />} />
+        <Route path="/privacy-policy"   element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/cookie-policy"    element={<CookiePolicy />} />
+        <Route path="*"         element={<NotFound />} />
       </Routes>
     </Suspense>
   );

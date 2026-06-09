@@ -6,24 +6,26 @@ import styles from './Footer.module.scss';
 
 const companyLinks = [
   { to: '/',        label: 'Home'     },
-  { to: '/about',   label: 'About'    },
+  { to: '/services',label: 'Services' },
   { to: '/projects',label: 'Projects' },
   { to: '/process', label: 'Process'  },
+  { to: '/about',   label: 'About'    },
+  { to: '/faq',     label: 'FAQ'      },
   { to: '/contact', label: 'Contact'  },
 ];
 
 const serviceLinks = [
-  'Web Development',
-  'UI/UX Design',
-  'SaaS Solutions',
-  'ERP Systems',
-  'Business Automation',
+  { to: '/services', label: 'Web Development' },
+  { to: '/services', label: 'UI/UX Design' },
+  { to: '/services', label: 'SaaS Solutions' },
+  { to: '/services', label: 'ERP Systems' },
+  { to: '/services', label: 'Business Automation' },
 ];
 
 const legalLinks = [
-  { href: '#', label: 'Privacy Policy'   },
-  { href: '#', label: 'Terms of Service' },
-  { href: '#', label: 'Cookie Policy'    },
+  { to: '/privacy-policy',   label: 'Privacy Policy'   },
+  { to: '/terms-of-service', label: 'Terms of Service' },
+  { to: '/cookie-policy',    label: 'Cookie Policy'    },
 ];
 
 // ─── Variants ─────────────────────────────────────────────────
@@ -77,7 +79,7 @@ const Footer = () => (
           </Link>
           <p className={styles.footer__tagline}>
             A freelance IT solutions partner building high-performance websites,
-            SaaS platforms, ERP systems, and custom software — crafted with
+            SaaS platforms, ERP systems, and custom software, crafted with
             honesty and purpose.
           </p>
 
@@ -124,8 +126,8 @@ const Footer = () => (
             <h4 className={styles.footer__columnTitle}>Services</h4>
             <ul className={styles.footer__list}>
               {serviceLinks.map((s) => (
-                <li key={s}>
-                  <span className={styles.footer__link}>{s}</span>
+                <li key={s.label}>
+                  <Link to={s.to} className={styles.footer__link}>{s.label}</Link>
                 </li>
               ))}
             </ul>
@@ -136,7 +138,7 @@ const Footer = () => (
             <ul className={styles.footer__list}>
               {legalLinks.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className={styles.footer__link}>{l.label}</a>
+                  <Link to={l.to} className={styles.footer__link}>{l.label}</Link>
                 </li>
               ))}
             </ul>

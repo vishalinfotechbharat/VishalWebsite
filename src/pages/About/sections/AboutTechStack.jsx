@@ -57,14 +57,14 @@ const AboutTechStack = () => (
           <span>Power Our Work</span>
         </h2>
         <p className={styles.tech__subtitle}>
-          We choose tools based on what's right for the project — proven,
+          We choose tools based on what's right for the project - proven,
           battle-tested technologies paired with modern frameworks.
         </p>
       </div>
     </Container>
 
     <div className={styles.tech__marqueeWrap}>
-      {/* Row 1 — scrolls left */}
+      {/* Row 1 - scrolls left */}
       <div className={styles.tech__track}>
         <div className={styles.tech__trackInner}>
           {[...row1, ...row1].map((t, i) => (
@@ -73,7 +73,7 @@ const AboutTechStack = () => (
         </div>
       </div>
 
-      {/* Row 2 — scrolls right */}
+      {/* Row 2 - scrolls right */}
       <div className={styles.tech__track}>
         <div className={`${styles.tech__trackInner} ${styles['tech__trackInner--rev']}`}>
           {[...row2, ...row2].map((t, i) => (

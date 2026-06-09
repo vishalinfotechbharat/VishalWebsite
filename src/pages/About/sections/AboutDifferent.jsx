@@ -6,7 +6,7 @@ import styles from './AboutDifferent.module.scss';
 const strengths = [
   {
     title: 'Thoughtful UI/UX',
-    desc: 'We design interfaces that are clear, intuitive, and considered. Good UX is not decoration — it is engineering.',
+    desc: 'We design interfaces that are clear, intuitive, and considered. Good UX is not decoration - it is engineering.',
     color: '#6366F1',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
@@ -26,7 +26,7 @@ const strengths = [
   },
   {
     title: 'Performance by Default',
-    desc: 'Speed is a feature. We optimise for load time, rendering, and efficiency from the first sprint — not as a patch.',
+    desc: 'Speed is a feature. We optimise for load time, rendering, and efficiency from the first sprint - not as a patch.',
     color: '#10B981',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
@@ -36,7 +36,7 @@ const strengths = [
   },
   {
     title: 'Responsive-First',
-    desc: 'Every product we ship looks and works perfectly across all devices — mobile is not an afterthought.',
+    desc: 'Every product we ship looks and works perfectly across all devices - mobile is not an afterthought.',
     color: '#F59E0B',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
@@ -46,7 +46,7 @@ const strengths = [
   },
   {
     title: 'Attention to Detail',
-    desc: 'The small things compound. Pixel precision, copy clarity, interaction polish — we notice what most skip.',
+    desc: 'The small things compound. Pixel precision, copy clarity, interaction polish - we notice what most skip.',
     color: '#EC4899',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
@@ -98,7 +98,7 @@ const AboutDifferent = () => (
           </h2>
           <p className={styles.diff__sub}>
             Instead of promises, here is what we actually bring to every
-            project — the qualities that shape our work and define how we
+            project - the qualities that shape our work and define how we
             operate.
           </p>
         </ScrollReveal>

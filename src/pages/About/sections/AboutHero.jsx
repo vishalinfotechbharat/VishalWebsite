@@ -41,7 +41,7 @@ const AboutHero = () => (
           <ScrollReveal delay={0.2}>
             <p className={styles.hero__sub}>
               Vishal Infotech is a freelance IT solutions provider focused on building
-              scalable, high-quality products — where thoughtful design meets
+              scalable, high-quality products - where thoughtful design meets
               precise engineering to create experiences that genuinely work.
             </p>
           </ScrollReveal>

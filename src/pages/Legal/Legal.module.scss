@@ -1,0 +1,59 @@
+@use '../../styles/variables' as v;
+@use '../../styles/responsive' as r;
+
+.legalPage {
+  background: v.$bg-light;
+  min-height: 80vh;
+  padding: 140px 0 100px;
+}
+
+.legalPage__card {
+  background: v.$white;
+  border: 1px solid v.$border-light;
+  border-radius: v.$radius-2xl;
+  padding: clamp(30px, 5vw, 60px);
+  box-shadow: v.$shadow-md;
+}
+
+.legalPage__title {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 800;
+  color: v.$text-primary;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.legalPage__updated {
+  font-size: 13px;
+  color: v.$text-muted;
+  margin-bottom: 36px;
+  font-weight: v.$font-weight-medium;
+}
+
+.legalPage__content {
+  color: v.$text-secondary;
+  line-height: 1.8;
+  font-size: 15.5px;
+
+  h2 {
+    font-size: clamp(18px, 3vw, 22px);
+    font-weight: 700;
+    color: v.$text-primary;
+    margin-top: 36px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-left: 24px;
+    margin-bottom: 20px;
+
+    li {
+      margin-bottom: 8px;
+    }
+  }
+}

@@ -374,7 +374,7 @@ const ServicesHero = () => {
             <div className={styles.hero__fadeBottom} />
 
             <div className={styles.hero__cols}>
-              {/* Column 1 — scrolls up */}
+              {/* Column 1 - scrolls up */}
               <div className={styles.hero__col}>
                 <div className={styles.hero__colTrack}>
                   {col1.map((card, i) => (
@@ -383,7 +383,7 @@ const ServicesHero = () => {
                 </div>
               </div>
 
-              {/* Column 2 — scrolls down */}
+              {/* Column 2 - scrolls down */}
               <div className={styles.hero__col}>
                 <div className={`${styles.hero__colTrack} ${styles['hero__colTrack--rev']}`}>
                   {col2.map((card, i) => (

@@ -7,7 +7,7 @@ import styles from './ContactFAQ.module.scss';
 const faqs = [
   {
     question: 'What services do you provide?',
-    answer: 'We offer end-to-end digital product services: web development, UI/UX design, SaaS application development, software testing, IT consulting, and ongoing maintenance & support. We work across the full lifecycle — from initial idea and design to launch and beyond.',
+    answer: 'We offer end-to-end digital product services: web development, UI/UX design, SaaS application development, software testing, IT consulting, and ongoing maintenance & support. We work across the full lifecycle - from initial idea and design to launch and beyond.',
   },
   {
     question: 'How long does a project usually take?',
@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: 'Do you work with growing businesses and mid-market companies?',
-    answer: 'Yes — we partner with businesses of various sizes. Whether you\'re a growing company looking to optimize workflows or a larger enterprise scaling your digital systems, we adapt our process to fit your operations and goals.',
+    answer: 'Yes - we partner with businesses of various sizes. Whether you\'re a growing company looking to optimize workflows or a larger enterprise scaling your digital systems, we adapt our process to fit your operations and goals.',
   },
   {
     question: 'Can you redesign or improve an existing product?',
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: 'Do you provide ongoing support after launch?',
-    answer: 'Yes. We don\'t disappear after launch. We offer flexible maintenance and support arrangements — from bug fixes and dependency updates to feature development and monitoring. We can discuss what level of ongoing engagement makes sense for your product.',
+    answer: 'Yes. We don\'t disappear after launch. We offer flexible maintenance and support arrangements - from bug fixes and dependency updates to feature development and monitoring. We can discuss what level of ongoing engagement makes sense for your product.',
   },
   {
     question: 'How do we get started working together?',

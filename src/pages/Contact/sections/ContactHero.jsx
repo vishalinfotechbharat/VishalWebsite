@@ -130,7 +130,7 @@
 //               <p className={styles.hero__sub}>
 //                 Have a project in mind, a problem to solve, or just an idea
 //                 you'd like to explore? We'd love to hear it. Share what you're
-//                 thinking — no pitch decks required.
+//                 thinking - no pitch decks required.
 //               </p>
 //             </ScrollReveal>
 
@@ -433,10 +433,10 @@ const ContactHero = () => {
       };
 
       const response = await emailjs.send(
-        'service_b5t44ac',
-        'template_vefiyqa',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_b5t44ac',
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_vefiyqa',
         templateParams,
-        'Gxo-Fx7MMQ5fGBBvA'
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'Gxo-Fx7MMQ5fGBBvA'
       );
 
       console.log('EMAIL SUCCESS:', response);
@@ -590,11 +590,12 @@ const ContactHero = () => {
 
                       {/* NAME */}
                       <div className={styles.form__field}>
-                        <label className={styles.form__label}>
+                        <label htmlFor="form-name" className={styles.form__label}>
                           Full Name
                         </label>
 
                         <input
+                          id="form-name"
                           type="text"
                           name="name"
                           className={styles.form__input}
@@ -602,16 +603,18 @@ const ContactHero = () => {
                           value={formData.name}
                           onChange={handleChange}
                           required
+                          aria-required="true"
                         />
                       </div>
 
                       {/* EMAIL */}
                       <div className={styles.form__field}>
-                        <label className={styles.form__label}>
+                        <label htmlFor="form-email" className={styles.form__label}>
                           Email Address
                         </label>
 
                         <input
+                          id="form-email"
                           type="email"
                           name="email"
                           className={styles.form__input}
@@ -619,21 +622,24 @@ const ContactHero = () => {
                           value={formData.email}
                           onChange={handleChange}
                           required
+                          aria-required="true"
                         />
                       </div>
 
                       {/* PROJECT TYPE */}
                       <div className={styles.form__field}>
-                        <label className={styles.form__label}>
+                        <label htmlFor="form-project-type" className={styles.form__label}>
                           Project Type
                         </label>
 
                         <select
+                          id="form-project-type"
                           name="projectType"
                           className={styles.form__select}
                           value={formData.projectType}
                           onChange={handleChange}
                           required
+                          aria-required="true"
                         >
                           <option value="">
                             Select Project Type
@@ -652,11 +658,12 @@ const ContactHero = () => {
 
                       {/* MESSAGE */}
                       <div className={styles.form__field}>
-                        <label className={styles.form__label}>
+                        <label htmlFor="form-message" className={styles.form__label}>
                           Message
                         </label>
 
                         <textarea
+                          id="form-message"
                           name="message"
                           rows="5"
                           className={styles.form__textarea}
@@ -664,6 +671,7 @@ const ContactHero = () => {
                           value={formData.message}
                           onChange={handleChange}
                           required
+                          aria-required="true"
                         />
                       </div>
 

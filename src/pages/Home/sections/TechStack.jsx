@@ -3,7 +3,7 @@ import Container from '../../../components/Container/Container';
 import ScrollReveal from '../../../components/ScrollReveal/ScrollReveal';
 import styles from './TechStack.module.scss';
 
-// Row 1 — scrolls left
+// Row 1 - scrolls left
 const row1 = [
   { name: 'React',       color: '#61DAFB' },
   { name: 'Next.js',     color: '#FFFFFF' },
@@ -17,7 +17,7 @@ const row1 = [
   { name: 'Docker',      color: '#2496ED' },
 ];
 
-// Row 2 — scrolls right
+// Row 2 - scrolls right
 const row2 = [
   { name: 'GraphQL',     color: '#E10098' },
   { name: 'Tailwind',    color: '#38BDF8' },
@@ -53,14 +53,14 @@ const TechStack = () => (
             Tools We Use to <span>Craft Great Products</span>
           </h2>
           <p className={styles.tech__subtitle}>
-            We choose our tools deliberately — each one selected for performance,
+            We choose our tools deliberately - each one selected for performance,
             developer experience, and long-term reliability.
           </p>
         </div>
       </ScrollReveal>
     </Container>
 
-    {/* Marquee — full bleed, outside container */}
+    {/* Marquee - full bleed, outside container */}
     <div className={styles.tech__marqueeWrap}>
       {/* Row 1: scrolls left */}
       <div className={styles.tech__track} data-dir="left">

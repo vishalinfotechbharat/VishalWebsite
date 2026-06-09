@@ -18,7 +18,7 @@ const capabilities = [
     id: 1,
     type: 'SaaS & Web Applications',
     headline: 'AiFin Financial Platform',
-    description: 'Your smart finance companion — a secure digital banking and asset management platform for tracking wealth and real-time market data.',
+    description: 'Your smart finance companion - a secure digital banking and asset management platform for tracking wealth and real-time market data.',
     tags: ['SaaS', 'Finance', 'Analytics'],
     color: '#2563EB',
     features: ['Multi-tenant auth', 'Real-time data', 'Subscription billing', 'Admin panels'],
@@ -29,7 +29,7 @@ const capabilities = [
     id: 2,
     type: 'Business Platforms',
     headline: 'Smarter Funding Dashboard',
-    description: 'Accelerate business growth — an intelligent business funding and capital management dashboard for tracking credit, cash flow, and analytics.',
+    description: 'Accelerate business growth - an intelligent business funding and capital management dashboard for tracking credit, cash flow, and analytics.',
     tags: ['Dashboard', 'Fintech', 'SaaS'],
     color: '#3B5EFB',
     features: ['Role-based access', 'Custom workflows', 'Reporting', 'Integrations'],
@@ -40,7 +40,7 @@ const capabilities = [
     id: 3,
     type: 'Mobile-First Experiences',
     headline: 'Kutulus Booking App',
-    description: 'Where adventure meets serenity — a luxury mobile-first booking experience and hospitality management system for high-end boutique resorts.',
+    description: 'Where adventure meets serenity - a luxury mobile-first booking experience and hospitality management system for high-end boutique resorts.',
     tags: ['Booking', 'Hospitality', 'Mobile-First'],
     color: '#10B981',
     features: ['Offline support', 'Push notifications', 'Native-feel UI', 'App store ready'],
@@ -51,7 +51,7 @@ const capabilities = [
     id: 4,
     type: 'Luxury Showrooms',
     headline: 'Timezone Luxury Showcase',
-    description: 'Discover timeless elegance — a high-end luxury watch showroom featuring Audemars Piguet watches with interactive customization options.',
+    description: 'Discover timeless elegance - a high-end luxury watch showroom featuring Audemars Piguet watches with interactive customization options.',
     tags: ['E-commerce', 'Luxury', 'Retail'],
     color: '#8B5CF6',
     features: ['High-fidelity 3D', 'Custom checkout', 'Product configurator', 'Fast loading'],
@@ -62,7 +62,7 @@ const capabilities = [
     id: 5,
     type: 'Creative Portfolios',
     headline: 'The Sanctuary Portfolio',
-    description: 'Elevate your escape — a premium architectural property portfolio showcasing ultra-exclusive luxury villa rentals and estates.',
+    description: 'Elevate your escape - a premium architectural property portfolio showcasing ultra-exclusive luxury villa rentals and estates.',
     tags: ['Real Estate', 'Portfolio', 'Corporate'],
     color: '#1C1D21',
     features: ['Interactive map', 'Property search', 'Booking scheduler', 'Virtual tours'],
@@ -80,7 +80,7 @@ const PortfolioPreview = () => {
         <SectionHeader
           subtitle="What We Build"
           title={<>Products We <span>Craft With Care</span></>}
-          description="A look at the types of digital products we design and engineer — built for performance, usability, and growth."
+          description="A look at the types of digital products we design and engineer - built for performance, usability, and growth."
         />
 
         <div className={styles.portfolio__grid}>

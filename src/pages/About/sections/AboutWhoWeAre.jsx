@@ -26,14 +26,14 @@ const AboutWhoWeAre = () => (
             <p className={styles.who__lead}>
               Vishal Infotech is a freelance IT solutions provider focused on crafting
               scalable, user-centered products. We combine rigorous engineering
-              with thoughtful design to build things that genuinely work — for
+              with thoughtful design to build things that genuinely work - for
               the people who use them and the businesses that depend on them.
             </p>
             <p className={styles.who__body}>
               Our team approaches every project as a product challenge, not just a
               development task. That means asking hard questions early, designing
               with clarity, and writing code that other engineers can actually work
-              with. We care about the details — because that's where quality lives.
+              with. We care about the details - because that's where quality lives.
             </p>
             <blockquote className={styles.who__quote}>
               "We believe the best digital products are built where clean code,

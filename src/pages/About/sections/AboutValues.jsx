@@ -15,7 +15,7 @@ const values = [
       </svg>
     ),
     title: 'Innovation',
-    desc: "We stay curious and up-to-date so we can bring forward-thinking solutions — without chasing hype for its own sake.",
+    desc: "We stay curious and up-to-date so we can bring forward-thinking solutions - without chasing hype for its own sake.",
   },
   {
     color: '#10B981',
@@ -26,7 +26,7 @@ const values = [
       </svg>
     ),
     title: 'Quality',
-    desc: "Every line of code, every pixel, every interaction — we hold ourselves to a high standard because we genuinely care about the work.",
+    desc: "Every line of code, every pixel, every interaction - we hold ourselves to a high standard because we genuinely care about the work.",
   },
   {
     color: '#8B5CF6',
@@ -38,7 +38,7 @@ const values = [
       </svg>
     ),
     title: 'Transparency',
-    desc: "No hidden surprises. We communicate clearly about scope, timelines, and challenges — so you're always in the loop.",
+    desc: "No hidden surprises. We communicate clearly about scope, timelines, and challenges - so you're always in the loop.",
   },
   {
     color: '#F59E0B',
@@ -51,7 +51,7 @@ const values = [
       </svg>
     ),
     title: 'Collaboration',
-    desc: "Your vision drives our work. We build with you, not just for you — bringing your ideas to life through open dialogue every step of the way.",
+    desc: "Your vision drives our work. We build with you, not just for you - bringing your ideas to life through open dialogue every step of the way.",
   },
   {
     color: '#06B6D4',
@@ -62,7 +62,7 @@ const values = [
       </svg>
     ),
     title: 'Reliability',
-    desc: "We follow through on our commitments. If something comes up, we'll communicate it early — never ghost, never surprise you with bad news.",
+    desc: "We follow through on our commitments. If something comes up, we'll communicate it early - never ghost, never surprise you with bad news.",
   },
   {
     color: '#EC4899',
@@ -73,7 +73,7 @@ const values = [
       </svg>
     ),
     title: 'User-Centric Thinking',
-    desc: "The end user is always in the room. Every decision we make considers real people — how they think, what they need, and how they'll feel.",
+    desc: "The end user is always in the room. Every decision we make considers real people - how they think, what they need, and how they'll feel.",
   },
 ];
 
@@ -91,7 +91,7 @@ const AboutValues = () => (
           What We <span>Stand By</span>
         </h2>
         <p className={styles.values__sub}>
-          These aren't just words on a page — they're the principles that guide
+          These aren't just words on a page - they're the principles that guide
           how we work, how we communicate, and how we show up for our clients.
         </p>
       </div>
