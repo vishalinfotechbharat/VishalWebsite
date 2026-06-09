@@ -3,7 +3,7 @@ import styles from './TrustedBy.module.scss';
 
 const logos = [
   'TechNova', 'FinEdge', 'HealthSphere', 'CloudBase',
-  'DataPilot', 'StartupHub', 'RetailPro', 'LogiFlow',
+  'DataPilot', 'LaunchHub', 'RetailPro', 'LogiFlow',
   'MediCore', 'SaaSify', 'EduVault', 'BuildForge',
 ];
 

@@ -15,7 +15,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "We launched our SaaS MVP in just 6 weeks. The team's attention to detail — from design to API architecture — was remarkable. Our user retention is at 87% thanks to the UX work.",
+    quote: "We launched our SaaS platform in just 6 weeks. The team's attention to detail — from design to API architecture — was remarkable. Our user retention is at 87% thanks to the UX work.",
     name: 'Priya Sharma',
     role: 'Founder',
     company: 'MediCare App',
@@ -24,7 +24,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "Best tech partner we've worked with in 5 years. They brought ideas we hadn't thought of, pushed back on bad decisions, and delivered a product we're proud to show investors.",
+    quote: "Best tech partner we've worked with in 5 years. They brought ideas we hadn't thought of, pushed back on bad decisions, and delivered a product we're proud to show partners.",
     name: 'Rohit Kapoor',
     role: 'CTO',
     company: 'DataPilot Inc',
@@ -51,10 +51,10 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "I came with a rough idea on a napkin. They turned it into a funded startup. The MVP they built helped us raise ₹2 Crore in seed funding within 3 months of launch.",
+    quote: "I came with a rough idea on a napkin. They turned it into a highly successful digital product. The platform they built helped us scale and secure ₹2 Crore in expansion funding within 3 months of launch.",
     name: 'Nisha Agarwal',
     role: 'Co-Founder',
-    company: 'StartupHub',
+    company: 'LaunchHub',
     avatar: 'NA',
     color: '#06B6D4',
     rating: 5,

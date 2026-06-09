@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import logoImg from '../../assets/logo.png';
 import styles from './Footer.module.scss';
 
 const companyLinks = [
@@ -71,11 +72,11 @@ const Footer = () => (
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          <Link to="/" className={styles.footer__logo}>
-            Vishal Infotech
+          <Link to="/" className={styles.footer__logoCard}>
+            <img src={logoImg} alt="Vishal Infotech" className={styles.footer__logoImg} />
           </Link>
           <p className={styles.footer__tagline}>
-            A freelance IT solutions studio building high-performance websites,
+            A freelance IT solutions partner building high-performance websites,
             SaaS platforms, ERP systems, and custom software — crafted with
             honesty and purpose.
           </p>
@@ -89,6 +90,14 @@ const Footer = () => (
               </svg>
               Start a Project
             </Link>
+            <a href="mailto:vishalinfotechbharat@gmail.com" className={styles.footer__emailLink}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              vishalinfotechbharat@gmail.com
+            </a>
           </div>
         </motion.div>
 
@@ -145,7 +154,7 @@ const Footer = () => (
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         <p className={styles.footer__copy}>
-          © {new Date().getFullYear()} Vishal Infotech. All rights reserved.
+          © 2026 Vishal Infotech. All rights reserved.
         </p>
         <p className={styles.footer__made}>
           Crafted with care &amp; purpose.

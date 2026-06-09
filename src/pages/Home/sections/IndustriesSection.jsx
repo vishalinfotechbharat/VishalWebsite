@@ -63,18 +63,20 @@ const industries = [
       </svg>
     ),
     name: 'SaaS Products',
-    desc: 'End-to-end SaaS from MVP to full product with subscriptions, billing and auth.',
+    desc: 'End-to-end SaaS from launch-ready platform to full scaling with subscriptions, billing and auth.',
     color: '#2563EB',
     bg: '#EFF6FF',
   },
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+        <polyline points="2 17 12 22 22 17" />
+        <polyline points="2 12 12 17 22 12" />
       </svg>
     ),
-    name: 'Startups',
-    desc: 'From zero to launch — MVPs, product design, tech strategy and scaling support.',
+    name: 'Enterprise Platforms',
+    desc: 'Custom internal software, operational dashboards, scalable ERPs, and automated workflows.',
     color: '#8B5CF6',
     bg: '#F5F3FF',
   },

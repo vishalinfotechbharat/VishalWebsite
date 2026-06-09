@@ -34,6 +34,8 @@
   position: relative;
   overflow: hidden;
   cursor: default;
+  display: flex;
+  flex-direction: column;
 
   &::before {
     content: '';
@@ -126,6 +128,7 @@
   color: v.$text-muted;
   line-height: 1.65;
   margin-bottom: 18px;
+  flex-grow: 1;
 }
 
 .services__tags {

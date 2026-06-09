@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Navbar.module.scss';
-import logoImg from '../../assets/hero.png';
+import logoImg from '../../assets/logo.png';
 
 const navLinks = [
   { path: '/',         label: 'Home'     },

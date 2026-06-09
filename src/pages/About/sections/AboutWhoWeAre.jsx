@@ -24,7 +24,7 @@ const AboutWhoWeAre = () => (
               <span>Quality Should Never Be Optional</span>
             </h2>
             <p className={styles.who__lead}>
-              Vishal Infotech is a digital solutions company focused on crafting
+              Vishal Infotech is a freelance IT solutions provider focused on crafting
               scalable, user-centered products. We combine rigorous engineering
               with thoughtful design to build things that genuinely work — for
               the people who use them and the businesses that depend on them.
@@ -62,7 +62,7 @@ const AboutWhoWeAre = () => (
                   <div className={styles.who__cardAvatar}>VI</div>
                   <div className={styles.who__cardMeta}>
                     <span className={styles.who__cardName}>Vishal Infotech</span>
-                    <span className={styles.who__cardSub}>Digital Product Studio</span>
+                    <span className={styles.who__cardSub}>Freelance IT Solutions</span>
                   </div>
                 </div>
                 <div className={styles.who__cardRows}>

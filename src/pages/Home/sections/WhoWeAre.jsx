@@ -66,7 +66,7 @@ const values = [
     ),
     label: 'Our Mission',
     title: 'Build Products That Actually Matter',
-    desc: 'To help businesses and startups build digital products that are meaningful, scalable, and genuinely useful — crafted with honesty, care, and deep respect for the people using them.',
+    desc: 'To help modern businesses and enterprise clients build digital products that are meaningful, scalable, and genuinely useful — crafted with honesty, care, and deep respect for the people using them.',
     color: '#60A5FA',
   },
   {
@@ -78,8 +78,8 @@ const values = [
       </svg>
     ),
     label: 'Our Vision',
-    title: 'Become a Studio Teams Trust',
-    desc: 'To grow into a recognized freelance IT studio where startups, founders, and growing businesses find not just skilled engineers but genuine collaborators who care about their success.',
+    title: 'A Partner That Teams Come Back To',
+    desc: 'To grow into a trusted digital product partner — one where founders, product teams, and growing businesses know they will find not just capable engineers and designers, but genuine partners who care about their success as much as they do.',
     color: '#818CF8',
   },
 ];
@@ -123,7 +123,7 @@ const WhoWeAre = () => (
           <span className={styles.who__grad}>Craft &amp; Honesty</span>
         </h2>
         <p className={styles.who__intro}>
-          Vishal Infotech is a freelance IT solutions studio specialising in
+          Vishal Infotech is a freelance IT solutions partner specialising in
           high-performance websites, SaaS platforms, ERP systems, and custom
           software. We work directly with founders and businesses — no agencies,
           no fluff — just clean engineering and thoughtful design that delivers

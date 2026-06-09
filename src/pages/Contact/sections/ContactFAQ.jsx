@@ -11,11 +11,11 @@ const faqs = [
   },
   {
     question: 'How long does a project usually take?',
-    answer: 'It depends on scope and complexity. A focused MVP or marketing site typically takes 4–8 weeks. A full SaaS platform or complex web app can take 3–6 months. We provide clear timeline estimates after the discovery phase, and we\'re transparent if scope changes affect delivery.',
+    answer: 'It depends on scope and complexity. A focused digital product or website typically takes 4–8 weeks. A full SaaS platform or complex web app can take 3–6 months. We provide clear timeline estimates after the discovery phase, and we\'re transparent if scope changes affect delivery.',
   },
   {
-    question: 'Do you work with startups and small businesses?',
-    answer: 'Yes — and we enjoy it. Whether you\'re a solo founder with a rough idea or a small team preparing for a launch, we adapt our process to fit your stage. We\'re comfortable with ambiguity and can help you figure out what to build before building it.',
+    question: 'Do you work with growing businesses and mid-market companies?',
+    answer: 'Yes — we partner with businesses of various sizes. Whether you\'re a growing company looking to optimize workflows or a larger enterprise scaling your digital systems, we adapt our process to fit your operations and goals.',
   },
   {
     question: 'Can you redesign or improve an existing product?',

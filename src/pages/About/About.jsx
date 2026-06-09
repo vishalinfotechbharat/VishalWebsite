@@ -12,11 +12,11 @@ const About = () => (
   <>
     <AboutHero />
     <AboutWhoWeAre />
+    <AboutValues />
     <AboutApproach />
     <AboutMissionVision />
     <AboutDifferent />
     <AboutTechStack />
-    <AboutValues />
     <AboutCTA />
   </>
 );

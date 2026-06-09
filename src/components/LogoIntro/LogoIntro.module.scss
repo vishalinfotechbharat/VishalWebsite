@@ -8,44 +8,12 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: v.$bg-white;
+  background: #FDFDFD;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-
-  // Soft blue glow behind logo
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -52%);
-    width: 560px;
-    height: 560px;
-    background: radial-gradient(
-      circle at center,
-      rgba(37, 99, 235, 0.08) 0%,
-      rgba(96, 165, 250, 0.04) 45%,
-      transparent 70%
-    );
-    border-radius: 50%;
-    pointer-events: none;
-  }
-
-  // Decorative top-right accent
-  &::after {
-    content: '';
-    position: absolute;
-    top: -120px;
-    right: -120px;
-    width: 360px;
-    height: 360px;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-  }
 }
 
 // ─── Decorative Dots ──────────────────────────────────────────
@@ -75,7 +43,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 0;
   position: relative;
   z-index: 1;
 }
@@ -86,50 +54,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 108px;
-  height: 108px;
-  border-radius: 28px;
-  background: v.$bg-white;
-  border: 1.5px solid v.$border-light;
-  box-shadow:
-    0 0 0 8px rgba(37, 99, 235, 0.05),
-    0 8px 40px rgba(37, 99, 235, 0.12),
-    0 2px 8px rgba(0, 0, 0, 0.06);
+  width: 280px;
+  height: 280px;
+  border-radius: 64px; // Smooth rounded rectangle curves (iOS-style squircle)
+  background: #FDFDFD;
+  padding: 36px;
+  overflow: hidden;
 }
 
 .intro__img {
-  height: 64px;
+  height: 160px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.2));
-}
-
-// Company name
-.intro__name {
-  font-size: clamp(22px, 4vw, 32px);
-  font-weight: v.$font-weight-black;
-  color: v.$text-primary;
-  letter-spacing: v.$letter-spacing-tight;
-  line-height: 1;
-}
-
-// Animated progress bar
-.intro__bar {
-  width: 48px;
-  height: 3px;
-  background: linear-gradient(90deg, v.$primary, v.$primary-lighter);
-  border-radius: 99px;
-  margin-top: 2px;
 }
 
 // Tagline
 .intro__tag {
-  font-size: 10.5px;
+  font-size: 13px;
   font-weight: v.$font-weight-semibold;
   color: v.$text-muted;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  margin-top: -4px;
+  margin-top: 0;
 }
 
 // ─── Slide-up curtain that reveals the page ───────────────────
@@ -141,4 +87,37 @@
   transform-origin: bottom;
   z-index: 2;
   pointer-events: none;
+}
+
+// ─── Animated Edge Borders ───────────────────────────────────
+.intro__edgeLine {
+  position: absolute;
+  background: v.$primary;
+  z-index: 10000;
+  pointer-events: none;
+
+  &--top {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+  }
+  &--right {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 6px;
+  }
+  &--bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+  }
+  &--left {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 6px;
+  }
 }

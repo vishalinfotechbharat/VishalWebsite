@@ -6,36 +6,48 @@ import styles from './FAQSection.module.scss';
 
 const faqs = [
   {
-    question: 'What types of businesses do you work with?',
-    answer: 'We partner with startups, scaleups, and enterprise clients across healthcare, fintech, e-commerce, SaaS, logistics, and more. Whether you are a solo founder with an idea or an enterprise needing a full rebuild, we have a model that fits.',
+    question: 'How can your services benefit my business?',
+    answer: 'We build custom solutions that automate manual workflows, reduce operational costs, and improve system performance. By eliminating off-the-shelf software limitations, we create digital tools tailored exactly to your operations, driving productivity and scaling capacity.',
   },
   {
-    question: 'How long does it take to build an MVP?',
-    answer: 'Most MVPs are ready in 4–8 weeks depending on complexity. We follow a lean sprint model — design in week 1–2, core development in weeks 3–6, QA and launch in the final week. You get daily updates throughout.',
+    question: 'How do you tailor solutions to fit my business needs?',
+    answer: 'We start with a discovery phase to understand your unique workflows, bottlenecks, and objectives. We don\'t believe in one-size-fits-all templates; we design the architecture, user experience, and integrations specifically around your business processes.',
   },
   {
-    question: 'Do you offer post-launch support and maintenance?',
-    answer: 'Absolutely. Every project includes a 30-day free bug-fix warranty. Beyond that, we offer flexible maintenance retainers — from basic monitoring to full dedicated support teams on standby 24/7.',
+    question: 'What technologies will you use to build my software?',
+    answer: 'We use modern, stable, and highly supported technologies. Our core stack includes React and Next.js for frontend, Node.js and Python for backend, and PostgreSQL or MongoDB for database management, hosted securely on AWS or Google Cloud.',
   },
   {
-    question: 'How do you handle project pricing and billing?',
-    answer: 'We offer both fixed-price project contracts and time-and-material engagements depending on the scope. You get a detailed proposal with milestones before any work begins — no surprises, ever.',
+    question: 'What services do you offer?',
+    answer: 'We provide end-to-end digital product design, web development, SaaS product development, custom ERP system engineering, data-rich internal dashboards, IT consulting, QA testing, and API integration.',
   },
   {
-    question: 'What is your tech stack, and can you work with ours?',
-    answer: 'We are polyglot engineers. Our default stack is React / Next.js + Node.js / Python + PostgreSQL / MongoDB + AWS. But we regularly adapt to client stacks — Vue, Angular, Laravel, Django, Rails — you name it.',
+    question: 'What types of SaaS platforms and ERP systems do you build?',
+    answer: 'Our SaaS development includes multi-tenant architectures, user role management, subscription billing (Stripe), and usage dashboards. Our ERP services deliver custom operational tools for inventory, CRM, supply chain, and enterprise resource planning tailored to your exact workflows.',
   },
   {
-    question: 'How do you ensure code quality and security?',
-    answer: 'Every codebase goes through automated testing (unit, integration, E2E), peer code reviews, OWASP security checks, dependency audits, and CI/CD pipelines. We deliver production-grade code from sprint one.',
+    question: 'What kind of web development and UI/UX design do you do?',
+    answer: 'We develop custom React and Next.js web applications, client portals, and high-performance, SEO-optimized marketing websites. In UI/UX, we provide user research, wireframes, and clickable high-fidelity Figma prototypes so you can test the system flow before code is written.',
   },
   {
-    question: 'Can you take over an existing project or legacy codebase?',
-    answer: 'Yes. We conduct a thorough technical audit, document what exists, and create a clear refactoring or migration roadmap. We are comfortable working inside complex or unfamiliar codebases and will give you an honest assessment of what needs to change and why.',
+    question: 'How much do your services cost?',
+    answer: 'We offer fixed-price contracts for clearly defined projects, as well as hourly retainers for ongoing development. We provide a detailed cost estimate before any work begins.',
   },
   {
-    question: 'Do you sign NDAs and IP ownership agreements?',
-    answer: 'Yes — we sign mutual NDAs before any discovery call. All IP created during a project is fully transferred to you upon final payment. We use industry-standard contracts vetted by legal professionals.',
+    question: 'How long does a project take?',
+    answer: 'A standard website or custom tool typically takes 4 to 8 weeks. Larger, more complex platforms or integrations usually take 3 to 6 months.',
+  },
+  {
+    question: 'Will I own the source code?',
+    answer: 'Yes, absolutely. Once the project is completed and the final invoice is paid, you have 100% full ownership of the source code, design assets, and intellectual property.',
+  },
+  {
+    question: 'Do you provide support after launch?',
+    answer: 'Yes, we offer flexible post-launch support and maintenance plans that cover security updates, performance monitoring, database backups, and new feature additions.',
+  },
+  {
+    question: 'Can you work with our existing codebase?',
+    answer: 'Yes. We can audit, refactor, and optimize your current legacy applications, or build new features on top of your existing systems with minimal disruption.',
   },
 ];
 

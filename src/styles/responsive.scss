@@ -29,6 +29,7 @@
 // ============================================================
 
 @use 'sass:math';
+@use 'sass:map';
 
 
 // ═══════════════════════════════════════════════════════════════════
@@ -72,11 +73,11 @@ $breakpoint-map: (
 
 // Returns the px value for a named breakpoint key.
 @function bp($name) {
-  @if map-has-key($breakpoint-map, $name) {
-    @return map-get($breakpoint-map, $name);
+  @if map.has-key($breakpoint-map, $name) {
+    @return map.get($breakpoint-map, $name);
   }
 
-  @warn "Unknown breakpoint `#{$name}`. Available: #{map-keys($breakpoint-map)}";
+  @warn "Unknown breakpoint `#{$name}`. Available: #{map.keys($breakpoint-map)}";
   @return null;
 }
 

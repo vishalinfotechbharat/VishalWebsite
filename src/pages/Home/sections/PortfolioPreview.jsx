@@ -6,36 +6,68 @@ import SectionHeader from '../../../components/SectionHeader/SectionHeader';
 import Button from '../../../components/Button/Button';
 import styles from './PortfolioPreview.module.scss';
 
+// Import images
+import project1 from '../../../assets/project1.jpg';
+import project2 from '../../../assets/project2.png';
+import project3Jpg from '../../../assets/project3.jpg';
+import project3Png from '../../../assets/project3.png';
+import project4 from '../../../assets/project4.png';
+
 const capabilities = [
   {
     id: 1,
     type: 'SaaS & Web Applications',
-    headline: 'Analytics Dashboards & Platforms',
-    description: 'We build data-rich SaaS products with multi-tenant architectures, subscription billing, real-time charts, and user management — designed to scale from your first user to your thousandth.',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Charts'],
+    headline: 'AiFin Financial Platform',
+    description: 'Your smart finance companion — a secure digital banking and asset management platform for tracking wealth and real-time market data.',
+    tags: ['SaaS', 'Finance', 'Analytics'],
     color: '#2563EB',
     features: ['Multi-tenant auth', 'Real-time data', 'Subscription billing', 'Admin panels'],
     size: 'large',
+    image: project1,
   },
   {
     id: 2,
     type: 'Business Platforms',
-    headline: 'ERP & Workflow Systems',
-    description: 'Custom business software that replaces spreadsheets and manual processes — inventory, HR, operations, and finance modules built around how your team actually works.',
-    tags: ['Next.js', 'Python', 'PostgreSQL', 'REST APIs'],
-    color: '#8B5CF6',
+    headline: 'Smarter Funding Dashboard',
+    description: 'Accelerate business growth — an intelligent business funding and capital management dashboard for tracking credit, cash flow, and analytics.',
+    tags: ['Dashboard', 'Fintech', 'SaaS'],
+    color: '#3B5EFB',
     features: ['Role-based access', 'Custom workflows', 'Reporting', 'Integrations'],
     size: 'medium',
+    image: project4,
   },
   {
     id: 3,
     type: 'Mobile-First Experiences',
-    headline: 'Responsive Apps & PWAs',
-    description: 'Fast, touch-friendly applications that feel native on every device. From progressive web apps to cross-platform mobile interfaces built with performance at their core.',
-    tags: ['React Native', 'PWA', 'TypeScript', 'REST APIs'],
+    headline: 'Kutulus Booking App',
+    description: 'Where adventure meets serenity — a luxury mobile-first booking experience and hospitality management system for high-end boutique resorts.',
+    tags: ['Booking', 'Hospitality', 'Mobile-First'],
     color: '#10B981',
     features: ['Offline support', 'Push notifications', 'Native-feel UI', 'App store ready'],
     size: 'medium',
+    image: project2,
+  },
+  {
+    id: 4,
+    type: 'Luxury Showrooms',
+    headline: 'Timezone Luxury Showcase',
+    description: 'Discover timeless elegance — a high-end luxury watch showroom featuring Audemars Piguet watches with interactive customization options.',
+    tags: ['E-commerce', 'Luxury', 'Retail'],
+    color: '#8B5CF6',
+    features: ['High-fidelity 3D', 'Custom checkout', 'Product configurator', 'Fast loading'],
+    size: 'medium',
+    image: project3Jpg,
+  },
+  {
+    id: 5,
+    type: 'Creative Portfolios',
+    headline: 'The Sanctuary Portfolio',
+    description: 'Elevate your escape — a premium architectural property portfolio showcasing ultra-exclusive luxury villa rentals and estates.',
+    tags: ['Real Estate', 'Portfolio', 'Corporate'],
+    color: '#1C1D21',
+    features: ['Interactive map', 'Property search', 'Booking scheduler', 'Virtual tours'],
+    size: 'medium',
+    image: project3Png,
   },
 ];
 
@@ -68,20 +100,7 @@ const PortfolioPreview = () => {
               >
                 <div className={styles.portfolio__visual}>
                   <div className={styles.portfolio__visualBg} />
-                  <div className={styles.portfolio__mockup}>
-                    <div className={styles.portfolio__mockupBar}>
-                      <span /><span /><span />
-                    </div>
-                    <div className={styles.portfolio__mockupContent}>
-                      <div className={styles.portfolio__mockupRow} />
-                      <div className={`${styles.portfolio__mockupRow} ${styles['portfolio__mockupRow--short']}`} />
-                      <div className={styles.portfolio__mockupGrid}>
-                        <div className={styles.portfolio__mockupBlock} />
-                        <div className={styles.portfolio__mockupBlock} />
-                        <div className={styles.portfolio__mockupBlock} />
-                      </div>
-                    </div>
-                  </div>
+                  <img src={cap.image} alt={cap.headline} className={styles.portfolio__img} />
                   <div className={`${styles.portfolio__overlay} ${hovered === cap.id ? styles['portfolio__overlay--show'] : ''}`}>
                     <div className={styles.portfolio__featurePills}>
                       {cap.features.map((f) => (

@@ -110,12 +110,6 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
           >
-            {/* Availability badge */}
-            <motion.div className={styles.hero__badge} variants={itemVariants}>
-              <span className={styles.hero__badgeDot} aria-hidden="true" />
-              Available for New Projects
-            </motion.div>
-
             {/* Main heading */}
             <motion.h1 className={styles.hero__title} variants={itemVariants}>
               Engineering Digital<br />
@@ -132,24 +126,10 @@ const HeroSection = () => {
               businesses grow faster.
             </motion.p>
 
-            {/* Trust tags */}
-            <motion.div
-              className={styles.hero__tags}
-              variants={itemVariants}
-              role="list"
-              aria-label="Core capabilities"
-            >
-              {trustTags.map((tag) => (
-                <span key={tag} className={styles.hero__tag} role="listitem">
-                  {tag}
-                </span>
-              ))}
-            </motion.div>
-
             {/* CTA buttons */}
             <motion.div className={styles.hero__actions} variants={itemVariants}>
               <Button
-                to="/contact"
+                to="/services"
                 variant="primary"
                 size="lg"
                 icon={
@@ -159,9 +139,6 @@ const HeroSection = () => {
                   </svg>
                 }
               >
-                Start Your Project
-              </Button>
-              <Button to="/services" variant="outline-white" size="lg">
                 Explore Services
               </Button>
             </motion.div>

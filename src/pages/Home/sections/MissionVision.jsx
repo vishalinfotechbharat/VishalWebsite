@@ -8,7 +8,7 @@ const cards = [
     id: 'mission',
     eyebrow: 'Our Mission',
     title: 'Build Products That Actually Matter',
-    body: 'To help businesses and startups build digital products that are meaningful, scalable, and genuinely useful — crafted with honesty, care, and deep respect for the people using them.',
+    body: 'To help modern businesses and enterprise clients build digital products that are meaningful, scalable, and genuinely useful — crafted with honesty, care, and deep respect for the people using them.',
     color: '#60A5FA',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
@@ -22,8 +22,8 @@ const cards = [
   {
     id: 'vision',
     eyebrow: 'Our Vision',
-    title: 'Become a Studio Teams Trust',
-    body: 'To grow into a recognized digital product studio — where startups, founders, and growing businesses find not just skilled engineers and designers, but genuine collaborators who care about their success.',
+    title: 'A Partner That Teams Come Back To',
+    body: 'To grow into a trusted digital product partner — one where founders, product teams, and growing businesses know they will find not just capable engineers and designers, but genuine partners who care about their success as much as they do.',
     color: '#818CF8',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none"

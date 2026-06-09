@@ -621,3 +621,73 @@
     transform: translateY(-1px);
   }
 }
+
+// ─── Direct Email Card ────────────────────────────────────────
+.hero__emailSection {
+  margin-top: 28px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.hero__emailCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: v.$radius-lg;
+  padding: 16px 20px;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  transition: all v.$transition-smooth;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.hero__emailIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: v.$radius-md;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$white;
+  flex-shrink: 0;
+  transition: transform v.$transition-smooth;
+
+  .hero__emailCard:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.hero__emailText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hero__emailLabel {
+  font-size: 11px;
+  font-weight: v.$font-weight-semibold;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hero__emailValue {
+  font-size: 15px;
+  font-weight: v.$font-weight-bold;
+  color: v.$white;
+  letter-spacing: 0.01em;
+
+  @include r.down(mobile) {
+    font-size: 13.5px;
+  }
+}

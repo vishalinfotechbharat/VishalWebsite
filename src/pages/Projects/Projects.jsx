@@ -4,133 +4,57 @@ import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
 import CTABanner from '../Home/sections/CTABanner';
 import styles from './Projects.module.scss';
 
+// Import project images
+import project1 from '../../assets/project1.jpg';
+import project2 from '../../assets/project2.png';
+import project3Jpg from '../../assets/project3.jpg';
+import project3Png from '../../assets/project3.png';
+import project4 from '../../assets/project4.png';
+
 const categories = ['All work', 'SaaS', 'E-commerce', 'Dashboards', 'Corporate'];
 
 const projects = [
   {
     id: 1,
-    title: 'Nexus CRM Dashboard',
-    category: 'Dashboards',
-    description: 'Modern CRM platform unifying pipeline, contacts and revenue reporting.',
-    tags: ['CRM', 'SaaS', 'Dashboard'],
-    artType: 'nexus',
+    title: 'AiFin Financial Platform',
+    category: 'SaaS',
+    description: 'Your smart finance companion — a secure digital banking and asset management platform for tracking wealth and real-time market data.',
+    tags: ['SaaS', 'Finance', 'Analytics'],
+    image: project1,
   },
   {
     id: 2,
-    title: 'Vogue Storefront',
-    category: 'E-commerce',
-    description: 'Headless commerce flagship with editorial, search and Shopify checkout.',
-    tags: ['E-commerce', 'Headless', 'Next.js'],
-    artType: 'vogue',
+    title: 'Kutulus Booking App',
+    category: 'Corporate',
+    description: 'Where adventure meets serenity — a luxury mobile-first booking experience and hospitality management system for high-end boutique resorts.',
+    tags: ['Booking', 'Hospitality', 'Mobile-First'],
+    image: project2,
   },
   {
     id: 3,
-    title: 'InsightPro Analytics',
-    category: 'SaaS',
-    description: 'Self-serve product analytics with funnels, cohorts and dashboards.',
-    tags: ['Analytics', 'SaaS', 'B2B'],
-    artType: 'insight',
+    title: 'Timezone Luxury Showcase',
+    category: 'E-commerce',
+    description: 'Discover timeless elegance — a high-end luxury watch showroom featuring Audemars Piguet watches with interactive customization options.',
+    tags: ['E-commerce', 'Luxury', 'Retail'],
+    image: project3Jpg,
   },
   {
     id: 4,
-    title: 'Lumina Corporate',
+    title: 'The Sanctuary Portfolio',
     category: 'Corporate',
-    description: 'Editorial-led corporate site for a renewable-energy company.',
-    tags: ['Corporate', 'Editorial', 'CMS'],
-    artType: 'lumina',
+    description: 'Elevate your escape — a premium architectural property portfolio showcasing ultra-exclusive luxury villa rentals and estates.',
+    tags: ['Real Estate', 'Portfolio', 'Corporate'],
+    image: project3Png,
+  },
+  {
+    id: 5,
+    title: 'Smarter Funding Dashboard',
+    category: 'Dashboards',
+    description: 'Accelerate business growth — an intelligent business funding and capital management dashboard for tracking credit, cash flow, and analytics.',
+    tags: ['Dashboard', 'Fintech', 'SaaS'],
+    image: project4,
   },
 ];
-
-const ProjectArtwork = ({ type }) => {
-  return (
-    <div className={`${styles.art} ${styles[`art--${type}`]}`}>
-      {type === 'nexus' && (
-        <div className={styles.artInner}>
-          <div className={styles.artSidebar}>
-            <div className={styles.artLine} style={{width: '60%', opacity: 0.5}} />
-            <div className={styles.artLine} />
-            <div className={styles.artLine} />
-            <div className={styles.artLine} style={{width: '80%'}} />
-          </div>
-          <div className={styles.artMain}>
-            <div className={styles.artTopbar} />
-            <div className={styles.artGrid}>
-              <div className={styles.artCard}>
-                 <svg viewBox="0 0 100 40" preserveAspectRatio="none" className={styles.artChart}>
-                   <path d="M0,35 Q25,15 50,30 T100,20" fill="none" stroke="#3B5EFB" strokeWidth="2"/>
-                 </svg>
-              </div>
-              <div className={`${styles.artCard} ${styles.artCardSolid}`} />
-            </div>
-          </div>
-        </div>
-      )}
-      
-      {type === 'vogue' && (
-        <div className={styles.artInnerDark}>
-          <div className={styles.artDarkTop} />
-          <div className={styles.artDarkBody}>
-            <div className={styles.artDarkLeft}>
-              <div className={styles.artDarkLogo}>VOGUE</div>
-              <div className={styles.artDarkLine} />
-              <div className={styles.artDarkLine} style={{width: '70%'}} />
-              <div className={styles.artDarkPill} />
-            </div>
-            <div className={styles.artDarkRight}>
-               <div className={styles.artDarkBoxes}>
-                 <div className={styles.artDarkBox} />
-                 <div className={styles.artDarkBox} />
-               </div>
-               <div className={styles.artDarkSolidBox} />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {type === 'insight' && (
-        <div className={styles.artInner}>
-           <div className={styles.artTopbarMini}>
-             <div className={styles.artPillMini} />
-           </div>
-           <div className={styles.artGridMini}>
-             <div className={styles.artCard} />
-             <div className={styles.artCard} />
-             <div className={`${styles.artCard} ${styles.artCardSolid}`} />
-           </div>
-           <div className={styles.artLargeCard}>
-             <svg viewBox="0 0 100 30" preserveAspectRatio="none" className={styles.artChart}>
-               <path d="M0,25 Q20,10 40,5 T80,15 T100,20" fill="none" stroke="#3B5EFB" strokeWidth="1.5"/>
-             </svg>
-           </div>
-        </div>
-      )}
-
-      {type === 'lumina' && (
-        <div className={styles.artInnerLumina}>
-          <div className={styles.artLuminaHeader}>
-            <div className={styles.artLuminaHeaderPill} style={{width: '40px', background: '#fff'}} />
-            <div className={styles.artLuminaHeaderGroup}>
-              <div className={styles.artLuminaHeaderPill} />
-              <div className={styles.artLuminaHeaderPill} />
-              <div className={styles.artLuminaHeaderPill} />
-            </div>
-          </div>
-          <div className={styles.artLuminaBody}>
-            <div className={styles.artLuminaLeft}>
-              <div className={styles.artLuminaLogo}>Lumina.</div>
-              <div className={styles.artLine} style={{height: '6px'}} />
-              <div className={styles.artLine} style={{height: '6px', width: '70%'}} />
-              <div className={styles.artLuminaButton} />
-            </div>
-            <div className={styles.artLuminaRight}>
-              <div className={styles.artLuminaCircle} />
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All work');
@@ -148,7 +72,7 @@ const Projects = () => {
           <div className={styles.projects__heroContent}>
             <ScrollReveal>
               <div className={styles.projects__badgeWrapper}>
-                <span className={styles.projects__badge}>— Selected Work • 2024-2025</span>
+                <span className={styles.projects__badge}>— Selected Work</span>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
@@ -184,7 +108,7 @@ const Projects = () => {
               <ScrollReveal key={project.id} delay={index * 0.08}>
                 <div className={styles.projects__card}>
                   <div className={styles.projects__cardImage}>
-                    <ProjectArtwork type={project.artType} />
+                    <img src={project.image} alt={project.title} className={styles.projects__img} />
                   </div>
                   <div className={styles.projects__cardBody}>
                     <h3 className={styles.projects__cardTitle}>{project.title}</h3>

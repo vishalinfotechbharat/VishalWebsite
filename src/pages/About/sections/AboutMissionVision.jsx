@@ -19,8 +19,8 @@ const cards = [
   {
     id: 'vision',
     eyebrow: 'Our Vision',
-    title: 'A Studio That Teams Come Back To',
-    body: 'To grow into a trusted digital product studio — one where founders, product teams, and growing businesses know they will find not just capable engineers and designers, but genuine partners who care about their success as much as they do.',
+    title: 'A Partner That Teams Come Back To',
+    body: 'To grow into a trusted digital product partner — one where founders, product teams, and growing businesses know they will find not just capable engineers and designers, but genuine partners who care about their success as much as they do.',
     color: '#818CF8',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">

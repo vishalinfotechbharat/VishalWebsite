@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logoImg from '../../assets/hero.png';
+import logoImg from '../../assets/logo.png';
 import styles from './LogoIntro.module.scss';
 
 // Shows once per browser session
@@ -35,42 +35,57 @@ const LogoIntro = ({ onDone }) => {
           transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
           aria-hidden="true"
         >
+          {/* Animated Edge Borders (Brand Blue) */}
+          <motion.div
+            className={`${styles.intro__edgeLine} ${styles['intro__edgeLine--top']}`}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            style={{ originX: 0 }}
+          />
+          <motion.div
+            className={`${styles.intro__edgeLine} ${styles['intro__edgeLine--right']}`}
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            style={{ originY: 0 }}
+          />
+          <motion.div
+            className={`${styles.intro__edgeLine} ${styles['intro__edgeLine--bottom']}`}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            style={{ originX: 1 }}
+          />
+          <motion.div
+            className={`${styles.intro__edgeLine} ${styles['intro__edgeLine--left']}`}
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1 }}
+            transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            style={{ originY: 1 }}
+          />
+
           <div className={styles.intro__logoWrap}>
-            {/* Logo image */}
-            <motion.img
-              src={logoImg}
-              alt=""
-              className={styles.intro__img}
-              initial={{ opacity: 0, scale: 0.65, y: 16 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            />
-
-            {/* Company name */}
-            <motion.span
-              className={styles.intro__name}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            >
-              Vishal Infotech
-            </motion.span>
-
-            {/* Animated bar */}
+            {/* Logo image inside a professional rounded rectangular container */}
             <motion.div
-              className={styles.intro__bar}
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.5, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              style={{ originX: 0 }}
-            />
+              className={styles.intro__imgRing}
+              initial={{ opacity: 0, scale: 0.5, rotate: -5 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.95, ease: [0.34, 1.56, 0.64, 1] }}
+            >
+              <img
+                src={logoImg}
+                alt=""
+                className={styles.intro__img}
+              />
+            </motion.div>
 
             {/* Tagline */}
             <motion.span
               className={styles.intro__tag}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.85 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
               Freelance IT Solutions
             </motion.span>

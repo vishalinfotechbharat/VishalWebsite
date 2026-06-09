@@ -40,7 +40,7 @@ const AboutHero = () => (
 
           <ScrollReveal delay={0.2}>
             <p className={styles.hero__sub}>
-              We are a modern digital solutions company focused on building
+              Vishal Infotech is a freelance IT solutions provider focused on building
               scalable, high-quality products — where thoughtful design meets
               precise engineering to create experiences that genuinely work.
             </p>
@@ -77,12 +77,12 @@ const AboutHero = () => (
                   <div className={styles.hero__cardDots}>
                     <span /><span /><span />
                   </div>
-                  <span className={styles.hero__cardFile}>studio-profile.ts</span>
+                  <span className={styles.hero__cardFile}>partner-profile.ts</span>
                 </div>
                 <div className={styles.hero__cardBody}>
                   <p className={styles.hero__codeLine}>
                     <span className={styles.hero__codeKw}>const</span>
-                    <span className={styles.hero__codeVar}> studio</span>
+                    <span className={styles.hero__codeVar}> partner</span>
                     <span className={styles.hero__codePunct}> = {'{'}</span>
                   </p>
                   {codeLines.map((line) => (

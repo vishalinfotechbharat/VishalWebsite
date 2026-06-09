@@ -1,0 +1,110 @@
+// ============================================================
+// FloatingEmail.module.scss — Floating Action Button (FAB)
+// ============================================================
+@use '../../styles/variables' as v;
+@use '../../styles/responsive' as r;
+
+.fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, v.$primary 0%, v.$primary-dark 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: v.$white;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+  cursor: pointer;
+  outline: none;
+  transition:
+    transform v.$transition-smooth,
+    box-shadow v.$transition-smooth,
+    background v.$transition-smooth;
+
+  @include r.down(tablet) {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+  }
+
+  // Hover states
+  &:hover {
+    transform: translateY(-4px) scale(1.04);
+    background: linear-gradient(135deg, v.$primary-lighter 0%, v.$primary 100%);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.45);
+
+    .fab__tooltip {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+      pointer-events: auto;
+    }
+
+    .fab__iconWrap svg {
+      transform: rotate(8deg) scale(1.08);
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px) scale(0.98);
+  }
+
+  // ─── Inner Icon Wrapper ─────────────────────────────────────
+  &__iconWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      transition: transform v.$transition-smooth;
+
+      @include r.down(tablet) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  // ─── Tooltip ────────────────────────────────────────────────
+  &__tooltip {
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%) translateX(8px);
+    background: v.$text-primary;
+    color: v.$white;
+    font-size: 12px;
+    font-weight: v.$font-weight-semibold;
+    padding: 6px 14px;
+    border-radius: v.$radius-md;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: v.$shadow-md;
+    transition:
+      opacity v.$transition-smooth,
+      transform v.$transition-smooth;
+
+    // Small arrow pointing to the FAB
+    &::after {
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent transparent v.$text-primary;
+    }
+
+    @include r.down(tablet) {
+      display: none; // Disable tooltips on touch devices
+    }
+  }
+}
