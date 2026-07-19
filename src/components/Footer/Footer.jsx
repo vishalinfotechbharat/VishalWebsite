@@ -80,7 +80,7 @@ const Footer = () => (
           <p className={styles.footer__tagline}>
             A freelance IT solutions partner building high-performance websites,
             SaaS platforms, ERP systems, and custom software, crafted with
-            honesty and purpose.
+            transparency and purpose.
           </p>
 
           {/* Social / contact pill */}

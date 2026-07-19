@@ -227,22 +227,4 @@
     border-radius: 100px;
   }
 
-  &__cardFooter {
-    margin-top: auto;
-    padding-top: 24px;
-  }
-
-  &__cardLink {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    color: v.$primary;
-    transition: gap 0.3s ease;
-
-    &:hover {
-      gap: 12px;
-    }
-  }
 }

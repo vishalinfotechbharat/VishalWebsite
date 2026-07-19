@@ -7,7 +7,7 @@
 
 .mv {
   padding: clamp(80px, 10vw, 130px) 0;
-  background: v.$bg-dark;
+  background: v.$bg-light;
   position: relative;
   overflow: hidden;
 }
@@ -34,7 +34,7 @@
   right: -8%;
   width: 440px;
   height: 440px;
-  background: radial-gradient(circle, rgba(129, 140, 248, 0.09) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.08) 0%, transparent 65%);
   border-radius: 50%;
 }
 
@@ -50,9 +50,9 @@
   font-weight: v.$font-weight-semibold;
   text-transform: uppercase;
   letter-spacing: v.$letter-spacing-wider;
-  color: rgba(255, 255, 255, 0.55);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: v.$text-secondary;
+  background: v.$bg-white;
+  border: 1px solid v.$border-light;
   padding: 4px 14px;
   border-radius: v.$radius-full;
   margin-bottom: 20px;
@@ -61,13 +61,13 @@
 .mv__title {
   font-size: clamp(30px, 5vw, 52px);
   font-weight: v.$font-weight-extrabold;
-  color: v.$white;
+  color: v.$text-primary;
   line-height: 1.15;
   letter-spacing: -0.03em;
   margin-bottom: 16px;
 
   span {
-    background: linear-gradient(135deg, #60A5FA 0%, #818CF8 100%);
+    background: linear-gradient(135deg, #3B82F6 0%, #6366F1 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -75,8 +75,8 @@
 }
 
 .mv__subtitle {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 17px;
+  color: v.$text-muted;
   line-height: 1.75;
   max-width: 520px;
   margin: 0 auto;
@@ -124,16 +124,18 @@
 
 .mv__cardInner {
   position: relative;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: v.$bg-white;
+  border: 1px solid v.$border-light;
   border-radius: v.$radius-xl;
   padding: 44px 40px;
   height: 100%;
-  transition: border-color v.$transition-smooth, background v.$transition-smooth;
+  box-shadow: v.$shadow-card;
+  transition: border-color v.$transition-smooth, background v.$transition-smooth, box-shadow v.$transition-smooth;
 
   .mv__card:hover & {
-    border-color: rgba(255, 255, 255, 0.16);
-    background: rgba(255, 255, 255, 0.06);
+    border-color: v.$primary-pale;
+    background: v.$bg-white;
+    box-shadow: v.$shadow-card-hover;
   }
 
   @include r.down(mobile-lg) {
@@ -145,8 +147,8 @@
   width: 56px;
   height: 56px;
   border-radius: v.$radius-lg;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: v.$primary-faint;
+  border: 1px solid v.$primary-pale;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,16 +176,16 @@
 .mv__cardTitle {
   font-size: clamp(20px, 2.5vw, 26px);
   font-weight: v.$font-weight-extrabold;
-  color: v.$white;
+  color: v.$text-primary;
   letter-spacing: -0.02em;
   line-height: 1.25;
   margin-bottom: 16px;
 }
 
 .mv__cardBody {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.6);
+  color: v.$text-muted;
   margin-bottom: 28px;
 }
 

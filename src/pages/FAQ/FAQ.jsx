@@ -10,53 +10,43 @@ const categories = ['All', 'General', 'Services & Tech', 'Process', 'Pricing & L
 const faqs = [
   {
     category: 'General',
-    question: 'What is Vishal Infotech and what services do you provide?',
-    answer: 'Vishal Infotech is a premier freelance IT solutions provider offering high-performance web development, custom SaaS product engineering, custom ERP systems, UI/UX design, data-rich internal dashboards, and API integration services. We build secure, scalable, and tailored software designed to optimize business operations and drive growth.',
-  },
-  {
-    category: 'General',
-    question: 'Why should I choose a freelance IT solutions partner over an agency?',
-    answer: 'Choosing a freelance IT solutions partner like Vishal Infotech offers several distinct advantages: direct communication with the lead engineer, greater flexibility, faster delivery times, and highly competitive pricing. Unlike large agencies with high overheads and layers of account managers, you work directly with the expert builder who understands your project inside and out.',
-  },
-  {
-    category: 'Services & Tech',
-    question: 'What technologies do you specialize in for custom software and web applications?',
-    answer: 'We specialize in modern, robust, and highly scalable technology stacks. For frontend development, we use React.js, Next.js, HTML5, Vanilla CSS/SCSS, and Tailwind CSS. For backend development and APIs, we use Node.js (Express), Python (Django/FastAPI), and PHP. For databases, we use PostgreSQL, MySQL, and MongoDB. We host and deploy applications securely on AWS, Google Cloud Platform (GCP), Vercel, and Netlify.',
-  },
-  {
-    category: 'Services & Tech',
-    question: 'What types of custom ERP and SaaS systems do you design?',
-    answer: 'For SaaS development, we build multi-tenant architectures, secure role-based access controls (RBAC), subscription billing flows (via Stripe or PayPal), and real-time usage analytics dashboards. For custom ERP systems, we engineer tailored operational modules including inventory management, Customer Relationship Management (CRM) tools, supply chain automation, billing/invoicing systems, and internal reporting pipelines aligned to your specific business workflows.',
-  },
-  {
-    category: 'Services & Tech',
-    question: 'How do you ensure the websites and web apps you build are SEO-ready?',
-    answer: 'We implement SEO best practices at the architectural level. This includes server-side rendering (SSR) or static site generation (SSG) with Next.js for lightning-fast load times, semantic HTML5 tags, custom meta titles and descriptions for every page, optimized Open Graph (OG) tags for social sharing, clean URL structures, secure HTTPS setups, and structured data schema markups (like JSON-LD FAQPage, LocalBusiness, and Article schemas). We also generate automated sitemap.xml and robots.txt files to ensure search engines like Google can crawl and index your site efficiently.',
+    question: 'What services are offered?',
+    answer: 'Website development, web applications, UI/UX design, API integration, maintenance, and technical support.',
   },
   {
     category: 'Process',
-    question: 'What is your development process and how do we collaborate?',
-    answer: 'We follow a structured, transparent 4-stage process: 1) Discovery & Strategy: We align on your goals, requirements, and document user journeys. 2) UI/UX Design: We design high-fidelity, interactive Figma prototypes so you can preview the user interface. 3) Precise Engineering: We write clean, modular, and optimized code with regular progress updates. 4) Launch & Handover: We run extensive QA testing, deploy the system, and hand over 100% ownership.',
-  },
-  {
-    category: 'Pricing & Legal',
-    question: 'Who owns the source code and intellectual property once a project is finished?',
-    answer: 'You do! Once the project is completed and the final invoice is paid, you have 100% full ownership of the source code, design assets, databases, and all intellectual property. We hand over the Github repository and deploy the system directly to your hosting accounts.',
-  },
-  {
-    category: 'Pricing & Legal',
-    question: 'How do you estimate project pricing and timelines?',
-    answer: 'We offer two flexible pricing models: Fixed-Price Contracts (best for projects with clearly defined features and scope, providing a guaranteed cost and timeline) and Hourly/Retainer Contracts (best for ongoing development, scaling platforms, or evolving requirements). Most standard web applications or tools take between 4 to 8 weeks, while complex ERP or SaaS platforms take 3 to 6 months.',
-  },
-  {
-    category: 'Pricing & Legal',
-    question: 'Do you provide maintenance and technical support after launch?',
-    answer: 'Yes, we provide flexible monthly maintenance and support retainers. These plans cover regular security patches, dependencies updates, cloud infrastructure monitoring, database backups, performance audits, and continuous minor feature additions to keep your system operating at peak performance.',
+    question: 'How long does a typical project take?',
+    answer: 'Timelines depend on project scope and complexity. A detailed schedule is provided before development begins.',
   },
   {
     category: 'Services & Tech',
-    question: 'Can you optimize or integrate legacy codebases and existing databases?',
-    answer: 'Absolutely. We can audit your existing legacy code, refactor slow queries, modernize the frontend UI/UX, or build custom API integrations to connect your current legacy systems with modern SaaS tools, payment processors, or external data pipelines.',
+    question: 'Can an existing website be redesigned?',
+    answer: 'Yes, existing websites can be modernized with improved design, performance, and functionality while preserving important content.',
+  },
+  {
+    category: 'Pricing & Legal',
+    question: 'Is post-launch support available?',
+    answer: 'Ongoing maintenance, updates, and technical assistance can be provided after project completion.',
+  },
+  {
+    category: 'Services & Tech',
+    question: 'Are websites optimized for mobile devices?',
+    answer: 'Yes, all websites are designed to provide a responsive experience across desktops, tablets, and mobile devices.',
+  },
+  {
+    category: 'Services & Tech',
+    question: 'Can third-party services be integrated?',
+    answer: 'Integrations such as payment gateways, CRMs, analytics, APIs, and other business tools can be incorporated based on project requirements.',
+  },
+  {
+    category: 'Services & Tech',
+    question: 'What technologies are used for development?',
+    answer: 'Modern, well-supported technologies are used for frontend, backend, and database layers, along with secure cloud hosting platforms selected to fit each project.',
+  },
+  {
+    category: 'Pricing & Legal',
+    question: 'Who owns the code and design assets after completion?',
+    answer: 'Full ownership of the source code, design files, databases, and related assets is transferred upon final payment.',
   },
 ];
 

@@ -8,7 +8,7 @@ const cards = [
     id: 'mission',
     eyebrow: 'Our Mission',
     title: 'Build Products That Actually Matter',
-    body: 'To help modern businesses and enterprise clients build digital products that are meaningful, scalable, and genuinely useful - crafted with honesty, care, and deep respect for the people using them.',
+    body: 'To help modern businesses and enterprise clients build digital products that are meaningful, scalable, and genuinely useful - crafted with transparency, care, and deep respect for the people using them.',
     color: '#60A5FA',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none"

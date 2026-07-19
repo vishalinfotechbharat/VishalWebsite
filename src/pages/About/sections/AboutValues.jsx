@@ -72,7 +72,7 @@ const values = [
         <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
       </svg>
     ),
-    title: 'User-Centric Thinking',
+    title: 'User-Centric Focus',
     desc: "The end user is always in the room. Every decision we make considers real people - how they think, what they need, and how they'll feel.",
   },
 ];

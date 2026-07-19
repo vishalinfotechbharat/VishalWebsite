@@ -8,10 +8,13 @@ import styles from './PortfolioPreview.module.scss';
 
 // Import images
 import project1 from '../../../assets/project1.jpg';
-import project2 from '../../../assets/project2.png';
-import project3Jpg from '../../../assets/project3.jpg';
-import project3Png from '../../../assets/project3.png';
-import project4 from '../../../assets/project4.png';
+import project2 from '../../../assets/project2.webp';
+import hourglass from '../../../assets/Hourglass.webp';
+import project3Png from '../../../assets/project3.webp';
+import project4 from '../../../assets/project4.webp';
+import healthcareProject from '../../../assets/HealthCareProject.webp';
+import heartlyDating from '../../../assets/Heartly Dating.webp';
+import inventoryMngt from '../../../assets/InventoryMngt.webp';
 
 const capabilities = [
   {
@@ -39,7 +42,7 @@ const capabilities = [
   {
     id: 3,
     type: 'Mobile-First Experiences',
-    headline: 'Kutulus Booking App',
+    headline: 'Holiday Booking App',
     description: 'Where adventure meets serenity - a luxury mobile-first booking experience and hospitality management system for high-end boutique resorts.',
     tags: ['Booking', 'Hospitality', 'Mobile-First'],
     color: '#10B981',
@@ -50,13 +53,13 @@ const capabilities = [
   {
     id: 4,
     type: 'Luxury Showrooms',
-    headline: 'Timezone Luxury Showcase',
+    headline: 'Hourglass Showcase',
     description: 'Discover timeless elegance - a high-end luxury watch showroom featuring Audemars Piguet watches with interactive customization options.',
     tags: ['E-commerce', 'Luxury', 'Retail'],
     color: '#8B5CF6',
     features: ['High-fidelity 3D', 'Custom checkout', 'Product configurator', 'Fast loading'],
     size: 'medium',
-    image: project3Jpg,
+    image: hourglass,
   },
   {
     id: 5,
@@ -68,6 +71,39 @@ const capabilities = [
     features: ['Interactive map', 'Property search', 'Booking scheduler', 'Virtual tours'],
     size: 'medium',
     image: project3Png,
+  },
+  {
+    id: 6,
+    type: 'Healthcare SaaS',
+    headline: 'CarePulse Health Platform',
+    description: 'A comprehensive patient monitoring and healthcare analytics platform designed for clinics and wellness tracking.',
+    tags: ['Healthcare', 'SaaS', 'Analytics'],
+    color: '#06B6D4',
+    features: ['Patient telemetry', 'EHR integrations', 'Appointment scheduling', 'HIPAA compliant'],
+    size: 'medium',
+    image: healthcareProject,
+  },
+  {
+    id: 7,
+    type: 'Social & Matchmaking',
+    headline: 'Heartly Dating App',
+    description: 'A modern, user-centric dating application built with interactive matching algorithms, chat capabilities, and premium onboarding flows.',
+    tags: ['Dating', 'Mobile-First', 'Social'],
+    color: '#EC4899',
+    features: ['Real-time chat', 'Custom matching engine', 'Interactive swipe UI', 'Location-based services'],
+    size: 'medium',
+    image: heartlyDating,
+  },
+  {
+    id: 8,
+    type: 'Inventory & ERP Systems',
+    headline: 'Apex Inventory Manager',
+    description: 'An enterprise-grade inventory management and warehouse tracking system designed to streamline stock control, order fulfillment, and logistics.',
+    tags: ['Inventory', 'ERP', 'Logistics'],
+    color: '#F59E0B',
+    features: ['Real-time stock tracking', 'Automated purchase orders', 'Multi-warehouse support', 'Detailed analytics reports'],
+    size: 'large',
+    image: inventoryMngt,
   },
 ];
 

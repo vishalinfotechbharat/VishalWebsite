@@ -89,6 +89,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0 60px;
+  align-items: start;
   position: relative;
   z-index: 1;
   max-width: 900px;
@@ -100,11 +101,16 @@
   }
 }
 
+.process__col {
+  display: flex;
+  flex-direction: column;
+}
+
 // ─── Step ─────────────────────────────────────────────────────
 .step {
   display: flex;
   gap: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
 
   &:last-child {
     padding-bottom: 0;
@@ -184,16 +190,6 @@
   color: var(--sc, v.$primary);
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.05em;
-}
-
-.step__subtitle {
-  font-size: 11px;
-  color: v.$text-light;
-  font-weight: v.$font-weight-medium;
-  background: v.$bg-light;
-  border: 1px solid v.$border-light;
-  padding: 2px 8px;
-  border-radius: v.$radius-full;
 }
 
 .step__title {

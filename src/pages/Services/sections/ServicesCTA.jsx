@@ -36,8 +36,8 @@ const ServicesCTA = () => (
 
           <p className={styles.cta__sub}>
             Whether you have a fully-formed brief or just a rough idea, we're
-            happy to have a conversation. No pressure, no commitment - just an
-            honest discussion about what we can build together.
+            happy to have a conversation - No pressure, no commitment, just a transparent
+            discussion about what we can build together.
           </p>
 
           <div className={styles.cta__prompts}>

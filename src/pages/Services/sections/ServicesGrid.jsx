@@ -38,8 +38,8 @@ const services = [
       </svg>
     ),
     title: 'UI/UX Design',
-    tagline: 'Intuitive. Beautiful. Purposeful.',
-    desc: 'Great design is not decoration - it\'s the reason users stay. We design interfaces that are beautiful to look at and effortless to use.',
+    tagline: 'Intuitive. Elegant. Purposeful.',
+    desc: 'Great design is not decoration - it\'s the reason users stay. We design interfaces that are visually striking and effortless to use.',
     tags: ['Figma', 'Design Systems', 'Prototyping', 'User Research', 'Wireframes'],
     points: [
       'User-centred design from research to pixel-perfect delivery',
@@ -100,7 +100,7 @@ const services = [
       </svg>
     ),
     title: 'IT Consulting',
-    tagline: 'Honest advice. No vendor agenda.',
+    tagline: 'Transparent guidance. No vendor agenda.',
     desc: 'We help you make better technology decisions - from choosing the right stack to auditing your existing systems. We tell you what will actually work, not what\'s fashionable.',
     tags: ['Tech Audits', 'Architecture', 'Stack Review', 'Roadmapping', 'Code Review'],
     points: [
@@ -120,7 +120,7 @@ const services = [
       </svg>
     ),
     title: 'Maintenance & Support',
-    tagline: 'We don\'t disappear after launch.',
+    tagline: 'Support that continues well beyond launch.',
     desc: 'Software needs care after it goes live. We provide ongoing maintenance, monitoring, dependency updates, and fast turnaround on bugs - so you can focus on your business.',
     tags: ['Monitoring', 'Updates', 'Bug Fixes', 'Performance', 'Security'],
     points: [

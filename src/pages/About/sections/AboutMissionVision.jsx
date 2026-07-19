@@ -8,7 +8,7 @@ const cards = [
     id: 'mission',
     eyebrow: 'Our Mission',
     title: 'Build Products That Create Real Value',
-    body: 'To help businesses of every scale build digital products that are reliable, scalable, and genuinely meaningful - crafted with honesty, precision, and respect for the people who use them every day.',
+    body: 'To help businesses of every scale build digital products that are reliable, scalable, and genuinely meaningful - crafted with transparency, precision, and respect for the people who use them every day.',
     color: '#60A5FA',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
@@ -46,7 +46,7 @@ const AboutMissionVision = () => (
           </h2>
           <p className={styles.mv__sub}>
             Everything we build reflects a commitment to doing things right —
-            not just quickly. Our mission and vision keep us honest.
+            not just quickly. Our mission and vision keep us transparent.
           </p>
         </ScrollReveal>
       </div>

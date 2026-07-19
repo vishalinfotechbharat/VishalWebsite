@@ -30,7 +30,7 @@
     display: flex;
     align-items: center;
     background: v.$white;
-    padding: 8px 18px;
+    padding: 9px 18px;
     border-radius: v.$radius-full;
     box-shadow: v.$shadow-md;
     border: 1px solid v.$border-light;
@@ -44,7 +44,7 @@
   }
 
   &__logoImg {
-    height: 32px;
+    height: 36px;
     width: auto;
     object-fit: contain;
   }

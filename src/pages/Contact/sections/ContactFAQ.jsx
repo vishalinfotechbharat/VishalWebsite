@@ -6,28 +6,28 @@ import styles from './ContactFAQ.module.scss';
 
 const faqs = [
   {
-    question: 'What services do you provide?',
-    answer: 'We offer end-to-end digital product services: web development, UI/UX design, SaaS application development, software testing, IT consulting, and ongoing maintenance & support. We work across the full lifecycle - from initial idea and design to launch and beyond.',
+    question: 'What services are offered?',
+    answer: 'Website development, web applications, UI/UX design, API integration, maintenance, and technical support.',
   },
   {
-    question: 'How long does a project usually take?',
-    answer: 'It depends on scope and complexity. A focused digital product or website typically takes 4–8 weeks. A full SaaS platform or complex web app can take 3–6 months. We provide clear timeline estimates after the discovery phase, and we\'re transparent if scope changes affect delivery.',
+    question: 'How long does a typical project take?',
+    answer: 'Timelines depend on project scope and complexity. A detailed schedule is provided before development begins.',
   },
   {
-    question: 'Do you work with growing businesses and mid-market companies?',
-    answer: 'Yes - we partner with businesses of various sizes. Whether you\'re a growing company looking to optimize workflows or a larger enterprise scaling your digital systems, we adapt our process to fit your operations and goals.',
+    question: 'Can an existing product be redesigned or improved?',
+    answer: 'Yes, existing products can be modernized with improved design, performance, and functionality while preserving important content.',
   },
   {
-    question: 'Can you redesign or improve an existing product?',
-    answer: 'Absolutely. We regularly take on existing products that need a design overhaul, a performance improvement, or a codebase refactor. We start with a thorough audit and give you an honest assessment of what needs to change and in what order.',
+    question: 'Is post-launch support available?',
+    answer: 'Ongoing maintenance, updates, and technical assistance can be provided after project completion.',
   },
   {
-    question: 'Do you provide ongoing support after launch?',
-    answer: 'Yes. We don\'t disappear after launch. We offer flexible maintenance and support arrangements - from bug fixes and dependency updates to feature development and monitoring. We can discuss what level of ongoing engagement makes sense for your product.',
+    question: 'Are digital products optimized for mobile devices?',
+    answer: 'Yes, all builds are designed to provide a responsive experience across desktops, tablets, and mobile devices.',
   },
   {
-    question: 'How do we get started working together?',
-    answer: 'Fill in the contact form above and we\'ll follow up within 24 hours. We\'ll schedule a short introductory call to hear about your project, ask a few questions, and share our honest thoughts. From there, we\'ll put together a proposal if it seems like a good fit.',
+    question: 'Can third-party services be integrated?',
+    answer: 'Integrations such as payment gateways, CRMs, analytics, APIs, and other business tools can be incorporated based on project requirements.',
   },
 ];
 

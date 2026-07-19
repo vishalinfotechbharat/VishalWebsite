@@ -2,15 +2,17 @@ import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Container from '../../components/Container/Container';
 import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
-import CTABanner from '../Home/sections/CTABanner';
 import styles from './Projects.module.scss';
 
 // Import project images
 import project1 from '../../assets/project1.jpg';
-import project2 from '../../assets/project2.png';
-import project3Jpg from '../../assets/project3.jpg';
-import project3Png from '../../assets/project3.png';
-import project4 from '../../assets/project4.png';
+import project2 from '../../assets/project2.webp';
+import hourglass from '../../assets/Hourglass.webp';
+import project3Png from '../../assets/project3.webp';
+import project4 from '../../assets/project4.webp';
+import healthcareProject from '../../assets/HealthCareProject.webp';
+import heartlyDating from '../../assets/Heartly Dating.webp';
+import inventoryMngt from '../../assets/InventoryMngt.webp';
 
 const categories = ['All work', 'SaaS', 'E-commerce', 'Dashboards', 'Corporate'];
 
@@ -26,21 +28,21 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Kutulus Booking App',
+    title: 'Holiday Booking App',
     category: 'Corporate',
     description: 'Where adventure meets serenity, a luxury mobile-first booking experience and hospitality management system for high-end boutique resorts.',
     tags: ['Booking', 'Hospitality', 'Mobile-First'],
     image: project2,
-    alt: 'Kutulus booking application mobile-first interface for boutique resorts',
+    alt: 'Holiday booking application mobile-first interface for boutique resorts',
   },
   {
     id: 3,
-    title: 'Timezone Luxury Showcase',
+    title: 'Hourglass Showcase',
     category: 'E-commerce',
     description: 'Discover timeless elegance, a high-end luxury watch showroom featuring Audemars Piguet watches with interactive customization options.',
     tags: ['E-commerce', 'Luxury', 'Retail'],
-    image: project3Jpg,
-    alt: 'Timezone luxury watch e-commerce showroom showcase with AP watches',
+    image: hourglass,
+    alt: 'Hourglass luxury watch e-commerce showroom showcase with AP watches',
   },
   {
     id: 4,
@@ -59,6 +61,33 @@ const projects = [
     tags: ['Dashboard', 'Fintech', 'SaaS'],
     image: project4,
     alt: 'Smarter Funding dashboard with cash flow graphs and credit score tracker',
+  },
+  {
+    id: 6,
+    title: 'CarePulse Health Platform',
+    category: 'SaaS',
+    description: 'A comprehensive patient monitoring and healthcare analytics platform designed for clinics and wellness tracking.',
+    tags: ['Healthcare', 'SaaS', 'Analytics'],
+    image: healthcareProject,
+    alt: 'CarePulse healthcare dashboard showing patient telemetry, scheduling, and health analytics',
+  },
+  {
+    id: 7,
+    title: 'Heartly Dating App',
+    category: 'Corporate',
+    description: 'A modern, user-centric dating application built with interactive matching algorithms, chat capabilities, and premium onboarding flows.',
+    tags: ['Dating', 'Mobile-First', 'Social'],
+    image: heartlyDating,
+    alt: 'Heartly dating application mobile-first user matching and chat interface',
+  },
+  {
+    id: 8,
+    title: 'Apex Inventory Manager',
+    category: 'Dashboards',
+    description: 'An enterprise-grade inventory management and warehouse tracking system designed to streamline stock control, order fulfillment, and logistics.',
+    tags: ['Inventory', 'ERP', 'Logistics'],
+    image: inventoryMngt,
+    alt: 'Apex inventory management system showing warehouse analytics, stock tracking, and supplier controls',
   },
 ];
 
@@ -156,14 +185,6 @@ const Projects = () => {
                         <span key={tag} className={styles.projects__tag}>{tag}</span>
                       ))}
                     </div>
-                    <div className={styles.projects__cardFooter}>
-                      <span className={styles.projects__cardLink}>
-                        View case study
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                    </div>
                   </div>
                 </div>
               </ScrollReveal>
@@ -172,8 +193,6 @@ const Projects = () => {
         </Container>
       </section>
       
-      {/* We can include CTABanner at the bottom to match the image's bottom section */}
-      <CTABanner />
     </div>
   );
 };

@@ -185,7 +185,7 @@ const showcaseItems = [
     id: 'web',
     eyebrow: 'Web Development',
     title: 'Websites & Web Apps Built for the Real World',
-    desc: 'We move quickly without cutting corners. Our web development practice covers everything from marketing sites to complex internal tools - and we make sure they work beautifully on every device.',
+    desc: 'We move quickly without cutting corners. Our web development practice covers everything from marketing sites to complex internal tools - and we make sure they look attractive and work perfectly on every device.',
     points: [
       { label: 'Responsive by default', text: 'Every layout tested across mobile, tablet, and desktop before it ships.' },
       { label: 'Performance-optimized', text: 'We target sub-2s load times and strong Core Web Vitals as standard practice.' },
@@ -200,7 +200,7 @@ const showcaseItems = [
     id: 'uiux',
     eyebrow: 'UI/UX Design',
     title: 'Design That Makes Users Feel Understood',
-    desc: 'We design with empathy first. Before we open Figma, we understand who your users are, what they\'re trying to accomplish, and where they currently get stuck. Then we design around that reality.',
+    desc: 'We design with a user-centric focus first. Before we open Figma, we understand who your users are, what they\'re trying to accomplish, and where they currently get stuck. Then we design around that reality.',
     points: [
       { label: 'Research-informed', text: 'We ask real questions before designing - who are your users, what do they need?' },
       { label: 'Component-driven systems', text: 'Design systems that developers love and designers can evolve easily.' },
@@ -219,7 +219,7 @@ const showcaseItems = [
     points: [
       { label: 'Multi-tenant from the start', text: 'Isolated data, flexible plans, and team management built into the core.' },
       { label: 'Billing that just works', text: 'Stripe integration, subscription tiers, usage-based pricing - we\'ve built it all.' },
-      { label: 'User onboarding flows', text: 'New-user experiences designed to get people to their "aha moment" fast.' },
+      { label: 'User onboarding flows', text: 'New-user experiences designed to get people to their "Eureka moment" fast.' },
       { label: 'Admin & analytics dashboards', text: 'Tools for you to understand your product\'s health and your users\' behaviour.' },
     ],
     color: '#10B981',

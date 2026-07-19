@@ -81,15 +81,28 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
+  align-items: stretch;
 
   @include r.down(tablet) {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  // ScrollReveal renders a motion.div wrapper as the actual grid item -
+  // stretch it too so .mv__card inside can fill it to equal height.
+  > * {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .mv__card {
   position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   border-radius: v.$radius-xl;
   overflow: hidden;
   transition: transform v.$transition-smooth;
@@ -119,6 +132,9 @@
   border-radius: v.$radius-xl;
   padding: 44px 40px;
   height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   transition: border-color v.$transition-smooth, background v.$transition-smooth;
 
   .mv__card:hover & {

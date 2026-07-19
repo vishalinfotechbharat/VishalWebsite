@@ -29,7 +29,7 @@
 // ─── Header ───────────────────────────────────────────────────
 .approach__header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: clamp(56px, 10vw, 130px);
 }
 .approach__eyebrow {
   display: inline-block;
@@ -130,12 +130,23 @@
   }
 }
 
-.approach__numBadge {
-  font-size: 10px;
+.approach__stepMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+
+  @include r.down(mobile) {
+    margin-bottom: 8px;
+  }
+}
+
+.approach__stepNum {
+  font-size: 11px;
   font-weight: v.$font-weight-bold;
   color: var(--sc, v.$primary);
+  font-variant-numeric: tabular-nums;
   letter-spacing: 0.05em;
-  opacity: 0.7;
 }
 
 .approach__stepBody {
@@ -149,7 +160,7 @@
   font-weight: v.$font-weight-extrabold;
   color: v.$text-primary;
   letter-spacing: -0.02em;
-  margin-bottom: 8px;
+  margin-bottom: 0;
   transition: color v.$transition-smooth;
 
   .approach__step:hover & {

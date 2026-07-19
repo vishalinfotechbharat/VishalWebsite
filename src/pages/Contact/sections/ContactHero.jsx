@@ -382,24 +382,11 @@ const highlights = [
   },
 ];
 
-const projectTypes = [
-  'Web Application',
-  'SaaS Product',
-  'UI/UX Design',
-  'Mobile App',
-  'E-commerce Platform',
-  'API / Backend',
-  'IT Consulting',
-  'Maintenance & Support',
-  'Other / Not Sure Yet',
-];
-
 const ContactHero = () => {
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectType: '',
     message: '',
   });
 
@@ -427,7 +414,6 @@ const ContactHero = () => {
       const templateParams = {
         name: formData.name,
         email: formData.email,
-        project_type: formData.projectType,
         message: formData.message,
         time: new Date().toLocaleString(),
       };
@@ -446,7 +432,6 @@ const ContactHero = () => {
       setFormData({
         name: '',
         email: '',
-        projectType: '',
         message: '',
       });
 
@@ -471,7 +456,6 @@ const ContactHero = () => {
     setFormData({
       name: '',
       email: '',
-      projectType: '',
       message: '',
     });
   };
@@ -624,36 +608,6 @@ const ContactHero = () => {
                           required
                           aria-required="true"
                         />
-                      </div>
-
-                      {/* PROJECT TYPE */}
-                      <div className={styles.form__field}>
-                        <label htmlFor="form-project-type" className={styles.form__label}>
-                          Project Type
-                        </label>
-
-                        <select
-                          id="form-project-type"
-                          name="projectType"
-                          className={styles.form__select}
-                          value={formData.projectType}
-                          onChange={handleChange}
-                          required
-                          aria-required="true"
-                        >
-                          <option value="">
-                            Select Project Type
-                          </option>
-
-                          {projectTypes.map((item) => (
-                            <option
-                              key={item}
-                              value={item}
-                            >
-                              {item}
-                            </option>
-                          ))}
-                        </select>
                       </div>
 
                       {/* MESSAGE */}

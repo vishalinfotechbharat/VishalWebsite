@@ -51,15 +51,15 @@
 
 // ─── Card ─────────────────────────────────────────────────────
 .cta__card {
-  background: linear-gradient(135deg, v.$primary-darker 0%, v.$primary-dark 50%, #1D4ED8 100%);
+  background: linear-gradient(135deg, v.$primary-dark 0%, v.$primary 50%, #1D4ED8 100%);
   border-radius: v.$radius-2xl;
   padding: clamp(56px, 8vw, 96px) clamp(32px, 6vw, 80px);
   text-align: center;
   position: relative;
   overflow: hidden;
   box-shadow:
-    0 24px 80px rgba(30, 58, 138, 0.35),
-    0 8px 24px rgba(0, 0, 0, 0.15);
+    0 24px 60px rgba(30, 58, 138, 0.22),
+    0 8px 20px rgba(15, 23, 42, 0.1);
 
   // Subtle texture overlay
   &::before {

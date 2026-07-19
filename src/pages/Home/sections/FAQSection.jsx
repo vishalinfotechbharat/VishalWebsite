@@ -6,48 +6,36 @@ import styles from './FAQSection.module.scss';
 
 const faqs = [
   {
-    question: 'How can your services benefit my business?',
-    answer: 'We build custom solutions that automate manual workflows, reduce operational costs, and improve system performance. By eliminating off-the-shelf software limitations, we create digital tools tailored exactly to your operations, driving productivity and scaling capacity.',
+    question: 'What services are offered?',
+    answer: 'Website development, web applications, UI/UX design, API integration, maintenance, and technical support.',
   },
   {
-    question: 'How do you tailor solutions to fit my business needs?',
-    answer: 'We start with a discovery phase to understand your unique workflows, bottlenecks, and objectives. We don\'t believe in one-size-fits-all templates; we design the architecture, user experience, and integrations specifically around your business processes.',
+    question: 'How long does a typical project take?',
+    answer: 'Timelines depend on project scope and complexity. A detailed schedule is provided before development begins.',
   },
   {
-    question: 'What technologies will you use to build my software?',
-    answer: 'We use modern, stable, and highly supported technologies. Our core stack includes React and Next.js for frontend, Node.js and Python for backend, and PostgreSQL or MongoDB for database management, hosted securely on AWS or Google Cloud.',
+    question: 'Can an existing website be redesigned?',
+    answer: 'Yes, existing websites can be modernized with improved design, performance, and functionality while preserving important content.',
   },
   {
-    question: 'What services do you offer?',
-    answer: 'We provide end-to-end digital product design, web development, SaaS product development, custom ERP system engineering, data-rich internal dashboards, IT consulting, QA testing, and API integration.',
+    question: 'Is post-launch support available?',
+    answer: 'Ongoing maintenance, updates, and technical assistance can be provided after project completion.',
   },
   {
-    question: 'What types of SaaS platforms and ERP systems do you build?',
-    answer: 'Our SaaS development includes multi-tenant architectures, user role management, subscription billing (Stripe), and usage dashboards. Our ERP services deliver custom operational tools for inventory, CRM, supply chain, and enterprise resource planning tailored to your exact workflows.',
+    question: 'Are websites optimized for mobile devices?',
+    answer: 'Yes, all websites are designed to provide a responsive experience across desktops, tablets, and mobile devices.',
   },
   {
-    question: 'What kind of web development and UI/UX design do you do?',
-    answer: 'We develop custom React and Next.js web applications, client portals, and high-performance, SEO-optimized marketing websites. In UI/UX, we provide user research, wireframes, and clickable high-fidelity Figma prototypes so you can test the system flow before code is written.',
+    question: 'Can third-party services be integrated?',
+    answer: 'Integrations such as payment gateways, CRMs, analytics, APIs, and other business tools can be incorporated based on project requirements.',
   },
   {
-    question: 'How much do your services cost?',
-    answer: 'We offer fixed-price contracts for clearly defined projects, as well as hourly retainers for ongoing development. We provide a detailed cost estimate before any work begins.',
+    question: 'What technologies are used for development?',
+    answer: 'Modern, well-supported technologies are used, including React, Next.js, and Node.js, along with reliable cloud hosting platforms selected to fit each project.',
   },
   {
-    question: 'How long does a project take?',
-    answer: 'A standard website or custom tool typically takes 4 to 8 weeks. Larger, more complex platforms or integrations usually take 3 to 6 months.',
-  },
-  {
-    question: 'Will I own the source code?',
-    answer: 'Yes, absolutely. Once the project is completed and the final invoice is paid, you have 100% full ownership of the source code, design assets, and intellectual property.',
-  },
-  {
-    question: 'Do you provide support after launch?',
-    answer: 'Yes, we offer flexible post-launch support and maintenance plans that cover security updates, performance monitoring, database backups, and new feature additions.',
-  },
-  {
-    question: 'Can you work with our existing codebase?',
-    answer: 'Yes. We can audit, refactor, and optimize your current legacy applications, or build new features on top of your existing systems with minimal disruption.',
+    question: 'Who owns the code and design assets after completion?',
+    answer: 'Full ownership of the source code, design files, and related assets is transferred upon final payment.',
   },
 ];
 
@@ -67,8 +55,8 @@ const FAQSection = () => {
                 <span>We Have Answers.</span>
               </h2>
               <p className={styles.faq__subtitle}>
-                Everything you need to know before starting your project with Vishal Infotech.
-                Don't find what you're looking for? Let's talk.
+                Everything you need to know before starting your project with us.
+                Can't find what you're looking for? Let's talk.
               </p>
               <div className={styles.faq__contact}>
                 <Button to="/contact" variant="primary" size="md">

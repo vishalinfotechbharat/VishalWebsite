@@ -27,7 +27,7 @@ const AboutCTA = () => (
 
           <p className={styles.cta__sub}>
             We'd love to hear what you're working on. Share your idea —
-            no pressure, no commitment, just an honest conversation.
+            No pressure, no commitment, just a transparent conversation.
           </p>
 
           <div className={styles.cta__actions}>

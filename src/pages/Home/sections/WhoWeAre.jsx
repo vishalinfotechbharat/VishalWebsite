@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Container from '../../../components/Container/Container';
 import styles from './WhoWeAre.module.scss';
 
-// ─── Differentiators (honest, qualitative) ────────────────────
+// ─── Differentiators (transparent, qualitative) ────────────────────
 const differentiators = [
   {
     icon: (
@@ -25,8 +25,8 @@ const differentiators = [
         <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
       </svg>
     ),
-    title: 'Direct Collaboration',
-    desc: 'Work directly with the developer: no account managers, no middlemen, just honest communication.',
+    title: 'Complete Transparent Work',
+    desc: 'Work directly with the developer and business analyst. Enjoy complete transparency and faster updates.',
     color: '#6366F1',
   },
   {
@@ -66,7 +66,7 @@ const values = [
     ),
     label: 'Our Mission',
     title: 'Build Products That Actually Matter',
-    desc: 'To help modern businesses and enterprise clients build digital products that are meaningful, scalable, and genuinely useful, crafted with honesty, care, and deep respect for the people using them.',
+    desc: 'To help modern businesses and enterprise clients build digital products that are meaningful, scalable, and genuinely useful, crafted with transparency, care, and deep respect for the people using them.',
     color: '#60A5FA',
   },
   {
@@ -78,7 +78,7 @@ const values = [
       </svg>
     ),
     label: 'Our Vision',
-    title: 'A Partner That Teams Come Back To',
+    title: 'A Trusted Partner for Growing Businesses',
     desc: 'To grow into a trusted digital product partner, one where founders, product teams, and growing businesses know they will find not just capable engineers and designers, but genuine partners who care about their success as much as they do.',
     color: '#818CF8',
   },
@@ -120,14 +120,13 @@ const WhoWeAre = () => (
         <span className={styles.who__eyebrow}>Who We Are</span>
         <h2 className={styles.who__title} id="who-heading">
           Freelance IT Solutions Built on{' '}
-          <span className={styles.who__grad}>Craft &amp; Honesty</span>
+          <span className={styles.who__grad}>Craft &amp; Transparency</span>
         </h2>
         <p className={styles.who__intro}>
-          Vishal Infotech is a freelance IT solutions partner specialising in
-          high-performance websites, SaaS platforms, ERP systems, and custom
-          software. We work directly with founders and businesses (no agencies,
-          no fluff) just clean engineering and thoughtful design that delivers
-          real results.
+          As a freelance IT solutions partner, We Build high-performance
+          websites, SaaS platforms, ERP systems, and custom software. We work
+          directly with founders and businesses, with clean engineering and
+          thoughtful design that delivers real results.
         </p>
       </motion.div>
 

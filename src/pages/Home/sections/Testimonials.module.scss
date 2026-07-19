@@ -7,7 +7,7 @@
 
 .testimonials {
   padding: clamp(80px, 10vw, 130px) 0;
-  background: v.$bg-dark;
+  background: v.$bg-light;
   position: relative;
   overflow: hidden;
 }
@@ -24,7 +24,7 @@
   left: -5%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 65%);
   border-radius: 50%;
 }
 
@@ -44,14 +44,15 @@
 }
 
 .testimonials__card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: v.$bg-white;
+  border: 1px solid v.$border-light;
   border-radius: v.$radius-xl;
   padding: 28px;
   cursor: pointer;
   transition: all v.$transition-smooth;
   position: relative;
   overflow: hidden;
+  box-shadow: v.$shadow-card;
 
   &::before {
     content: '';
@@ -65,16 +66,16 @@
 
   &:hover,
   &--active {
-    border-color: rgba(255, 255, 255, 0.16);
-    background: rgba(255, 255, 255, 0.07);
+    border-color: v.$primary-pale;
+    background: v.$bg-white;
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: v.$shadow-card-hover;
 
     &::before { opacity: 1; }
   }
 
   &--active {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: v.$primary-pale;
     border-left: 3px solid var(--color, v.$primary);
   }
 }
@@ -93,14 +94,14 @@
 }
 
 .testimonials__quoteIcon {
-  color: rgba(255, 255, 255, 0.1);
+  color: v.$border-light;
   flex-shrink: 0;
 }
 
 .testimonials__quote {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.75);
+  color: v.$text-secondary;
   margin-bottom: 24px;
   flex: 1;
 }
@@ -110,7 +111,7 @@
   align-items: center;
   gap: 12px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid v.$border-light;
 }
 
 .testimonials__avatar {
@@ -137,10 +138,10 @@
 .testimonials__name {
   font-size: 14px;
   font-weight: v.$font-weight-semibold;
-  color: v.$white;
+  color: v.$text-primary;
 }
 
 .testimonials__meta {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.45);
+  color: v.$text-muted;
 }

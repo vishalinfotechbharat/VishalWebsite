@@ -15,7 +15,6 @@ const steps = [
       </svg>
     ),
     title: 'Discovery',
-    subtitle: 'Weeks 1–2',
     desc: 'We start by deeply understanding your problem. User research, stakeholder interviews, competitive landscape - before any solution is proposed.',
     actions: ['Requirements workshop', 'User persona mapping', 'Technical feasibility check', 'Project scope agreement'],
   },
@@ -30,7 +29,6 @@ const steps = [
       </svg>
     ),
     title: 'Design',
-    subtitle: 'Weeks 2–4',
     desc: 'Wireframes become prototypes. Prototypes get tested. Only when we\'re confident the UX is right do we move to visual design and developer handoff.',
     actions: ['Information architecture', 'Lo-fi wireframes', 'Interactive prototype', 'Design system creation'],
   },
@@ -45,7 +43,6 @@ const steps = [
       </svg>
     ),
     title: 'Development',
-    subtitle: 'Weeks 3–12+',
     desc: 'Sprint-based development with weekly demos. You see working software early and often - not a big reveal at the end. Feedback shapes every sprint.',
     actions: ['Weekly sprint cycles', 'Continuous integration', 'Code review practice', 'Staging environment demos'],
   },
@@ -59,7 +56,6 @@ const steps = [
       </svg>
     ),
     title: 'Testing',
-    subtitle: 'Ongoing',
     desc: 'Testing isn\'t a phase - it runs throughout. Unit tests, integration tests, and end-to-end flows are written and maintained alongside the code.',
     actions: ['Automated test suite', 'Cross-browser QA', 'Performance audits', 'Security review'],
   },
@@ -73,7 +69,6 @@ const steps = [
       </svg>
     ),
     title: 'Launch',
-    subtitle: 'Go-live',
     desc: 'A coordinated launch - not a rushed push. We prepare deployment runbooks, monitoring setup, rollback plans, and communicate clearly throughout.',
     actions: ['Production deployment', 'Monitoring & alerting', 'Load testing', 'Rollback plan ready'],
   },
@@ -87,8 +82,7 @@ const steps = [
       </svg>
     ),
     title: 'Support & Growth',
-    subtitle: 'Post-launch',
-    desc: 'We stay engaged after the launch. Bug fixes, performance improvements, new features - and honest advice on what to build next and what to skip.',
+    desc: 'We stay engaged after the launch. Bug fixes, performance improvements, new features - and clear advice on what to build next and what to skip.',
     actions: ['Ongoing bug support', 'Monthly health reports', 'Feature roadmapping', 'Performance tuning'],
   },
 ];
@@ -109,46 +103,49 @@ const ServicesProcess = () => (
             <span>In Control</span>
           </h2>
           <p className={styles.process__sub}>
-            No big reveals. No surprise scope changes. No disappearing for weeks
-            only to return with the wrong thing. Our process is built around
-            visibility and early feedback.
+            No big reveals. No surprise scope changes. We maintain continuous progress
+            visibility so you are always in the loop. Our process is built around
+            constant collaboration and early feedback.
           </p>
         </div>
       </ScrollReveal>
 
       <div className={styles.process__steps}>
-        {steps.map((step, i) => (
-          <ScrollReveal key={step.num} delay={i * 0.08}>
-            <div className={styles.step} style={{ '--sc': step.color }}>
-              <div className={styles.step__left}>
-                <div className={styles.step__numWrap}>
-                  <div className={styles.step__iconWrap}>
-                    {step.icon}
+        {[steps.slice(0, 3), steps.slice(3, 6)].map((column, colIndex) => (
+          <div className={styles.process__col} key={colIndex}>
+            {column.map((step, i) => (
+              <ScrollReveal key={step.num} delay={i * 0.08}>
+                <div className={styles.step} style={{ '--sc': step.color }}>
+                  <div className={styles.step__left}>
+                    <div className={styles.step__numWrap}>
+                      <div className={styles.step__iconWrap}>
+                        {step.icon}
+                      </div>
+                      {i < column.length - 1 && (
+                        <div className={styles.step__connector} />
+                      )}
+                    </div>
                   </div>
-                  {i < steps.length - 1 && (
-                    <div className={styles.step__connector} />
-                  )}
-                </div>
-              </div>
 
-              <div className={styles.step__right}>
-                <div className={styles.step__meta}>
-                  <span className={styles.step__num}>{step.num}</span>
-                  <span className={styles.step__subtitle}>{step.subtitle}</span>
+                  <div className={styles.step__right}>
+                    <div className={styles.step__meta}>
+                      <span className={styles.step__num}>{step.num}</span>
+                    </div>
+                    <h3 className={styles.step__title}>{step.title}</h3>
+                    <p className={styles.step__desc}>{step.desc}</p>
+                    <ul className={styles.step__actions}>
+                      {step.actions.map(a => (
+                        <li key={a} className={styles.step__action}>
+                          <span className={styles.step__actionDot} />
+                          {a}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <h3 className={styles.step__title}>{step.title}</h3>
-                <p className={styles.step__desc}>{step.desc}</p>
-                <ul className={styles.step__actions}>
-                  {step.actions.map(a => (
-                    <li key={a} className={styles.step__action}>
-                      <span className={styles.step__actionDot} />
-                      {a}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </ScrollReveal>
+              </ScrollReveal>
+            ))}
+          </div>
         ))}
       </div>
     </Container>

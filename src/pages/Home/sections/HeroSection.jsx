@@ -121,7 +121,7 @@ const HeroSection = () => {
 
             {/* Description */}
             <motion.p className={styles.hero__desc} variants={itemVariants}>
-              Vishal Infotech builds high-performance websites, SaaS platforms,
+              We Build high-performance websites, SaaS platforms,
               ERP systems, and scalable digital solutions designed to help modern
               businesses grow faster.
             </motion.p>

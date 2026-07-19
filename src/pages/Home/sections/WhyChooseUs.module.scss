@@ -43,9 +43,9 @@
 
 .why__card {
   position: relative;
-  background: v.$bg-dark;
+  background: v.$bg-white;
   border-radius: v.$radius-xl;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid v.$border-light;
   overflow: hidden;
   box-shadow: v.$shadow-xl;
 }
@@ -70,7 +70,7 @@
   gap: 10px;
   padding-bottom: 16px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid v.$border-light;
 }
 
 .why__codeDots {
@@ -91,7 +91,7 @@
 .why__codeFile {
   font-size: 12px;
   font-family: v.$font-mono;
-  color: rgba(255, 255, 255, 0.35);
+  color: v.$text-muted;
   letter-spacing: 0.02em;
 }
 
@@ -126,11 +126,11 @@
 }
 
 .why__codeKey {
-  color: rgba(255, 255, 255, 0.55);
+  color: v.$text-secondary;
 }
 
 .why__codePunct {
-  color: rgba(255, 255, 255, 0.3);
+  color: v.$text-light;
 }
 
 .why__codeStr {
@@ -144,15 +144,15 @@
   flex-wrap: wrap;
   gap: 8px;
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid v.$border-light;
 }
 
 .why__badge {
   font-size: 11px;
   font-weight: v.$font-weight-semibold;
-  color: v.$primary-lighter;
-  background: rgba(37, 99, 235, 0.15);
-  border: 1px solid rgba(37, 99, 235, 0.25);
+  color: v.$primary;
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.22);
   padding: 5px 12px;
   border-radius: v.$radius-full;
   letter-spacing: 0.02em;
@@ -228,7 +228,7 @@
 }
 
 .why__itemDesc {
-  font-size: 12px;
+  font-size: 13px;
   color: v.$text-muted;
   line-height: 1.6;
 }

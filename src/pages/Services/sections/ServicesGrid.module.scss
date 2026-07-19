@@ -87,6 +87,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  align-items: stretch;
 
   @include r.down(tablet-lg) {
     grid-template-columns: repeat(2, 1fr);
@@ -96,11 +97,20 @@
     grid-template-columns: 1fr;
     gap: 16px;
   }
+
+  // ScrollReveal renders a motion.div wrapper as the actual grid item -
+  // stretch it too so .card inside can fill it to equal height.
+  > * {
+    height: 100%;
+  }
 }
 
 // ─── Card ─────────────────────────────────────────────────────
 .card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: v.$bg-light;
   border: 1px solid v.$border-light;
   border-radius: v.$radius-xl;
@@ -251,6 +261,7 @@
 
 // ─── Card footer link ─────────────────────────────────────────
 .card__footer {
+  margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid v.$border-light;
 }

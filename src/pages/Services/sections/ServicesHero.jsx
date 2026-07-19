@@ -357,7 +357,7 @@ const ServicesHero = () => {
             </div>
 
             <div className={styles.hero__tags}>
-              {['Design-First', 'Scalable Systems', 'Clean Code', 'On-Time Delivery', 'Honest Pricing'].map(tag => (
+              {['Design-First', 'Scalable Systems', 'Clean Code', 'On-Time Delivery', 'Transparent Pricing'].map(tag => (
                 <span key={tag} className={styles.hero__tag}>
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                     <path d="M2 5l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

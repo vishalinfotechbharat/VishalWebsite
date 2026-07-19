@@ -91,10 +91,10 @@ const AboutDifferent = () => (
     <Container>
       <div className={styles.diff__header}>
         <ScrollReveal>
-          <span className={styles.diff__eyebrow}>What Makes Us Different</span>
+          <span className={styles.diff__eyebrow}>What Sets Us Apart</span>
           <h2 className={styles.diff__title}>
-            Real Strengths,<br />
-            <span>Not Generic Claims</span>
+            What Makes Us<br />
+            <span>Different</span>
           </h2>
           <p className={styles.diff__sub}>
             Instead of promises, here is what we actually bring to every

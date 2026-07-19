@@ -90,10 +90,12 @@ const AboutApproach = () => (
               )}
               <div className={styles.approach__stepLeft}>
                 <div className={styles.approach__iconWrap}>{step.icon}</div>
-                <div className={styles.approach__numBadge}>{step.number}</div>
               </div>
               <div className={styles.approach__stepBody}>
-                <h3 className={styles.approach__stepTitle}>{step.title}</h3>
+                <div className={styles.approach__stepMeta}>
+                  <span className={styles.approach__stepNum}>{step.number}</span>
+                  <h3 className={styles.approach__stepTitle}>{step.title}</h3>
+                </div>
                 <p className={styles.approach__stepDesc}>{step.desc}</p>
               </div>
             </div>

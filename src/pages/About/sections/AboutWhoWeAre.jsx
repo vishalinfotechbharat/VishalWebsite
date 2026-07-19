@@ -37,7 +37,7 @@ const AboutWhoWeAre = () => (
             </p>
             <blockquote className={styles.who__quote}>
               "We believe the best digital products are built where clean code,
-              user empathy, and real business understanding meet."
+              user-centered design, and real business understanding meet."
             </blockquote>
             <div className={styles.who__pillars}>
               {pillars.map((p) => (

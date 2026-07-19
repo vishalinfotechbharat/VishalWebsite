@@ -27,7 +27,7 @@ const CTABanner = () => (
 
           <p className={styles.cta__sub}>
             Share your idea with us - we'll listen, think it through,
-            and tell you honestly what we can build together.
+            and tell you transparently what we can build together.
           </p>
 
           <div className={styles.cta__actions}>
